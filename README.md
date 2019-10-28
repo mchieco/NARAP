@@ -1,4 +1,4 @@
-# narap
+# NARAP Website
 
 ## Project setup
 ```
