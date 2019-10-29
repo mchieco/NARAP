@@ -2,6 +2,7 @@
   <div id="app">
     <section class="main-navbar-section">
       <div class="container">
+        <router-link></router-link>
         <vue-navigation-bar
           :options="navbarOptions"
           @vnb-item-clicked="vnbItemClicked"
@@ -32,6 +33,7 @@
         </vue-navigation-bar>
       </div>
     </section>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -56,7 +58,7 @@ export default {
           {
             type: 'link',
             text: 'Home',
-            path: './',
+            path: '/',
           },
           {
             type: 'link',
@@ -65,14 +67,17 @@ export default {
               {
                 type: 'link',
                 text: 'About Us',
-                path: './aboutus',
+                path: '/aboutus',
                 iconLeft: '<i class="fa fa-user fa-fw"></i>',
+              },
+              {
+                type: 'hr',
               },
               {
                 type: 'link',
                 text: 'Our Team',
                 path: './ourteam',
-                iconLeft: '<i class="fa fa-star fa-fw"></i>',
+                iconLeft: '<i class="fas fa-star"></i>',
               },
             ],
           },
@@ -94,13 +99,16 @@ export default {
                 type: 'link',
                 text: 'Mentoring Program',
                 path: './alumnimentor',
-                iconLeft: '<i class="fa fa-user fa-fw"></i>',
+                iconLeft: '<i class="fas fa-user"></i>',
+              },
+              {
+                type: 'hr',
               },
               {
                 type: 'link',
                 text: 'Where Are They Now?',
                 path: './alumninow',
-                iconLeft: '<i class="fa fa-star fa-fw"></i>',
+                iconLeft: '<i class="fas fa-search-location"></i>',
               },
             ],
           },
@@ -112,13 +120,16 @@ export default {
                 type: 'link',
                 text: 'Research',
                 path: './research',
-                iconLeft: '<i class="fa fa-user fa-fw"></i>',
+                iconLeft: '<i class="fas fa-poll"></i>',
+              },
+              {
+                type: 'hr',
               },
               {
                 type: 'link',
                 text: 'Research Associates',
                 path: './researchassociates',
-                iconLeft: '<i class="fa fa-star fa-fw"></i>',
+                iconLeft: '<i class="fas fa-user"></i>',
               },
             ],
           },
@@ -130,13 +141,16 @@ export default {
                 type: 'link',
                 text: 'NARAP in the News',
                 path: './inthenews',
-                iconLeft: '<i class="fa fa-user fa-fw"></i>',
+                iconLeft: '<i class="fas fa-tv"></i>',
+              },
+              {
+                type: 'hr',
               },
               {
                 type: 'link',
                 text: 'News Magazine',
                 path: './newmagazine',
-                iconLeft: '<i class="fa fa-star fa-fw"></i>',
+                iconLeft: '<i class="far fa-newspaper"></i>',
               },
             ],
           },
@@ -148,13 +162,16 @@ export default {
                 type: 'link',
                 text: 'Your Support',
                 path: './yoursupport',
-                iconLeft: '<i class="fa fa-user fa-fw"></i>',
+                iconLeft: '<i class="fas fa-users"></i>',
+              },
+              {
+                type: 'hr',
               },
               {
                 type: 'link',
                 text: 'Wish List',
                 path: './wishlist',
-                iconLeft: '<i class="fa fa-star fa-fw"></i>',
+                iconLeft: '<i class="fas fa-gift"></i>',
               },
             ],
           },
@@ -164,6 +181,7 @@ export default {
             type: 'button',
             text: 'Login',
             path: './login',
+            class: 'button-green',
             iconRight:
               '<svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M22 6 L30 16 22 26 M30 16 L2 16" /> </svg>',
           },
@@ -182,7 +200,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
 html {
   width: 100%;
@@ -210,6 +227,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
+
 @media (min-width: 992px) {
   .code-text {
     margin-bottom: 0;
@@ -218,31 +236,6 @@ body {
 .btn {
   text-transform: uppercase;
   font-weight: bold;
-}
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-}
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
 }
 .main-content-section {
   padding: 45px 0;
@@ -257,10 +250,10 @@ body {
 }
 .vnb {
   font-family: "Montserrat", sans-serif;
-  .button-red {
-    background: #ff3b30;
+  .button-green {
+    background: green;
     &:hover {
-      background: darken(#ff3b30, 10%);
+      background: darken(green, 10%);
     }
   }
   &__menu-options {
