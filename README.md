@@ -1,4 +1,4 @@
-# NARAP Website
+# NARAP Website for Senior Capstone
 
 ## Project setup
 ```
