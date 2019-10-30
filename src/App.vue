@@ -1,40 +1,16 @@
 <template>
-  <div id="app">
+  <v-app>
     <section class="main-navbar-section">
       <div class="container">
-        <router-link></router-link>
         <vue-navigation-bar
           :options="navbarOptions"
           @vnb-item-clicked="vnbItemClicked"
         >
-          <!-- Custom Slot - Uncomment to use -->
-          <!-- <template v-slot:custom-section>
-            <div class="custom-section-content">
-              <div class="input-group input-group-sm">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder
-                  aria-label="Example text with button addon"
-                  aria-describedby="button-addon1"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    id="button-addon1"
-                  >
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </template> -->
         </vue-navigation-bar>
       </div>
     </section>
     <router-view></router-view>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -175,8 +151,6 @@ export default {
               },
             ],
           },
-        ],
-        menuOptionsRight: [
           {
             type: 'button',
             text: 'Login',
@@ -252,6 +226,7 @@ body {
   font-family: "Montserrat", sans-serif;
   .button-green {
     background: green;
+    color: #ffffff;
     &:hover {
       background: darken(green, 10%);
     }
@@ -294,5 +269,19 @@ body {
       width: 20%;
     }
   }
+    &__menu-options {
+      &__option {
+        &__link {
+          color: #333 !important;
+        }
+      }
+    }
+    &__sub-menu-options {
+      &__option {
+        &__link {
+          color: #333 !important;
+        }
+      }
+    }
 }
 </style>

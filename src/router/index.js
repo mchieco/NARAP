@@ -4,9 +4,8 @@ import VueNavigationBar from 'vue-navigation-bar';
 import 'vue-navigation-bar/dist/vue-navigation-bar.css';
 import Home from '../views/Home.vue';
 
-Vue.component('vue-navigation-bar', VueNavigationBar);
-
 Vue.use(VueRouter);
+Vue.component('vue-navigation-bar', VueNavigationBar);
 
 const routes = [
   {
