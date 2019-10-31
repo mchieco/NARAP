@@ -17,8 +17,11 @@
 
   <div class="container" id="homeText">
 <!-- eslint-disable max-len -->
-
-
+<p>Centered in emergency deptartments across the US, NARAP is a non-profit clinical research organization facilitating large-scale, national, multi-center studies to increase the quality of healthcare delivery nationally, especially in the areas of screening and prevention.</p>
+<p>Our work engages vast numbers of pre-health professional students as Data Collectors / Research Associates in the studies, providing enhanced clinical opportunities unique to the research setting while teaching the fundamentals of interacting with patients. </p>
+  <h1> Consider These Numbers</h1>
+  <p> More than half the U.S. population visits an Emergency Department as a patient or visitor each year. The average Emergency Department visit lasts four hours. </p>
+    <p> By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate  students any given year.</p>
   </div>
 
     <v-container fluid>
@@ -73,8 +76,7 @@ export default {
 
 <style>
 .caro {
-  margin-left: 1%;
-  margin-right: 1%;
+
 }
 .v-carousel {
   height: 550px !important;
@@ -116,6 +118,14 @@ export default {
   padding: 10%;
   margin-left: 8%;
   max-width: 45%;
-  }
+}
+#homeText{
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 20px;
+  text-align: center;
+}
 
 </style>
