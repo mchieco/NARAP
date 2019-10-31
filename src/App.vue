@@ -11,8 +11,8 @@
     </section>
     <router-view></router-view>
       <section class="main-footer-section">
-      <div class="footer">
-        <v-footer class="grey lighten-2" height="auto" width="100%">
+      <div class="footer" style="margin-bottom: 150px">
+        <v-footer absolute class="grey lighten-2" height="auto" width="100%">
           <v-card flat tile class="container grey lighten-2 white --text text-xs-center">
             <v-card-title class="grey lighten-2">
               <strong class="subheading">Contact NARAP</strong>
