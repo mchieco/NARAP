@@ -10,6 +10,28 @@
       </div>
     </section>
     <router-view></router-view>
+      <section class="main-footer-section">
+      <div class="footer">
+        <v-footer class="grey lighten-2" height="auto" width="100%">
+          <v-card flat tile class="container grey lighten-2 white --text text-xs-center">
+            <v-card-title class="grey lighten-2">
+              <strong class="subheading">Contact NARAP</strong>
+  
+              <v-spacer></v-spacer>
+  
+              <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+                <v-icon size="24px">{{ icon }}</v-icon>
+              </v-btn>
+            </v-card-title>
+  
+          <v-card-text class="py-2 white--text text-center">
+            {{ new Date().getFullYear() }} — <strong>NARAP</strong>
+          </v-card-text>
+        </v-card>
+      </v-footer>
+      </div>
+
+    </section>
   </v-app>
 </template>
 
@@ -166,6 +188,10 @@ export default {
           },
         ],
       },
+      icons: [
+        'fab fa-facebook',
+        'fab fa-linkedin',
+      ],
     };
   },
 };
@@ -186,9 +212,8 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 #app {
-  height: 100%;
-  height: 100vh;
-  width: 100%;
+  height: auto;
+  max-width: 100%;
   line-height: 1.5;
 }
 .code-text {
