@@ -7,8 +7,19 @@
         :src="item.src"
         reverse-transition="fade-transition"
         transition="fade-transition"
-      ></v-carousel-item>
+      >
+      <div class="caroMisc">
+      <p class="caroText"> NARAP a unique approach to clinical research  </p>
+      <v-btn class="ma-2" id="caroBtn" outlined color="green">Learn More</v-btn>
+      </div>
+      </v-carousel-item>
     </v-carousel>
+
+  <div class="container" id="homeText">
+<!-- eslint-disable max-len -->
+
+
+  </div>
 
     <v-container fluid>
       <v-row>
@@ -80,4 +91,31 @@ export default {
   padding-top: 100px;
   height: 90%;
 }
+.caroText{
+  font-size: 25px;
+  color: white;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+  }
+#caroBtn{
+    height:50px;
+    width:200px;
+    position:relative;
+    top:100%;
+    color: aliceblue;
+    background-color: white!important;
+    opacity: 0.7;
+  }
+#caroBtn:hover {
+  color: green;
+}
+.caroMisc{
+  padding: 10%;
+  margin-left: 8%;
+  max-width: 45%;
+  }
+
 </style>
