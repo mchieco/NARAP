@@ -11,25 +11,42 @@
     </section>
     <router-view></router-view>
       <section class="main-footer-section">
-      <div class="footer" style="margin-bottom: 150px">
-        <v-footer absolute class="grey lighten-2" height="auto" width="100%">
-          <v-card flat tile class="container grey lighten-2 white --text text-xs-center">
-            <v-card-title class="grey lighten-2">
-              <strong class="subheading">Contact NARAP</strong>
-  
-              <v-spacer></v-spacer>
-  
-              <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-                <v-icon size="24px">{{ icon }}</v-icon>
-              </v-btn>
-            </v-card-title>
-  
-          <v-card-text class="py-2 white--text text-center">
-            {{ new Date().getFullYear() }} — <strong>NARAP</strong>
-          </v-card-text>
-        </v-card>
-      </v-footer>
-      </div>
+<v-footer
+    dark
+    padless
+  >
+    <v-card
+      class="flex"
+      flat
+      tile
+    >
+      <v-card-title class="green">
+        <div class="footerText">
+        <strong class="subheading">Contact NARAP</strong>
+        <div class="address">
+        <p>NARAP</p>
+        <p>66 Lilalyn Drive</p>
+        <p>Fairfield, CT 06825</p>
+        </div>
+        </div>
+        <v-spacer></v-spacer>
+
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4"
+          dark
+          icon
+        >
+          <v-icon size="24px">{{ icon }}</v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <v-card-text class="py-2 white--text text-center">
+        {{ new Date().getFullYear() }} — <strong>NARAP</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
 
     </section>
   </v-app>
@@ -190,7 +207,10 @@ export default {
       },
       icons: [
         'fab fa-facebook',
+        'fab fa-twitter',
+        'fab fa-google-plus',
         'fab fa-linkedin',
+        'fab fa-instagram',
       ],
     };
   },
@@ -223,6 +243,12 @@ body {
   border-radius: 4px;
   margin-bottom: 20px;
   text-align: center;
+}
+.address{
+  font-size: 15px;
+  font-weight: 100;
+  max-width: 90%;
+  margin-bottom: 0% !important;
 }
 
 @media (min-width: 992px) {
