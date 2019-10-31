@@ -10,7 +10,11 @@
       >
         <div class="caroMisc">
           <p class="caroText">NARAP a unique approach to clinical research</p>
+
+          <router-link to="/theProgram">
           <v-btn class="ma-2" id="caroBtn" outlined color="green">Learn More</v-btn>
+          </router-link>
+
         </div>
       </v-carousel-item>
     </v-carousel>
