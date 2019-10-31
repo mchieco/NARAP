@@ -8,21 +8,21 @@
         reverse-transition="fade-transition"
         transition="fade-transition"
       >
-      <div class="caroMisc">
-      <p class="caroText"> NARAP a unique approach to clinical research  </p>
-      <v-btn class="ma-2" id="caroBtn" outlined color="green">Learn More</v-btn>
-      </div>
+        <div class="caroMisc">
+          <p class="caroText">NARAP a unique approach to clinical research</p>
+          <v-btn class="ma-2" id="caroBtn" outlined color="green">Learn More</v-btn>
+        </div>
       </v-carousel-item>
     </v-carousel>
 
-  <div class="container" id="homeText">
-<!-- eslint-disable max-len -->
-<p>Centered in emergency deptartments across the US, NARAP is a non-profit clinical research organization facilitating large-scale, national, multi-center studies to increase the quality of healthcare delivery nationally, especially in the areas of screening and prevention.</p>
-<p>Our work engages vast numbers of pre-health professional students as Data Collectors / Research Associates in the studies, providing enhanced clinical opportunities unique to the research setting while teaching the fundamentals of interacting with patients. </p>
-  <h1> Consider These Numbers</h1>
-  <p> More than half the U.S. population visits an Emergency Department as a patient or visitor each year. The average Emergency Department visit lasts four hours. </p>
-    <p> By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate  students any given year.</p>
-  </div>
+    <div class="container" id="homeText">
+      <!-- eslint-disable max-len -->
+      <p>Centered in emergency deptartments across the US, NARAP is a non-profit clinical research organization facilitating large-scale, national, multi-center studies to increase the quality of healthcare delivery nationally, especially in the areas of screening and prevention.</p>
+      <p>Our work engages vast numbers of pre-health professional students as Data Collectors / Research Associates in the studies, providing enhanced clinical opportunities unique to the research setting while teaching the fundamentals of interacting with patients.</p>
+      <h1>Consider These Numbers</h1>
+      <p>More than half the U.S. population visits an Emergency Department as a patient or visitor each year. The average Emergency Department visit lasts four hours.</p>
+      <p>By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate students any given year.</p>
+    </div>
 
     <v-container fluid>
       <v-row>
@@ -76,7 +76,6 @@ export default {
 
 <style>
 .caro {
-
 }
 .v-carousel {
   height: 550px !important;
@@ -93,33 +92,33 @@ export default {
   padding-top: 100px;
   height: 90%;
 }
-.caroText{
+.caroText {
   font-size: 25px;
   color: white;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .custom-loader {
-    animation: loader 1s infinite;
-    display: flex;
-  }
-#caroBtn{
-    height:50px;
-    width:200px;
-    position:relative;
-    top:100%;
-    color: aliceblue;
-    background-color: white!important;
-    opacity: 0.7;
-  }
+  animation: loader 1s infinite;
+  display: flex;
+}
+#caroBtn {
+  height: 50px;
+  width: 200px;
+  position: relative;
+  top: 100%;
+  color: aliceblue;
+  background-color: white !important;
+  opacity: 0.7;
+}
 #caroBtn:hover {
   color: green;
 }
-.caroMisc{
+.caroMisc {
   padding: 10%;
   margin-left: 8%;
   max-width: 45%;
 }
-#homeText{
+#homeText {
   padding-left: 12%;
   padding-right: 12%;
   padding-top: 5%;
@@ -127,5 +126,4 @@ export default {
   font-size: 20px;
   text-align: center;
 }
-
 </style>
