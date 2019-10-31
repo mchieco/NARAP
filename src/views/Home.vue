@@ -7,10 +7,28 @@
         :src="item.src"
         reverse-transition="fade-transition"
         transition="fade-transition"
-      ></v-carousel-item>
+      >
+        <div class="caroMisc">
+          <p class="caroText">NARAP a unique approach to clinical research</p>
+
+          <router-link to="/theProgram">
+          <v-btn class="ma-2" id="caroBtn" outlined color="green">Learn More</v-btn>
+          </router-link>
+
+        </div>
+      </v-carousel-item>
     </v-carousel>
 
-    <v-container fluid>
+    <div class="container" id="homeText">
+      <!-- eslint-disable max-len -->
+      <p>Centered in emergency deptartments across the US, NARAP is a non-profit clinical research organization facilitating large-scale, national, multi-center studies to increase the quality of healthcare delivery nationally, especially in the areas of screening and prevention.</p>
+      <p>Our work engages vast numbers of pre-health professional students as Data Collectors / Research Associates in the studies, providing enhanced clinical opportunities unique to the research setting while teaching the fundamentals of interacting with patients.</p>
+      <h1>Consider These Numbers</h1>
+      <p>More than half the U.S. population visits an Emergency Department as a patient or visitor each year. The average Emergency Department visit lasts four hours.</p>
+      <p>By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate students any given year.</p>
+    </div>
+
+    <v-container fluid id="homePics">
       <v-row>
         <v-col cols="6" sm="4">
           <v-img
@@ -61,10 +79,6 @@ export default {
 </script>
 
 <style>
-.caro {
-  margin-left: 1%;
-  margin-right: 1%;
-}
 .v-carousel {
   height: 550px !important;
 }
@@ -79,5 +93,42 @@ export default {
 #homeImg {
   padding-top: 100px;
   height: 90%;
+}
+.caroText {
+  font-size: 30px;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.custom-loader {
+  animation: loader 1s infinite;
+  display: flex;
+}
+#caroBtn {
+  height: 50px;
+  width: 150px;
+  position: relative;
+  top: 100%;
+  color: aliceblue;
+  background-color: white !important;
+  opacity: 0.7;
+}
+#caroBtn:hover {
+  color: green;
+}
+.caroMisc {
+  padding: 10%;
+  margin-left: 28%;
+  max-width: 35%;
+}
+#homeText {
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 20px;
+  text-align: center;
+}
+#homePics{
+  max-width: 70%;
 }
 </style>
