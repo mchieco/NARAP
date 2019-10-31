@@ -28,7 +28,7 @@
       <p>By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate students any given year.</p>
     </div>
 
-    <v-container fluid>
+    <v-container fluid id="homePics">
       <v-row>
         <v-col cols="6" sm="4">
           <v-img
@@ -79,8 +79,6 @@ export default {
 </script>
 
 <style>
-.caro {
-}
 .v-carousel {
   height: 550px !important;
 }
@@ -97,7 +95,7 @@ export default {
   height: 90%;
 }
 .caroText {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
@@ -107,7 +105,7 @@ export default {
 }
 #caroBtn {
   height: 50px;
-  width: 200px;
+  width: 150px;
   position: relative;
   top: 100%;
   color: aliceblue;
@@ -119,8 +117,8 @@ export default {
 }
 .caroMisc {
   padding: 10%;
-  margin-left: 8%;
-  max-width: 45%;
+  margin-left: 28%;
+  max-width: 35%;
 }
 #homeText {
   padding-left: 12%;
@@ -129,5 +127,8 @@ export default {
   padding-bottom: 5%;
   font-size: 20px;
   text-align: center;
+}
+#homePics{
+  max-width: 70%;
 }
 </style>
