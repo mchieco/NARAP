@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <section class="main-navbar-section">
-      <div class="container">
+      <div class="container" style="align-content: center;">
         <vue-navigation-bar
           :options="navbarOptions"
           @vnb-item-clicked="vnbItemClicked"
@@ -61,6 +61,11 @@ export default {
             type: 'link',
             text: 'The Program',
             path: './theprogram',
+          },
+          {
+            type: 'link',
+            text: 'Live Data',
+            path: './livedata',
           },
           {
             type: 'link',
@@ -162,13 +167,6 @@ export default {
         ],
       },
     };
-  },
-  methods: {
-    vnbItemClicked(text) {
-      if (text === 'About') {
-        alert("'About' was selected.");
-      }
-    },
   },
 };
 </script>
