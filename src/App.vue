@@ -10,10 +10,11 @@
       </div>
     </section>
     <router-view></router-view>
-      <section class="main-footer-section">
+      <section class="main-footer-section" style="margin-bottom: 250px;">
 <v-footer
     dark
     padless
+    absolute
   >
     <v-card
       class="flex"

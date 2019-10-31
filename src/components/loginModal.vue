@@ -10,7 +10,7 @@
       :error-messages="usernameErrors"
       :counter="10"
       label="Username"
-      prepend-icon="mdi-lock"
+      prepend-icon="mdi-android"
       required
       @input="$v.username.$touch()"
       @blur="$v.username.$touch()"
