@@ -10,44 +10,53 @@
       </div>
     </section>
     <router-view></router-view>
-      <section class="main-footer-section" style="margin-bottom: 250px;">
-<v-footer
-    dark
-    padless
-    absolute
-  >
-    <v-card
-      class="flex"
-      flat
-      tile
-    >
-      <v-card-title class="green">
-        <div class="footerText">
-        <strong class="subheading">Contact NARAP</strong>
-        <div class="address">
-        <p>NARAP</p>
-        <p>66 Lilalyn Drive</p>
-        <p>Fairfield, CT 06825</p>
-        </div>
-        </div>
-        <v-spacer></v-spacer>
-
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4"
+    <section class="main-footer-section" style="margin-bottom: 250px;">
+      <v-footer
           dark
-          icon
+          padless
+          absolute
         >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-      </v-card-title>
+          <v-card
+            class="flex"
+            flat
+            tile
+          >
+            <v-card-title class="grey lighten-3 black--text">
+                <div class="row" id="footerRow">
+                  <v-img src="@/assets/narap_logo.png" class="logo"></v-img>
+                  <div class="col">
+                    <strong class="subheading">Contact NARAP</strong>
+                    <div class="address">
+                      <p id="pCon">NARAP <br>
+                        66 Lilalyn Drive <br>
+                        Fairfield, CT 06825 <br>
+                        (860) 386-5676 <br>
+                        <a href="mailto:ask@thenarap.org">ask@thenarap.org</a>
+                        
+                      </p>
+                    </div>
 
-      <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>NARAP</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+                  </div>
+                  <div class="col">
+                    <div class="images">
+                      <a href="https://www.paypal.com/donate/?token=e_e-3hzEwCdjIm1OPZvWzE7dsx0Dm0ZJZ-mMpv_LkII_w_uMlek7j1KBmyr6vvJb5CdaT0&country.x=US&locale.x="><v-img src="@/assets/donate.png" class="donate"></v-img></a>
+                      <a href="donate@theNARAP.org">donate@theNARAP.org</a>
+                      <p class="register">
+                        NARAP is registered as a 501(c)(3)<br>
+                        non-profit organization
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                  </div>
+                </div>
+            </v-card-title>
+
+            <v-card-text class="py-2 white--text text-center">
+              {{ new Date().getFullYear() }} — <strong>NARAP</strong>
+            </v-card-text>
+          </v-card>
+        </v-footer>
 
     </section>
     <login-modal @close="showLogin=false"
@@ -213,10 +222,7 @@ export default {
       },
       icons: [
         'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
         'fab fa-linkedin',
-        'fab fa-instagram',
       ],
     };
   },
@@ -257,12 +263,37 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
+
 .address{
   font-size: 15px;
-  font-weight: 100;
-  max-width: 90%;
+  font-weight: 300;
+  max-width: 100%;
   margin-bottom: 0% !important;
 }
+
+#footerRow{
+  max-width: 100%;
+  margin: auto;
+  align-content: center;
+  margin-left: 18%;
+}
+
+.donate{
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+.logo{
+  height: 2%;
+  width: 2%;
+  margin-right: 10%;
+}
+
+.register{
+  font-size: 10px;
+  margin-top: 3%;
+}
+
 
 @media (min-width: 992px) {
   .code-text {
