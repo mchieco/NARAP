@@ -10,7 +10,7 @@
       </div>
     </section>
     <router-view></router-view>
-    <section class="main-footer-section" style="margin-bottom: 250px;">
+    <section class="main-footer-section" style="margin-bottom: 275px;">
       <v-footer
           dark
           padless
@@ -27,7 +27,7 @@
                   <div class="col">
                     <strong class="subheading">Contact NARAP</strong>
                     <div class="address">
-                      <p id="pCon">NARAP <br>
+                      <p>NARAP <br>
                         66 Lilalyn Drive <br>
                         Fairfield, CT 06825 <br>
                         (860) 386-5676 <br>
@@ -38,7 +38,7 @@
 
                   </div>
                   <div class="col">
-                    <div class="images">
+                    <div>
                       <a href="https://www.paypal.com/donate/?token=e_e-3hzEwCdjIm1OPZvWzE7dsx0Dm0ZJZ-mMpv_LkII_w_uMlek7j1KBmyr6vvJb5CdaT0&country.x=US&locale.x="><v-img src="@/assets/donate.png" class="donate"></v-img></a>
                       <a href="donate@theNARAP.org">donate@theNARAP.org</a>
                       <p class="register">
@@ -47,7 +47,15 @@
                       </p>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="col-2" id="newsCol">
+                      <v-img src="@/assets/news.png" class="news"></v-img>
+                  </div>
+                  <div class="col">
+                      <h1 class="header">
+                        Join FANS of NARAP by <br> receiving our news!
+                      </h1>
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                      <button type="button" class="btn btn-primary">Subscribe</button>
                   </div>
                 </div>
             </v-card-title>
@@ -272,10 +280,10 @@ body {
 }
 
 #footerRow{
-  max-width: 100%;
+  max-width: 75%;
   margin: auto;
   align-content: center;
-  margin-left: 18%;
+  margin-left: 10%;
 }
 
 .donate{
@@ -284,14 +292,27 @@ body {
 }
 
 .logo{
-  height: 2%;
-  width: 2%;
+  height: 1%;
+  width: 1%;
   margin-right: 10%;
+}
+
+.news{
+  width: 60%;
+  margin-left: 30%;
 }
 
 .register{
   font-size: 10px;
   margin-top: 3%;
+}
+
+.header{
+  font-size: 15px;
+}
+
+.btn{
+  margin-top: 10%;
 }
 
 
