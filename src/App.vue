@@ -10,6 +10,7 @@
       </div>
     </section>
     <router-view></router-view>
+    <!--
     <section class="main-footer-section" style="margin-bottom: 275px;">
       <v-footer
           dark
@@ -65,7 +66,77 @@
             </v-card-text>
           </v-card>
         </v-footer>
+    </section>
+    -->
 
+    <section class="main-footer-section">
+      <v-footer
+        color="grey lighten-3 black--text"
+      >
+        <v-row
+          justify="center"
+          
+        >
+
+          <v-container fluid class="footer">
+              <v-layout row wrap>
+                <v-flex xs3 sm3 md3 order-md1 order-sm1>
+                    <v-card-text>
+                      <strong class="subheading">Contact NARAP</strong>
+                        <div class="address">
+                          <p>NARAP <br>
+                            66 Lilalyn Drive <br>
+                            Fairfield, CT 06825 <br>
+                            (860) 386-5676 <br>
+                            <a href="mailto:ask@thenarap.org">ask@thenarap.org</a>
+                          </p>
+                        </div>
+                        <v-btn
+                          v-for="icon in icons"
+                          :key="icon"
+                          class="mx-4 blue--text"
+                          icon
+                        >
+                          <v-icon size="44px">{{ icon }}</v-icon>
+                        </v-btn>
+                    </v-card-text>
+                </v-flex>
+                <v-flex xs3 sm3 md3 order-md2 order-sm2>
+                    <v-card-text>
+                      <div>
+                        <a href="https://www.paypal.com/donate/?token=e_e-3hzEwCdjIm1OPZvWzE7dsx0Dm0ZJZ-mMpv_LkII_w_uMlek7j1KBmyr6vvJb5CdaT0&country.x=US&locale.x="><v-img src="@/assets/donate.png" class="donate"></v-img></a>
+                        <a href="donate@theNARAP.org">donate@theNARAP.org</a>
+                        <p class="register">
+                          NARAP is registered as a 501(c)(3)<br>
+                          non-profit organization
+                        </p>
+                    </div>
+                    </v-card-text>
+                </v-flex>
+                <v-flex xs3 sm3 md3 order-md3 order-sm3>
+                    <v-card-text>
+                      <v-img src="@/assets/news.png" class="news"></v-img>
+                    </v-card-text>
+                </v-flex>
+                <v-flex xs3 sm3 md3 order-md4 order-sm4>
+                    <v-card-text>
+                        <h1 class="header">
+                          Join FANS of NARAP by <br> receiving our news!
+                        </h1>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                        <button type="button" class="btn btn-primary">Subscribe</button>
+                    </v-card-text>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          <v-col
+            class="grey lighten-3 black--text text-center"
+            cols="12"
+          >
+            {{ new Date().getFullYear() }} — <strong>NARAP</strong>
+          </v-col>
+        </v-row>
+      </v-footer>
     </section>
     <login-modal @close="showLogin=false"
                   :dialog="showLogin"/>
@@ -279,17 +350,20 @@ body {
   margin-bottom: 0% !important;
 }
 
-#footerRow{
-  max-width: 75%;
-  margin: auto;
-  align-content: center;
-  margin-left: 10%;
+.main-footer-section{
+  max-width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+.footer{
+  max-width: 60%;
 }
 
 .donate{
   width: 50%;
-  margin-bottom: 5%;
-}
+
+  }
 
 .logo{
   height: 1%;
@@ -299,7 +373,7 @@ body {
 
 .news{
   width: 60%;
-  margin-left: 30%;
+  margin-left: 40%;
 }
 
 .register{
