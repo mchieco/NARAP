@@ -46,7 +46,7 @@
                     <v-card-text>
                       <div>
                         <a href="https://www.paypal.com/donate/?token=e_e-3hzEwCdjIm1OPZvWzE7dsx0Dm0ZJZ-mMpv_LkII_w_uMlek7j1KBmyr6vvJb5CdaT0&country.x=US&locale.x="><v-img src="@/assets/donate.png" class="donate"></v-img></a>
-                        <a href="donate@theNARAP.org">donate@theNARAP.org</a>
+                        <a href="mailto:donate@theNARAP.org">donate@theNARAP.org</a>
                         <p class="register">
                           NARAP is registered as a 501(c)(3)<br>
                           non-profit organization
