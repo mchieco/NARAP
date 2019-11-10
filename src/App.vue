@@ -141,11 +141,6 @@ export default {
           },
           {
             type: 'link',
-            text: 'Form',
-            path: './form',
-          },
-          {
-            type: 'link',
             text: 'Live Data',
             path: './livedata',
           },

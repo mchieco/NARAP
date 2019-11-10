@@ -10,7 +10,7 @@
       :error-messages="usernameErrors"
       :counter="10"
       label="Username"
-      prepend-icon="mdi-android"
+      prepend-icon="mdi-face"
       required
       @input="$v.username.$touch()"
       @blur="$v.username.$touch()"
@@ -18,10 +18,11 @@
     <v-text-field
       v-model="password"
       :error-messages="passwordErrors"
-      :counter="15"
+      :counter="25"
       label="Password"
       prepend-icon="mdi-lock"
       required
+      :type="'password'"
       @input="$v.password.$touch()"
       @blur="$v.password.$touch()"
     ></v-text-field>
@@ -47,7 +48,7 @@ export default {
 
   validations: {
     username: { required, maxLength: maxLength(10) },
-    password: { required, maxLength: maxLength(15) },
+    password: { required, maxLength: maxLength(25) },
   },
 
   data: () => ({
@@ -66,7 +67,7 @@ export default {
     passwordErrors() {
       const errors = [];
       if (!this.$v.password.$dirty) return errors;
-      if (!this.$v.password.maxLength) errors.push('Password must be at most 15 characters long');
+      if (!this.$v.password.maxLength) errors.push('Password must be at most 25 characters long');
       if (!this.$v.password.required) errors.push('Password is required');
       return errors;
     },
