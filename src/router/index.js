@@ -30,6 +30,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Form.vue'),
   },
   {
+    path: '/form2',
+    name: 'Form2',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Form2.vue'),
+  },
+  {
+    path: '/alumnimentor',
+    name: 'Alumni',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/alumni.vue'),
+  },
+  {
     path: '/livedata',
     name: 'liveData',
     // route level code-splitting
@@ -37,6 +53,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/LiveData.vue'),
   },
+  
 ];
 
 const router = new VueRouter({
