@@ -12,7 +12,7 @@
     </v-img>
     <div class="">
       <v-row>
-        <h1 class="header">
+        <h1 class="headerTop">
           About NARAP
         </h1>
       </v-row>
@@ -115,7 +115,8 @@
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.header{
+.headerTop{
+  font-size: 30px;
   margin-left: 10%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;
