@@ -1,9 +1,11 @@
 <template>
   <div class="myForm">
+    <h1>Introductory Information</h1>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-row class="columnText">
+        <!--
         <v-col cols="5">
-          <p>NARAP Site</p>
+          <p id="title">NARAP Site</p>
           <br />
           <br />
           <p>RA Initials</p>
@@ -18,14 +20,18 @@
           <br />
           <p>May I ask how old you</p>
         </v-col>
+        !-->
         <v-col cols="6">
+          <p id="title">NARAP Site</p>
           <v-overflow-btn
             class="my-2"
             :items="dropdown_font"
             label="Choose Site"
             target="#dropdown-example"
           ></v-overflow-btn>
+          <p id="title">RA Initials</p>
           <v-text-field v-model="name" :counter="3" :rules="nameRules" label="RA Initials" required></v-text-field>
+          <p id="title">RA ID</p>
           <v-text-field
             v-model="name2"
             :counter="10"
@@ -33,45 +39,39 @@
             label="RA ID Number"
             required
           ></v-text-field>
+          <p id="title">Date</p>
           <div id="pickDate">
             <date-modal />
           </div>
-          <!--
-          <v-dialog
-            ref="dialog"
-            v-model="modal2"
-            :return-value.sync="time"
-            persistent
-            width="290px"
-          >
-          <time-modal/>
-            <template v-slot:activator="{ on }">
-              <v-text-field v-model="time" label="Click to select time" readonly v-on="on"></v-text-field>
-            </template>
-            <v-time-picker v-if="modal2" v-model="time" full-width>
-              <v-spacer></v-spacer>
-              <v-btn text color="primary" @click="modal2 = false">Cancel</v-btn>
-              <v-btn text color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
-            </v-time-picker>
-          </v-dialog>
-          !-->
+          <p id="title">Time</p>
           <div id="picktime">
             <time-modal />
           </div>
-
+          <p id="title">May I ask how old you are?</p>
           <v-radio-group v-model="ex8" column>
             <v-radio label="Yes" color="success" value="success"></v-radio>
             <v-radio label="Excluded after apporaching" color="warning" value="warning"></v-radio>
             <v-radio label="No" color="error" value="error"></v-radio>
           </v-radio-group>
+          <p id="title">Age of participant</p>
+          <v-text-field
+            ref="zip"
+            v-model="zip"
+            :rules="[() => !!zip || 'This field is required']"
+            :counter="3"
+            label="Age"
+            required
+            placeholder="35"
+          ></v-text-field>
         </v-col>
       </v-row>
+      <div class="btns">
+        <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
 
-      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
+        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
 
-      <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
-
-      <v-btn color="warning" @click="resetValidation">Reset Validation</v-btn>
+        <v-btn color="primary" text @click="submit">Submit</v-btn>
+      </div>
     </v-form>
   </div>
 </template>
@@ -128,17 +128,28 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
+    submit() {
+      this.formHasErrors = false;
+      Object.keys(this.form).forEach((f) => {
+        if (!this.form[f]) this.formHasErrors = true;
+        this.$refs[f].validate(true);
+      });
+    },
   },
 };
 </script>
  
  <style>
 .myForm {
-  max-width: 90%;
-  margin-left: 10%;
+  max-width: 70%;
+  margin-left: 15%;
   margin-right: 10%;
   margin-bottom: 10%;
   margin-top: 3%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkgrey;
+  background-color: rgb(228, 228, 228);
 }
 #google {
   width: 100%;
@@ -147,7 +158,22 @@ export default {
 .googleForm {
   max-width: 100%;
 }
-.columnText{
+.columnText {
   text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.btns,
+h1 {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+#title {
+  display: flex;
+  justify-content: left;
 }
 </style>

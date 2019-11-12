@@ -12,6 +12,8 @@
           <v-text-field
             v-model="date"
             label="Date"
+            required
+            :rules="[() => !!date || 'This field is required']"
             readonly
             v-on="on"
           ></v-text-field>
