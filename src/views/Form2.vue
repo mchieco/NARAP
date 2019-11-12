@@ -15,7 +15,7 @@
           <p>Date</p>
           <br />
           <p>Time</p>
-                    <br />
+          <br />
           <p>May I ask how old you</p>
         </v-col>
         <v-col cols="6">
@@ -33,32 +33,10 @@
             label="RA ID Number"
             required
           ></v-text-field>
-          <v-menu
-            ref="menu1"
-            v-model="menu1"
-            :close-on-content-click="false"
-            transition="scale-transition"
-            offset-y
-            full-width
-            max-width="290px"
-            min-width="290px"
-          >
-            <template v-slot:activator="{ on }">
-              <v-text-field
-                v-model="dateFormatted"
-                label="Date"
-                hint="MM/DD/YYYY format"
-                persistent-hint
-                @blur="date = parseDate(dateFormatted)"
-                v-on="on"
-              ></v-text-field>
-            </template>
-            <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
-          </v-menu>
-          <p>
-            Date in ISO format:
-            <strong>{{ date }}</strong>
-          </p>
+          <div id="pickDate">
+            <date-modal />
+          </div>
+          <!--
           <v-dialog
             ref="dialog"
             v-model="modal2"
@@ -76,31 +54,18 @@
               <v-btn text color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
             </v-time-picker>
           </v-dialog>
+          !-->
+          <div id="picktime">
+            <time-modal />
+          </div>
 
           <v-radio-group v-model="ex8" column>
-              <v-radio
-                label="Yes"
-                color="success"
-                value="success"
-              ></v-radio>
-              <v-radio
-                label="Excluded after apporaching"
-                color="warning"
-                value="warning"
-              ></v-radio>
-              <v-radio
-                label="No"
-                color="error"
-                value="error"
-              ></v-radio>
-            </v-radio-group>
+            <v-radio label="Yes" color="success" value="success"></v-radio>
+            <v-radio label="Excluded after apporaching" color="warning" value="warning"></v-radio>
+            <v-radio label="No" color="error" value="error"></v-radio>
+          </v-radio-group>
         </v-col>
       </v-row>
-      
-  <div id="picktime">
-      <time-modal @close="showLogin=false"
-                  :dialog="showLogin"/>
-      </div>
 
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
 
@@ -109,14 +74,14 @@
       <v-btn color="warning" @click="resetValidation">Reset Validation</v-btn>
     </v-form>
   </div>
-
 </template>
 
 <script>
 import Time from '@/components/timeModal.vue';
+import DatePick from '@/components/dateModal.vue';
 
 export default {
-  components: { 'time-modal': Time },
+  components: { 'time-modal': Time, 'date-modal': DatePick },
   data: () => ({
     dropdown_font: [
       'Hartford Hospital',
@@ -181,5 +146,8 @@ export default {
 }
 .googleForm {
   max-width: 100%;
+}
+.columnText{
+  text-align: center;
 }
 </style>
