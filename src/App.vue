@@ -177,7 +177,7 @@ export default {
               {
                 type: 'link',
                 text: 'Research',
-                path: './research',
+                path: './our-research',
                 iconLeft: '<i class="fas fa-poll"></i>',
               },
               {
@@ -186,7 +186,7 @@ export default {
               {
                 type: 'link',
                 text: 'Research Associates',
-                path: './researchassociates',
+                path: './research-associates',
                 iconLeft: '<i class="fas fa-user"></i>',
               },
             ],
@@ -219,7 +219,7 @@ export default {
               {
                 type: 'link',
                 text: 'Your Support',
-                path: './yoursupport',
+                path: './support',
                 iconLeft: '<i class="fas fa-users"></i>',
               },
               {
