@@ -1,9 +1,23 @@
 <template>
     <div class="pa-8">
-      <p>Research Study - Primary Care Tabacco</p>
+      <p>Implementation Study</p>
       <p>Number of Participants: {{ participants }}</p>
+      <div class="row justify-content-md-center">
+      <div class="col-4 align-self-center">
+      <v-select
+        :v-model="selectedValue"
+        :items="items"
+        label="Research Components"
+        dense
+        outlined
+      ></v-select>
+      </div>
+      </div>
       <div class="row">
       <div class="col">
+      <component
+        :is="loadComponent"
+      ></component>
       <apexchart type=pie width=500 :options="chartOptionsGender" :series="seriesGender" />
       </div>
       <div class="col">
@@ -15,6 +29,7 @@
 
 <script>
 import liveDataService from '@/services/livedata';
+import hello from '@/components/HelloWorld.vue';
 
 let females = 0;
 let males = 0;
@@ -29,6 +44,10 @@ export default {
     return {
       participants: 0,
       seriesGender: [],
+      selectedValue: null,
+      items: ['Demographics', 'Primary Care Practitioner', 'Tabacco Cessation',
+        'Breast Cancer Screening', 'Cervical Cancer Screening',
+        'Colon-Rectal Screening', 'Barriers to Screening'],
       chartOptionsGender: {
         labels: ['Male', 'Female'],
         responsive: [{
@@ -81,6 +100,17 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    loadComponent() {
+      switch (this.selectedValue) {
+        default:
+          break;
+        case 'Demographics':
+          return hello;
+      }
+      return console.log('nope');
+    },
   },
   methods: {
     async load() {
