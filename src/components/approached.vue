@@ -1,6 +1,5 @@
 <template>
     <div class="row justify-content-md-center">
-    <p> {{ enrolled }} </p>
     <apexchart type=pie width=650 :options="chartOptions" :series="series" />
     <v-overlay :value="isLoading">
       <v-progress-circular indeterminate size="64"></v-progress-circular>
