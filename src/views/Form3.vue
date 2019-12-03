@@ -10,6 +10,9 @@
       <v-tab>
         <v-btn rounded color="primary" dark @click="form4">Breast Screening</v-btn>
       </v-tab>
+      <v-tab>
+        <v-btn rounded color="primary" dark @click="form4">Cervical Screening</v-btn>
+      </v-tab>
     </div>
     <div class="myForm">
       <h1>Primary Care & Tabacco</h1>

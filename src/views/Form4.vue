@@ -10,12 +10,47 @@
       <v-tab>
         <v-btn rounded color="primary" dark @click="form4">Breast Screening</v-btn>
       </v-tab>
+      <v-tab>
+        <v-btn rounded color="primary" dark @click="form4">Cervical Screening</v-btn>
+      </v-tab>
     </div>
     <div class="myForm">
       <h1>Breast Screening</h1>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-row class="columnText">
           <v-col cols="6">
+            <p
+              id="title"
+            >Have you ever been told by a heath care professional that you no longer need to have mammograms for breast cancer?</p>
+            <v-radio-group v-model="ex8" column>
+              <v-radio label="Yes" color="success" value="success"></v-radio>
+              <v-radio label="No" color="error" value="error"></v-radio>
+              <v-radio label="Does not know" color="warning" value="warning"></v-radio>
+              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
+            </v-radio-group>
+            <p
+              id="title"
+            >You have been told by a physician that you no longer need to have mammograms correct?</p>
+            <v-radio-group v-model="ex8" column>
+              <v-radio label="Yes (No Mammograms)" color="success" value="success"></v-radio>
+              <v-radio label="No (Needs Mammograms)" color="error" value="error"></v-radio>
+            </v-radio-group>
+            <p
+              id="title"
+            >Have you been told by a heath care professional that you need a mammogram more often than evey 2 years?</p>
+            <v-radio-group v-model="ex8" column>
+              <v-radio label="Yes" color="success" value="success"></v-radio>
+              <v-radio label="No" color="error" value="error"></v-radio>
+              <v-radio label="Does not know" color="warning" value="warning"></v-radio>
+              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
+            </v-radio-group>
+            <p id="title">Have you had a mammogram within the last 2 years?</p>
+            <v-radio-group v-model="ex8" column>
+              <v-radio label="Yes" color="success" value="success"></v-radio>
+              <v-radio label="No" color="error" value="error"></v-radio>
+              <v-radio label="Does not know" color="warning" value="warning"></v-radio>
+              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
+            </v-radio-group>
           </v-col>
         </v-row>
         <div class="btns">

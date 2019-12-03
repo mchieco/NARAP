@@ -10,6 +10,9 @@
       <v-tab>
         <v-btn rounded color="primary" dark @click="form4">Breast Screening</v-btn>
       </v-tab>
+      <v-tab>
+        <v-btn rounded color="primary" dark @click="form4">Cervical Screening</v-btn>
+      </v-tab>
     </div>
     <div class="myForm">
       <h1>Introductory Information</h1>
@@ -167,6 +170,15 @@ export default {
         this.$refs[f].validate(true);
       });
     },
+    showModal() {
+      this.$refs['my-modal'].show();
+    },
+    hideModal() {
+      this.$refs['my-modal'].hide();
+    },
+    mounted() {
+      this.showModal();
+    },
     submit() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
@@ -224,6 +236,6 @@ h1 {
   display: flex;
   justify-content: left;
   text-align: left;
-  margin-top: .5%;
+  margin-top: 0.5%;
 }
 </style>
