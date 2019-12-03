@@ -67,10 +67,8 @@
       </v-row>
       <div class="btns">
         <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
-
-        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
-
-        <v-btn color="primary" text @click="submit">Submit</v-btn>
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="exit">Save and Exit</v-btn>
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">Save and Continue</v-btn>
       </div>
     </v-form>
   </div>
@@ -128,7 +126,16 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
+    exit() {
+      this.$router.push('/');
+      this.formHasErrors = false;
+      Object.keys(this.form).forEach((f) => {
+        if (!this.form[f]) this.formHasErrors = true;
+        this.$refs[f].validate(true);
+      });
+    },
     submit() {
+      this.$router.push('/Form3');
       this.formHasErrors = false;
       Object.keys(this.form).forEach((f) => {
         if (!this.form[f]) this.formHasErrors = true;
