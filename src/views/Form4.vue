@@ -12,40 +12,10 @@
       </v-tab>
     </div>
     <div class="myForm">
-      <h1>Primary Care & Tabacco</h1>
+      <h1>Breast Screening</h1>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-row class="columnText">
           <v-col cols="6">
-            <p id="title">Do you have a primary Care Practitioner?</p>
-            <v-radio-group v-model="ex8" column>
-              <v-radio label="Yes" color="success" value="success"></v-radio>
-              <v-radio label="No" color="error" value="error"></v-radio>
-              <v-radio label="Does not know" color="warning" value="warning"></v-radio>
-              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
-            </v-radio-group>
-            <p id="title">Have you seen your Primary Care Practitioner within the last 12 months?</p>
-            <v-radio-group v-model="ex8" column>
-              <v-radio label="Yes" color="success" value="success"></v-radio>
-              <v-radio label="No" color="error" value="error"></v-radio>
-              <v-radio label="Does not remember" color="warning" value="warning"></v-radio>
-              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
-            </v-radio-group>
-            <p
-              id="title"
-            >Have you ever used tobacco products (cigaretts, cigars, chewing tabacco, or snuff more than 30 days in a row)</p>
-            <v-radio-group v-model="ex8" column>
-              <v-radio label="Yes" color="success" value="success"></v-radio>
-              <v-radio label="No" color="error" value="error"></v-radio>
-              <v-radio label="Does not know" color="warning" value="warning"></v-radio>
-              <v-radio label="Refused to respond" color="warning" value="refuse"></v-radio>
-            </v-radio-group>
-            <p id="title">Legal Residence</p>
-            <v-overflow-btn
-              class="my-2"
-              :items="dropdown_font"
-              label="Choose Site"
-              target="#dropdown-example"
-            ></v-overflow-btn>
           </v-col>
         </v-row>
         <div class="btns">
