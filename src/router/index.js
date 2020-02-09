@@ -101,6 +101,54 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Support.vue'),
   },
+  {
+    path: '/theprogram',
+    name: 'theprogram',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/TheProgram.vue'),
+  },
+  {
+    path: '/ourteam',
+    name: 'ourteam',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/OurTeam.vue'),
+  },
+  {
+    path: '/alumniassoc',
+    name: 'alumniassoc',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AlumniAssoc.vue'),
+  },
+  {
+    path: '/alumninow',
+    name: 'alumninow',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AlumniNow.vue'),
+  },
+  {
+    path: '/NARAPMagazine',
+    name: 'NARAPMagazine',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/NARAPMagazine.vue'),
+  },
+  {
+    path: '/NARAPInTheNews',
+    name: 'NARAPInTheNews',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/NARAPInTheNews.vue'),
+  },
   
 ];
 

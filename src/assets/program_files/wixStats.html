@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<!-- saved from url=(0603)https://wts.one/wixStats.pl?cacheKiller=1580665726131&compId=comp-jjbfsrdi&currency=USD&deviceType=desktop&height=59&instance=MV4LTwi6akX8NQ_iujijha5GlMe0p156AaqRIidgB6o.eyJpbnN0YW5jZUlkIjoiMTAwMTZlMmEtMDg3NS00MGY3LWEyZTEtMzk2NjhhMTZhNDdkIiwiYXBwRGVmSWQiOiIxMmNhMmZkNi1hNGM5LWI5MWYtYWU2Yy05NDg2OGIyYThmMWMiLCJzaWduRGF0ZSI6IjIwMjAtMDItMDZUMTY6Mjg6MTYuMjU3WiIsImRlbW9Nb2RlIjpmYWxzZSwiYWlkIjoiNDhmMTQ1NmYtYTY5YS00ZDExLTlmZTYtNzYxZGJhOGZlZGNkIiwic2l0ZU93bmVySWQiOiJlM2Q1Zjc0Ny0yN2U3LTQyNjctYmRkZC0zNjE3Zjk4NmU5M2UifQ&locale=en&pageId=masterPage&siteRevision=368&tz=America%2FNew_York&viewMode=site&width=169 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style></style>
+<script src="./wix.min.js(1).download" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+/////////////////////////
+function wtshInitStats(){
+
+//console.log("wix8176271");
+
+   if (viewMode == 'editor' || viewMode == 'preview'){
+
+      if (viewMode == 'editor' && '2020-02-06 16:27:03' == '' && '1768726' > '1922366' && document.cookie.indexOf('hide_'+1768726+'_init_sticker=1') == -1 && "2018_05_InvisibleAllowed:isDefault".indexOf("init_sticker:yes") > -1){
+         initStickerVisible = 1
+         printInitSticker('show');
+      }
+      else{
+         document.getElementById('wts'+'1768726').style.display = "inline-block";
+         if ('invisible' != 'invisible'){
+            wtshPrintCode(wtsh);
+         }
+      }
+
+   }
+   else if ('1' == '0'){
+
+      loadData(wtsh,function(wtsh){ 
+         getConv(wtsh,function(wtsh){ 
+            wtshPrintCode(wtsh);
+         }) 
+      });
+
+   }
+   else if ('invisible' != 'invisible'){
+      wtshPrintCode(wtsh);
+   }
+
+
+   if (initStickerVisible == 1){
+      // detect switch from editor to preview in Wix site builder
+      Wix.addEventListener(Wix.Events.EDIT_MODE_CHANGE,function() {
+         if (Wix.Utils.getViewMode() == 'editor'){
+            printInitSticker('show');
+         }
+         else {
+            printInitSticker('hide');
+         }
+      });
+   }
+
+
+   /// set invisible handle
+   if ('invisible' == 'invisible'){
+      if (viewMode == 'editor'){
+         document.getElementById('wts1768726').innerHTML='<div style="padding:8px; background: rgba(255,255,255, 0.8); font: 10px Arial,Helvetica,sans-serif; color:#888; text-align:center; border:1px solid %333; border-radius:4px;">Web-Stat editing handle<br>this will be invisible on the site</div>';
+      }
+
+      // detect switch from editor to preview in Wix site builder
+      Wix.addEventListener(Wix.Events.EDIT_MODE_CHANGE,function() {
+         if (Wix.Utils.getViewMode() == 'editor'){
+            document.getElementById('wts1768726').innerHTML='<div style="padding:8px; background: rgba(255,255,255, 0.8); font: 10px Arial,Helvetica,sans-serif; color:#888; text-align:center; border:1px solid %333; border-radius:4px;">Web-Stat editing handle<br>this will be invisible on the site</div>';
+         }
+         else {
+             document.getElementById('wts1768726').innerHTML='';
+         }
+      });
+   }
+   else if (initStickerVisible == 0){
+      Wix.addEventListener(Wix.Events.EDIT_MODE_CHANGE,function() {
+          window.location.reload();
+      });
+   }
+
+
+   // resize app if needed
+   if (viewMode == "editor"){
+      sizeApp();
+   }
+
+
+   if ('' == '1'){
+      // we execute this right away. It needs to be done ASAP and there is No need to wait for the page to finish loading.
+      // if we do and the user stops the connection for any reason the time zone does not get set
+      ajaxSetTimezone(); 
+   }
+
+
+   if ('0' == '1'){
+      updateURL();
+   }
+
+
+}
+
+
+
+/////////////////////////////////
+function loadData(wtsh,callback){
+
+   Wix.getSiteInfo( function(siteInfo) {
+
+      wtsh['url'] = siteInfo.url;
+
+      if (wtsh['url'].indexOf("editor.wix.com") > -1){
+         wtsh['url'] = 'http://editor.wix.com';
+      }
+      else if (wtsh['url'].indexOf("web-stat.com") > -1){
+         wtsh['url'] = 'http://www.wix.com';
+      }
+
+      wtsh['html_title'] = siteInfo.pageTitle;
+
+      wtsh['page_name'] = wtsh['html_title'];  // this is the HTML title of page. We use this as a fallback     
+      
+      wtsh['referer'] = siteInfo.referer || siteInfo.referrer;
+
+      return (callback(wtsh));
+
+   }); 
+
+}
+
+////////////////////////////////
+function getConv(wtsh,callback){
+
+   if (viewMode == 'editor'){
+      return (callback(wtsh));
+   }
+
+
+   var thisURL = wtsh['url'].split("?")[0];
+
+   if (thisURL.indexOf("/product-page") > -1){
+      var test = wtsh['url'].match(/\/product\-page\/(.*)/);
+      if (test){
+         wtsh['page_name'] = "Product page | "+test[1];
+      }
+      return (callback(wtsh));
+   } 
+
+   else if (thisURL.indexOf("/single-post") > -1 || thisURL.indexOf("/blog/") > -1 || thisURL.indexOf("/fullscreen-page/") > -1 || thisURL.indexOf("/post/") > -1 || thisURL.indexOf("/members/") > -1){
+
+      return (callback(wtsh));
+
+   }
+
+   else if (thisURL.indexOf("/thank-you-page/") > -1){
+      thisURL = wtsh['url'].split("/thank-you-page/")[0];
+      thisURL = thisURL + '/thank-you-page/';
+   }
+
+
+   // get editor's page name, then pageId and compare with conversions settings
+
+   Wix.Worker.getSiteMap( function (sitePages){
+
+      for (var i = 0; i < sitePages.length; i++) {
+
+         if (sitePages[i].url == thisURL){
+
+            if (sitePages[i].title){
+               wtsh['page_name'] = sitePages[i].title;   //this is the editor's page name. We use this, except for special cases
+            }
+
+            if ('' && sitePages[i].pageId){
+               wtsh['conversion_number'] = getConvNumber(sitePages[i].pageId);
+            }
+
+            return (callback(wtsh));
+
+         }
+         if (sitePages[i].subPages){
+
+            for (var j = 0; j < sitePages[i].subPages.length; j++) {
+
+               if (sitePages[i].subPages[j].url == thisURL){
+
+                  if (sitePages[i].subPages[j].title){
+                     wtsh['page_name'] = sitePages[i].subPages[j].title;
+                  }
+
+                  if ('' && sitePages[i].subPages[j].pageId){
+                     wtsh['conversion_number'] = getConvNumber(sitePages[i].subPages[j].pageId);
+                  }
+
+                  return (callback(wtsh));
+
+               }
+
+            }
+         }
+      }
+
+      return (callback(wtsh));
+
+   });
+
+ 
+}
+
+
+
+/////////////////////////////////
+function getConvNumber(thisPage){
+
+   thisPage = thisPage.replace('#','');
+   var conversion_number = '';
+   for (var i=0; i < conv_array.length; i++){
+     if (conv_array[i].page == thisPage){
+        conversion_number = conv_array[i].conv_n;
+        return conversion_number;
+     }
+   }
+
+}
+
+
+/////////////////////////////
+function wtshPrintCode(wtsh){
+
+   wtsh['custom'] = 'wix';
+
+   if (viewMode == 'editor' || viewMode == 'preview'){
+      wtsh['params'] = 'editor_load';
+   }
+   else if ('1' == '1'){
+      wtsh['params'] = 'no_count';
+   }
+
+   launchCount(wtsh);
+
+}
+
+
+///////////////////
+function sizeApp(){
+
+   // make sure we have app dimensions
+   var div_id = 'wts'+'1768726';
+
+   if (! document.getElementById(div_id).offsetWidth){
+      setTimeout(function(){ sizeApp(); }, 500); // try again until app loads
+      return;
+   }
+
+
+   Wix.getBoundingRectAndOffsets(function(data){
+
+      // get width of app
+      var target_width = document.getElementById(div_id).offsetWidth + 20;
+      var target_height = document.getElementById(div_id).offsetHeight + 20;
+
+      var height = data.rect.height;
+      var width = data.rect.width;
+
+      if (viewMode == "editor" && width != target_width){
+         Wix.resizeComponent({ width: target_width });
+      }
+      if (viewMode == "editor" && height != target_height){
+         Wix.resizeComponent({ height: target_height });
+      }
+
+   });
+
+}
+
+
+
+///////////////////////////
+function ajaxSetTimezone(){
+
+   var tz = jstz.determine_timezone();
+   tz = tz.name();
+   if (! tz){
+      tz = "America/New_York";
+   }
+   if (tz == "America/Santa_Isabel"){
+      tz = "America/Mexico_City";
+   }
+    
+   var db = '15';
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=SetTimeZone&enc=1&params='+btoa(db+':::'+userID+':::'+tz);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+/////////////////////
+function updateURL(){
+
+
+   Wix.getSiteInfo( function(siteInfo) {
+
+     ajaxSetURL(siteInfo.baseUrl,siteInfo.url);
+
+   });
+
+}
+
+
+//////////////////////////////////
+function ajaxSetURL(baseUrl,url){
+
+   var db = '15';
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var site_url =  encodeURI(baseUrl);
+   var url =  encodeURI(url);
+   var status = '0';
+   var new_account = '';
+
+//   if (site_url.indexOf("editor.wix.com") > -1 || site_url.indexOf("?") > -1 || site_url.indexOf("htmlcomponentservice") > -1){
+//      site_url = '';
+//   }
+//   if (url.indexOf("editor.wix.com") > -1 || url.indexOf("?") > -1 || url.indexOf("htmlcomponentservice") > -1){
+//      url = '';
+//   }
+
+
+   if (site_url != '' || url != ''){
+      var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=SetURL&enc=1&params='+btoa(db+':::'+userID+':::'+site_url+':::'+url+':::'+new_account);
+      request.open("GET", url, true);
+      request.send(null);
+   }
+
+}
+
+
+
+
+////////////////////////
+function ajaxPublish(){
+
+   var alias = '1768726';
+   var db = '15';
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordPublished&enc=1&params='+btoa(db+':::'+alias+':::'+userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+/////////////////////
+function ajaxSave(){
+
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordSaved&enc=1&params='+btoa(userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+/////////////////////////////
+function ajaxRecordRemoval(){
+
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordRemoval&enc=1&params='+btoa(userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+
+///////////////////////////
+function launchCount(wtsh){
+
+   var dbn = '15';
+   var alias = '1768726';
+
+   var newSpan = '';
+   var wtscript = '';
+   var scr_h = '';
+   var scr_w = '';
+   var scr_c = '';
+   var conv_n = '';
+   var page_name = '';
+   var test = 1;
+   var prefix = '';
+   var qry = '';
+   var img = '';
+
+   var storageAvailable;
+   var in_session = '';
+   var nowGMT = 0;
+   var visitorId = 0;
+   var nVisits = 0;
+   var timeLastVisitGMT = 0;
+   var wtsor = '';
+   var cLV;
+   var cNV;
+   var loc0;
+   var loc1;
+   var isOwner = 0;
+   var sessionId = '';
+   var checked_online = 'OK_OK';
+
+   var dnt = navigator.doNotTrack;
+   if (dnt != "1" && dnt != "yes"){
+      dnt = "0";
+   }
+
+
+   var cookieEnabled = checkCookie();
+
+   if (wtsh['invisible'] === undefined){ wtsh['invisible']=''; }
+   if (wtsh['url'] === undefined){ wtsh['url']=''; }
+   if (wtsh['html_title'] === undefined){ wtsh['html_title']=''; }
+   if (wtsh['page_name'] === undefined){ wtsh['page_name']=''; }
+   if (wtsh['referer'] === undefined){ wtsh['referer']=''; }
+   if (wtsh['conversion_number'] === undefined){ wtsh['conversion_number']=''; }
+   if (wtsh['params'] === undefined){ wtsh['params']=''; }
+
+
+   prefix = 'https://wts2.one';
+   prefix = 'https://wts.one';
+
+   qry = alias+':~:'+dbn+':~:'+wtsh['referer']+':~::~:no:~:'+scr_w+'x'+scr_h+':~:'+scr_c+':~:'+wtsh['url']+':~:'+conv_n+':~:'+page_name+':~:'+page_name+':~:'+wtsh['html_title']+':~::~:wix:~:'+test+':~:6.96wg:~:'+wtsh['params']+':~::~:'+dnt+':~:1:~::~:'+visitorId+':~:'+nVisits+':~:'+timeLastVisitGMT+':~:'+wtsor+':~:'+cookieEnabled+':~:'+in_session+':~:'+sessionId+':~:'+isOwner+':~:'+checked_online;
+
+
+   qry = encodeURIComponent(qry);
+
+   newSpan = document.createElement("span");
+   newSpan.setAttribute('id', 'wtstimer1768726');
+   newSpan.style.display="none";
+   document.body.appendChild(newSpan);
+   newSpan.focus(); 
+
+   wtscript = document.createElement("script"); 
+   wtscript.setAttribute('type','text/javascript');
+   wtscript.setAttribute('src', prefix+'/count6.pl?'+qry);
+
+   document.body.appendChild(wtscript);
+
+   if ('1' != '1' && viewMode == 'site'){
+      pingSite(0); 
+   }
+
+   if (viewMode == 'editor' || viewMode == 'preview'){
+      if ('invisible' == 'panel'){
+         updatePanel(0);
+      }
+   }
+   else{
+      if ('invisible' == 'panel'){
+         updatePanel(0);
+      }
+   }
+
+
+
+}
+
+
+//////////////////////
+function getCookie(a){
+    var d=[],
+        e=document.cookie.split(";");
+    a=RegExp("^\\s*"+a+"=\\s*(.*?)\\s*$");
+    for(var b=0;b<e.length;b++){
+        var f=e[b].match(a);
+        f&&d.push(f[1])
+    }
+    return d[0];
+}
+
+
+///////////////////////
+function checkCookie(){
+    //var cookieEnabled = navigator.cookieEnabled;
+    //if (! cookieEnabled){ 
+        document.cookie = "testcookie";
+        cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+        document.cookie = "testcookie= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    //}
+    return cookieEnabled;
+}
+
+
+/////////////////////////////
+function pingSite(wts_delay){ 
+
+   if (document.getElementById('wtstimer1768726').innerHTML == ''){
+      setTimeout(function(){ pingSite(0); }, 200); // try again until counter loads
+      return;
+   }
+   else if (document.getElementById('wtstimer1768726').innerHTML != 'no_streaming'){
+
+      var wts_curr_time = new Date().getTime();
+      var wts_running_time = wts_curr_time - wts_start_time;
+
+      if (isPremium == 0){
+         isPremium = 1;
+      }
+
+      if (! focusTimer){
+         focusTimer = setInterval( checkFocus, 2000);
+      }
+
+      if (wts_focus == 1 && wts_running_time <= 1800000){
+
+         wts_time_on_page = wts_time_on_page + wts_delay;
+         wts_delay = wts_delay + 1000;
+
+         var msg = '';
+         var uniqueID = document.getElementById('wtstimer1768726').innerHTML;
+         if (uniqueID != '' && uniqueID != 'no_streaming'){
+            uniqueID = uniqueID+'::'+wts_delay+'::'+Math.random();
+            msg = 'https://wts.one/ping_timer.htm?'+uniqueID;
+            ajaxRequest2.open('GET', msg, true);
+            ajaxRequest2.send(null);
+         }
+
+         pingTimer = setTimeout(function(){ pingSite(wts_delay); }, wts_delay);
+
+      }
+
+   }
+
+} 
+
+
+
+///////////////////////////
+function updatePanel(loop){
+
+   if (isPanel == 0){
+      if (document.getElementById('type_1768726') == null){
+         loop++;
+         if (loop < 50){
+            setTimeout( function(){ updatePanel(loop) }, 200);
+         }
+         return;
+      }
+      else if (document.getElementById('type_1768726').innerHTML.indexOf("Count") > -1 && document.getElementById('type_1768726').innerHTML != "CountPanel"){
+         return;
+      }
+   }
+
+   if (isPanel == 0){
+      isPanel = 1;
+   }
+
+   if (isPremium == 0 && document.getElementById('wts_prm_1768726').innerHTML == 'premium'){
+      isPremium = 1;
+      if (! focusTimer){
+         focusTimer = setInterval( checkFocus, 2000);
+      }
+   }
+
+
+   var delta_time =  document.getElementById('wts_delta_1768726').innerHTML;
+   var userID =  document.getElementById('wts_ui_1768726').innerHTML;
+   var msg = 'https://wts.one/ping_display_timer.htm?15:1768726:'+delta_time+':'+userID+':'+isPremium+':'+Math.random();
+
+   if (userID){
+      ajaxRequest1.onreadystatechange = updatePanelAjax;
+      ajaxRequest1.open('GET', msg, true);
+      ajaxRequest1.send(null);
+   }
+
+} 
+
+
+///////////////////////////////
+function showGreenDot(opacity){
+   document.getElementById('dot_1768726').style.opacity=opacity;
+   if (opacity < 1){
+      opacity = opacity+0.05;
+      setTimeout(function() {showGreenDot(opacity);}, 40);
+   }
+
+}
+
+
+////////////////////////////
+function updatePanelAjax(){
+
+   var response = '';
+   var wts_delay2 = '';
+   var previous_count = '';
+   var previous_delay = '';
+
+   if (ajaxRequest1.readyState==4) {
+
+      if (ajaxRequest1.status==200) {
+
+         response = ajaxRequest1.responseText.split("::");
+
+         if (response[0] == 'OK'){
+
+            previous_count = parseFloat(document.getElementById('last_count_1768726').innerHTML);
+            previous_delay = parseFloat(document.getElementById('delay_1768726').innerHTML);
+
+            // if there was a visitor, wts_delay2 goes down (min = 3 sec). If not it goes up by 1 sec
+            if (parseFloat(response[3]) > previous_count && previous_delay > 3000){
+               wts_delay2 = parseFloat(previous_delay) - 1000;
+            }
+            else {
+               wts_delay2 = parseFloat(previous_delay) + 1000;
+            }
+
+            if (wts_delay2 > 60000){ wts_delay2 = 60000; }
+            if (wts_delay2 < 3000){ wts_delay2 = 3000; }
+
+            document.getElementById('wts_sticker_v_1768726').innerHTML = response[1];
+            document.getElementById('wts_sticker_o_1768726').innerHTML = response[2];
+            document.getElementById('last_count_1768726').innerHTML = response[3];
+            document.getElementById('delay_1768726').innerHTML = wts_delay2;
+
+//            if (parseFloat(document.getElementById('wts_sticker_v_1768726').offsetWidth) > 50){
+//               document.getElementById('wts_sticker_v_1768726').style.marginLeft = '30px';
+//               document.getElementById('holder_1768726').style.textAlign = 'left';
+//            }
+
+            if (isPremium == 1 && wts_focus == 1){
+               document.getElementById('dot_1768726').style.opacity='0';
+               setTimeout(function() { showGreenDot(0.05); }, 200);
+               setTimeout(function() { updatePanel(0); }, wts_delay2);
+            }
+
+         }
+
+      }
+   }
+}
+
+
+//////////////////////
+function checkFocus(){
+
+   if (wts_focus == 1){
+
+      if (document.visibilityState == "hidden"){
+
+         wts_focus = 0;
+
+         if (pingTimer){
+            clearTimeout(pingTimer);
+         }
+
+         if ((viewMode != 'site' && 'invisible' == 'panel') || (viewMode == 'site' && 'invisible' == 'panel')){
+            document.getElementById('wts_live_1768726').innerHTML = 'off'
+            document.getElementById('live_1768726').style.top = '15px';
+            document.getElementById('live_1768726').style.marginLeft = '-4px';
+            document.getElementById('live_1768726').style.fontSize = '7px';
+            document.getElementById('dot_1768726').style.color='#C8322D';
+            document.getElementById('live_1768726').innerHTML = 'PAUSED';
+         }
+
+      }
+
+   }
+   else{
+
+      if (document.visibilityState == "visible"){
+
+         wts_focus = 1;
+
+         if ('1' != '1' && viewMode == 'site'){  
+            pingSite(0);
+         }
+
+         if ((viewMode != 'site' && 'invisible' == 'panel') || (viewMode == 'site' && 'invisible' == 'panel')){
+            document.getElementById('wts_live_1768726').innerHTML = 'on'
+            document.getElementById('live_1768726').style.top = '15px';
+            document.getElementById('live_1768726').style.marginLeft = '0px';
+            document.getElementById('live_1768726').style.fontSize = '9px';
+            document.getElementById('dot_1768726').style.color='#58C23D';
+            document.getElementById('live_1768726').innerHTML = 'LIVE';
+            document.getElementById('delay_1768726').innerHTML = '3000';
+            updatePanel(0);
+         }
+
+      }
+   }
+}
+
+////////////////////////////////
+function printInitSticker(flag){
+
+   if (flag == 'show'){
+      document.getElementById('wts'+'1768726').style.display = "none";
+      document.getElementById("init_sticker").style.display = "block";
+      document.getElementById("init_sticker_logo").innerHTML = '<img src="/Logo_white_240.png" style="width:120px; height:auto; margin-top:1em; margin-bottom:0.5em;">';
+      Wix.getBoundingRectAndOffsets(function(data){
+         var target_width = document.getElementById("init_sticker").offsetWidth + 20;
+         var target_height = document.getElementById("init_sticker").offsetHeight + 20;
+         var height = data.rect.height;
+         var width = data.rect.width;
+         if (viewMode == "editor" && width != target_width){
+            Wix.resizeComponent({ width: target_width });
+         }
+         if (viewMode == "editor" && height != target_height){
+            Wix.resizeComponent({ height: target_height });
+         }
+      });
+   }
+   else{
+      document.getElementById("init_sticker").style.display = "none";
+      document.getElementById('wts'+'1768726').style.display = "inline-block";
+      wtshPrintCode(wtsh);
+  //    sizeApp();
+   }
+
+}
+
+
+
+// set variables
+var wtsh = {};
+
+var isPanel = 0;
+var isPremium = 0;
+var pingTimer;
+var focusTimer;
+var wts_focus = 1;
+var initStickerVisible = 0;
+var wts_d0;
+wts_d0 = new Date();
+var wts_start_time;
+if ('1' != '1'){
+   wts_start_time = wts_d0.getTime();
+}
+var wts_time_on_page = 0;
+var ajaxRequest1 = new XMLHttpRequest();
+var ajaxRequest2 = new XMLHttpRequest();
+
+var conv_array = [];
+if (''){
+   var conv_settingi = '';
+   var raw_setting = '';
+   var conv_setting = raw_setting.split("|");
+   for (var i = 0; i < conv_setting.length; i++){
+      conv_settingi = conv_setting[i].split("::");
+      conv_array.push({page:conv_settingi[0], conv_n:conv_settingi[1]});
+   }
+}
+
+
+
+window.onunload = function(){}        // forces the code to be re-parsed even with back button
+
+window.onbeforeunload = function(){} // forces the code to be re-parsed even with back button
+
+window.onerror= function(){ return true; }
+
+
+var viewMode = Wix.Utils.getViewMode();
+
+
+window.addEventListener('resize', function(event){
+   sizeApp();
+});
+
+Wix.addEventListener(Wix.Events.SITE_PUBLISHED, function() { 
+   ajaxPublish(); 
+});
+
+Wix.addEventListener(Wix.Events.SITE_SAVED, function() { 
+   ajaxSave(); 
+});
+
+//Wix.addEventListener(Wix.Events.COMPONENT_DELETED, function() { 
+//   ajaxRecordRemoval(); 
+//});
+
+
+if ("1" == "0"){
+   // reload upon page change
+   Wix.addEventListener(Wix.Events.PAGE_NAVIGATION, function() {
+      window.location.reload();
+   });
+}
+
+
+// launch script
+if(document.readyState !== 'loading'){
+   wtshInitStats();
+} 
+else if (typeof document.addEventListener === 'function'){
+   document.addEventListener('DOMContentLoaded', function () {
+      wtshInitStats();
+   }, false);
+}
+else if(typeof document.getElementById('wts1768726') === 'object'){
+
+   var site;
+
+   if ('en' == 'fr'){
+      site = 'www.web-stat.fr';
+   }
+   else{
+      site = 'www.web-stat.com';
+   }
+
+   document.getElementById('wts1768726').innerHTML = '<a href="https://'+site+'"><img alt="Web-Stat Web Analytics" src="https://wts.one/6s/15/1768726.gif"></a>';
+
+}
+
+
+
+
+</script>
+<style>
+#init_sticker{
+   font: 1em Arial,Helvetica,sans-serif;
+   position:absolute; 
+   width:230px;
+   border:1px solid #fff; 
+   background:rgba(49,151,239,0.85); 
+   color:#fff;
+   padding: 0 1em;
+   display:none;
+   font-size:0.85em;
+}
+</style>
+<style wix-style="">.Title{ font:normal normal normal 36px/1.4em "open sans",sans-serif; } .Menu{ font:normal normal bold 16px/1.4em "jockey one",sans-serif; } .Page-title{ font:normal normal normal 37px/1.4em museo-slab-w01-100,serif; } .Heading-XL{ font:normal normal bold 48px/1.4em museo-slab-w01-100,serif; } .Heading-L{ font:normal normal normal 24px/1.4em "open sans",sans-serif; } .Heading-M{ font:normal normal normal 18px/1.4em "open sans",sans-serif; } .Heading-S{ font:normal normal bold 14px/1.4em "open sans",sans-serif; } .Body-L{ font:normal normal normal 22px/1.4em "open sans",sans-serif; } .Body-M{ font:normal normal normal 14px/1.4em "open sans",sans-serif; } .Body-S{ font:italic normal normal 14px/1.4em "open sans",sans-serif; } .Body-XS{ font:normal normal normal 11px/1.4em verdana,geneva,sans-serif; } }</style><link type="text/css" rel="stylesheet" href="./css" id="wix-google-fonts"><link type="text/css" rel="stylesheet" href="./languages.css"><style>:focus {
+    outline: none;
+}
+
+.js-focus-visible .focus-visible:focus,
+.js-focus-visible .focus-visible:focus ~ .wixSdkShowFocusOnSibling
+{
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 1px 2px #3899EC;
+}
+</style><script src="./focus-visible.min.js.download" id="dynamic_script_FOCUS_VISIBLE"></script></head>
+<body class="js-focus-visible">
+
+<div id="wtshandle" style="text-align:center;">
+   <div id="init_sticker" style="display:none;  text-align:left;">
+      <div style="text-align:center;"><div id="init_sticker_logo"></div>HOW DO I START?</div>
+      <ol style="padding-left:1em;">
+      <li style="margin-bottom:0.5em;">Click on 'Settings'
+         <ul style="padding-left:1em;">
+            <li style="margin-top:0.5em;">choose invisibility or display style
+            </li><li style="margin-top:0.5em;">click 'Full Settings' to pick further options
+         </li></ul>
+      </li><li style="margin-bottom:0.5em;">Save, and publish your site
+      </li></ol>
+      <p>We will then detect all your visitors automatically.</p>
+      <p style="font-size:0.9em; font-style:italic;">Note that your own visits from inside the editor are not counted. This is normal behavior.</p>
+   </div>
+   <div id="wts1768726" style="display:inline-block;"></div>
+</div>
+
+
+
+</body></html>

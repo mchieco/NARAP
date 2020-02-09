@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!-- saved from url=(0592)https://wts.one/wixStatsWorker.pl?cacheKiller=1580665726131&compId=tpaWorker_4431&currency=USD&deviceType=desktop&endpointType=worker&instance=MV4LTwi6akX8NQ_iujijha5GlMe0p156AaqRIidgB6o.eyJpbnN0YW5jZUlkIjoiMTAwMTZlMmEtMDg3NS00MGY3LWEyZTEtMzk2NjhhMTZhNDdkIiwiYXBwRGVmSWQiOiIxMmNhMmZkNi1hNGM5LWI5MWYtYWU2Yy05NDg2OGIyYThmMWMiLCJzaWduRGF0ZSI6IjIwMjAtMDItMDZUMTY6Mjg6MTYuMjU3WiIsImRlbW9Nb2RlIjpmYWxzZSwiYWlkIjoiNDhmMTQ1NmYtYTY5YS00ZDExLTlmZTYtNzYxZGJhOGZlZGNkIiwic2l0ZU93bmVySWQiOiJlM2Q1Zjc0Ny0yN2U3LTQyNjctYmRkZC0zNjE3Zjk4NmU5M2UifQ&locale=en&siteRevision=368&tz=America%2FNew_York&viewMode=site -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style></style>
+<script src="./wix.min.js(1).download" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+///////////////////////////////
+function wtshInitStatsWorker(flag){
+
+   if ('' == '1'){
+      ajaxSetTimezone(); 
+   }
+
+   if (viewMode != "site"){
+      return;
+   }
+
+   // recognize subsequent worker hits by that browser for this instanceID and ignore them for 30 minutes. Ignore if status is not 0
+//   if ("no" != "yes" && "0" == "0" && viewMode == "site"){
+//      var d = new Date();
+//      d.setTime(d.getTime() + 1800*1000); // in milliseconds
+//      document.cookie = 'wtsx2_10016e2a-0875-40f7-a2e1-39668a16a47d=1; path=/; Max-Age=1800; expires='+d.toGMTString()+';';
+//      document.cookie = 'wtsx2_1768726=1; path=/; Max-Age=1800; expires='+d.toGMTString()+';';
+//   }
+//   else if ("0" == "1"){
+//      document.cookie = 'wtsx2_10016e2a-0875-40f7-a2e1-39668a16a47d=0; path=/; Expires=Fri, 05 Jul 2019 00:00:01 GMT;';
+//      document.cookie = 'wtsx2_1768726=0; path=/; Expires=Fri, 05 Jul 2019 00:00:01 GMT;';
+//   }
+
+   loadData(wtsh, function(wtsh){ 
+      getConv(wtsh, function(wtsh){ 
+         wtshPrintCodeWorker(wtsh); 
+      });
+   });
+
+
+
+
+}
+
+
+/////////////////////////////////
+function loadData(wtsh,callback){
+
+   Wix.Worker.getSiteInfo( function(siteInfo) {
+
+      wtsh['url'] = siteInfo.url;
+
+      if (wtsh['url'].indexOf("editor.wix.com") > -1){
+         wtsh['url'] = 'http://editor.wix.com';
+      }
+      else if (wtsh['url'].indexOf("web-stat.com") > -1){
+         wtsh['url'] = 'http://www.wix.com';
+      }
+
+      wtsh['html_title'] = siteInfo.pageTitle;
+      wtsh['page_name'] = wtsh['html_title'];  // this is the HTML title of page. We use this as a fallback     
+
+      var referer = siteInfo.referer || siteInfo.referrer;
+
+      if (referer == '') { 
+         wtsh['referer'] = 'wix_none'; 
+      }
+      else {
+         wtsh['referer'] = referer;
+      } 	
+
+      return (callback(wtsh));
+
+   }); 
+
+
+}
+
+
+
+////////////////////////////////
+function getConv(wtsh,callback){
+
+   if (viewMode == 'editor'){
+      return (callback(wtsh));
+   }
+
+   var thisURL = wtsh['url'].split("?")[0];
+
+   if (thisURL.indexOf("/product-page") > -1){
+      var test = wtsh['url'].match(/\/product\-page\/(.*)/);
+      if (test){
+         wtsh['page_name'] = "Product page | "+test[1];
+      }
+      return (callback(wtsh));
+   } 
+
+   else if (thisURL.indexOf("/single-post") > -1 || thisURL.indexOf("/blog/") > -1 || thisURL.indexOf("/fullscreen-page/") > -1 || thisURL.indexOf("/post/") > -1 || thisURL.indexOf("/members/") > -1){
+      return (callback(wtsh));
+   }
+
+   else if (thisURL.indexOf("/thank-you-page/") > -1){
+      thisURL = wtsh['url'].split("/thank-you-page/")[0];
+      thisURL = thisURL + '/thank-you-page/';
+   }
+
+
+   // get editor's page name, then pageId and compare with conversions settings
+
+   Wix.Worker.getSiteMap( function (sitePages){
+
+      for (var i = 0; i < sitePages.length; i++) {
+
+         if (sitePages[i].url == thisURL){
+
+            if (sitePages[i].title){
+               wtsh['page_name'] = sitePages[i].title;   //this is the editor's page name. We use this, except for special cases
+            }
+
+            if ('' && sitePages[i].pageId){
+               wtsh['conversion_number'] = getConvNumber(sitePages[i].pageId);
+            }
+
+            return (callback(wtsh));
+
+         }
+         if (sitePages[i].subPages){
+
+            for (var j = 0; j < sitePages[i].subPages.length; j++) {
+
+               if (sitePages[i].subPages[j].url == thisURL){
+
+                  if (sitePages[i].subPages[j].title){
+                     wtsh['page_name'] = sitePages[i].subPages[j].title;
+                  }
+
+                  if ('' && sitePages[i].subPages[j].pageId){
+                     wtsh['conversion_number'] = getConvNumber(sitePages[i].subPages[j].pageId);
+                  }
+
+                  return (callback(wtsh));
+
+               }
+
+            }
+         }
+      }
+
+      return (callback(wtsh));
+
+   });
+
+ 
+}
+
+
+/////////////////////////////////
+function getConvNumber(thisPage){
+
+   thisPage = thisPage.replace('#','');
+   var conversion_number = '';
+   for (var i=0; i < conv_array.length; i++){
+     if (conv_array[i].page == thisPage){
+        conversion_number = conv_array[i].conv_n;
+        return conversion_number;
+     }
+   }
+
+}
+
+
+
+
+///////////////////////////////////
+function wtshPrintCodeWorker(wtsh){
+
+   wtsh['invisible'] = 'yes';
+   wtsh['custom'] = 'wix';
+
+   if (viewMode == 'editor' || viewMode == 'preview'){
+      wtsh['params'] = 'editor_load';
+   }
+
+   launchCount(wtsh);
+
+}
+
+
+///////////////////////////////
+function getCookieValue(cname){
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+///////////////////////////
+function ajaxSetTimezone(){
+
+   var tz = jstz.determine_timezone();
+   tz = tz.name();
+   if (! tz){
+      tz = "America/New_York";
+   }
+   if (tz == "America/Santa_Isabel"){
+      tz = "America/Mexico_City";
+   }
+    
+   var db = '15';
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=SetTimeZone&enc=1&params='+btoa(db+':::'+userID+':::'+tz);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+////////////////////////
+function ajaxPublish(){
+
+   var alias = '1768726';
+   var db = '15';
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordPublished&enc=1&params='+btoa(db+':::'+alias+':::'+userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+/////////////////////
+function ajaxSave(){
+
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordSaved&enc=1&params='+btoa(userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+/////////////////////////////
+function ajaxRecordRemoval(){
+
+   var userID = 'wix8176271';
+   var request = new XMLHttpRequest();
+   var url = '/wixStatsAjax.pl?nocache='+Math.random()+'&action=recordRemoval&enc=1&params='+btoa(userID);
+   request.open("GET", url, true);
+   request.send(null);
+
+}
+
+
+///////////////////////////
+function launchCount(wtsh){
+
+   var dbn = '15';
+   var alias = '1768726';
+
+   var newSpan = '';
+   var wtscript = '';
+   var scr_h = '';
+   var scr_w = '';
+   var scr_c = '';
+   var conv_n = '';
+   var page_name = '';
+   var test = 1;
+   var prefix = '';
+   var qry = '';
+   var img = '';
+   var sessionId = '';
+
+   var storageAvailable;
+   var in_session = '';
+   var nowGMT = 0;
+   var visitorId = 0;
+   var nVisits = 0;
+   var timeLastVisitGMT = 0;
+   var wtsor = '';
+   var cLV;
+   var cNV;
+   var loc0;
+   var loc1;
+   var isOwner = 0;
+   var checked_online = 'OK_OK';
+
+   var dnt = navigator.doNotTrack;
+   if (dnt != "1" && dnt != "yes"){
+      dnt = "0";
+   }
+
+
+   var cookieEnabled = checkCookie();
+
+   if (wtsh['invisible'] === undefined){ wtsh['invisible']=''; }
+   if (wtsh['url'] === undefined){ wtsh['url']=''; }
+   if (wtsh['html_title'] === undefined){ wtsh['html_title']=''; }
+   if (wtsh['page_name'] === undefined){ wtsh['page_name']=''; }
+   if (wtsh['referer'] === undefined){ wtsh['referer']=''; }
+   if (wtsh['conversion_number'] === undefined){ wtsh['conversion_number']=''; }
+   if (wtsh['language'] === undefined){ wtsh['language']=''; }
+   if (wtsh['params'] === undefined){ wtsh['params']=''; }
+
+
+   if (! wtsh['url']){
+      wtsh['url'] = document.referrer;
+   }
+
+   page_name = wtsh['page_name'] ? wtsh['page_name'] : '';
+   if (page_name){
+      if (page_name.length > 255){
+          page_name = page_name.substring(0,255);
+      }
+      page_name = page_name.replace(/^\s+|\s+$/g, '');
+   }
+
+   conv_n = wtsh['conversion_number'];
+   if (conv_n){
+      conv_n = parseInt(conv_n); 
+      if (conv_n > 5 || conv_n < 1){
+         conv_n = '';
+      }
+   }
+
+   try{
+      scr_h = screen.height;
+      scr_w = screen.width;
+      scr_c = screen.colorDepth;
+   }
+   catch (err) {
+      scr_h = '';
+      scr_w = '';
+      scr_c = '';
+   }
+
+
+
+   // have we already started a session?
+   if (cookieEnabled && document.cookie){
+
+      in_session = document.cookie.indexOf("sessionId_1768726=");
+
+      if (in_session > -1){
+         sessionId = getCookie("sessionId_1768726");
+      }
+
+   }
+
+   if (sessionId == ''){
+      sessionId = Date.now() + Math.random();
+   }
+
+   // Record return visitor info.
+
+   if (typeof localStorage != 'object'){
+      storageAvailable = 0;
+   }
+   else{
+
+      // test storage available
+      try {
+        localStorage.setItem("localStorage", 1);
+        storageAvailable = localStorage.getItem("localStorage");
+        localStorage.removeItem("localStorage");
+      } catch (e) {
+         storageAvailable = 0;
+      }
+
+      if (storageAvailable == 1){
+
+         // visitor info
+         visitorId = localStorage.getItem("wtsVid_1768726");
+
+         if (! visitorId || visitorId == 0){
+            visitorId = sessionId;
+            localStorage.setItem("wtsVid_1768726", visitorId);
+            nVisits = 0;
+            timeLastVisitGMT = 0;
+         }
+         else{
+            nVisits = parseInt(localStorage.getItem("wtsNv_1768726")) || 0;
+            timeLastVisitGMT = parseInt(localStorage.getItem("wtsTlv_1768726")) || 0;
+            isOwner = localStorage.getItem("is_owner_1768726") || 0;
+         }
+
+         nowGMT = parseInt((wts_d0.getTime() / 1000).toFixed(0));
+
+         localStorage.setItem("wtsNv_1768726", nVisits+1);
+         localStorage.setItem("wtsTlv_1768726", nowGMT);
+
+         // store original ref info
+         if (wtsh['referer'] && wtsh['url']){
+            try{
+               loc0 = new URL(wtsh['referer']);
+               loc1 = new URL(wtsh['url']);
+               if (loc0.hostname.indexOf(loc1.hostname) == -1){
+                  wtsor = 1;
+                  localStorage.setItem("wtsOr2_1768726",wtsh['referer']);
+               }
+            } 
+            catch (e) {
+               wtsor = "";
+            }
+         }
+         if (! wtsor){
+            wtsor = localStorage.getItem("wtsOr2_1768726") || getCookie("orig_ref_1768726") || "";
+         }
+
+         if (wtsor == 1){
+            wtsor = "";
+         }
+
+      }
+
+   }
+
+   var now = wts_d0;
+   now.setTime(now.getTime() + 1800000); 
+
+   document.cookie = "sessionId_1768726="+sessionId+"; max-age=1800; expires=" + now.toUTCString() + "; path=/"; 
+
+   prefix = 'https://wts2.one';
+   prefix = 'https://wts.one';
+
+   qry = alias+':~:'+dbn+':~:'+wtsh['referer']+':~:'+wtsh['invisible']+':~:no:~:'+scr_w+'x'+scr_h+':~:'+scr_c+':~:'+wtsh['url']+':~:'+conv_n+':~:'+page_name+':~:'+page_name+':~:'+wtsh['html_title']+':~::~:wix:~:'+test+':~:6.96wk:~:'+wtsh['params']+':~::~:'+dnt+':~:1:~::~:'+visitorId+':~:'+nVisits+':~:'+timeLastVisitGMT+':~:'+wtsor+':~:'+cookieEnabled+':~:'+in_session+':~:'+sessionId+':~:'+isOwner+':~:'+checked_online;
+
+   qry = encodeURIComponent(qry);
+
+   newSpan = document.createElement("span");
+   newSpan.setAttribute('id', 'wtstimer1768726');
+   newSpan.style.display="none";
+   document.body.appendChild(newSpan);
+   newSpan.focus(); 
+
+   wtscript = document.createElement("script"); 
+   wtscript.setAttribute('type','text/javascript');
+   wtscript.setAttribute('src', prefix+'/count6.pl?'+qry);
+   document.body.appendChild(wtscript);
+
+   if ("0" == "1" && viewMode == "site"){
+      pingSite(0); 
+   }
+
+
+}
+
+
+//////////////////////
+function getCookie(a){
+    var d=[],
+        e=document.cookie.split(";");
+    a=RegExp("^\\s*"+a+"=\\s*(.*?)\\s*$");
+    for(var b=0;b<e.length;b++){
+        var f=e[b].match(a);
+        f&&d.push(f[1])
+    }
+    return d[0];
+}
+
+
+///////////////////////
+function checkCookie(){
+   document.cookie = "testcookie";
+   cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+   document.cookie = "testcookie= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+   return cookieEnabled;
+}
+
+
+/////////////////////////////
+function pingSite(wts_delay){ 
+
+   if (document.getElementById('wtstimer1768726').innerHTML == ''){
+      setTimeout(function(){ pingSite(0); }, 200); // try again until counter loads
+      return;
+   }
+   else if (document.getElementById('wtstimer1768726').innerHTML != 'no_streaming'){
+
+      var wts_curr_time = new Date().getTime();
+      var wts_running_time = wts_curr_time - wts_start_time;
+
+      if (isPremium == 0){
+         isPremium = 1;
+      }
+
+      if (! focusTimer){
+         focusTimer = setInterval( checkFocus, 2000);
+      }
+
+      if (wts_focus == 1 && wts_running_time <= 1800000){
+
+         wts_time_on_page = wts_time_on_page + wts_delay;
+         wts_delay = wts_delay + 1000;
+
+         var uniqueID = document.getElementById('wtstimer1768726').innerHTML;
+         if (uniqueID != '' && uniqueID != 'no_streaming'){
+            uniqueID = uniqueID+'::'+wts_delay+'::'+Math.random();
+            var msg = 'https://wts.one/ping_timer.htm?'+uniqueID;
+            ajaxRequest.open('GET', msg, true);
+            ajaxRequest.send(null);
+         }
+
+         pingTimer = setTimeout( function(){ pingSite(wts_delay); }, wts_delay);
+
+      }
+
+   }
+
+} 
+
+
+//////////////////////
+function checkFocus(){
+
+   if (wts_focus == 1){
+      if (document.visibilityState == "hidden"){
+         wts_focus = 0;
+         if (pingTimer){
+            clearTimeout(pingTimer);
+         }
+      }
+   }
+   else{
+      if (document.visibilityState == "visible"){
+         wts_focus = 1;
+         if ("0" == "1" && viewMode == "site"){
+            pingSite(0);
+         }
+      }
+   }
+
+}
+
+
+
+
+
+// set variables
+var wtsh = {};
+
+var ajaxCounter = 0;
+var isPremium = 0;
+var pingTimer;
+
+var focusTimer;
+var wts_focus = 1;
+var wts_d0 = new Date();
+var wts_start_time = wts_d0.getTime();
+var wts_time_on_page = 0;
+
+var ajaxRequest = new XMLHttpRequest();
+
+var conv_array = [];
+if (''){
+   var conv_settingi = '';
+   var raw_setting = '';
+   var conv_setting = raw_setting.split("|");
+   for (var i = 0; i < conv_setting.length; i++){
+      conv_settingi = conv_setting[i].split("::");
+      conv_array.push({page:conv_settingi[0], conv_n:conv_settingi[1]});
+   }
+}
+
+
+
+
+window.onunload = function(){}        // forces the code to be re-parsed even with back button
+
+window.onbeforeunload = function(){} // forces the code to be re-parsed even with back button
+
+window.onerror= function(){ return true; }
+
+var viewMode = Wix.Worker.Utils.getViewMode();
+
+
+Wix.Worker.addEventListener(Wix.Events.SITE_PUBLISHED, function() { 
+   ajaxPublish(); 
+});
+
+Wix.Worker.addEventListener(Wix.Events.SITE_SAVED, function() { 
+   ajaxSave(); 
+});
+
+//Wix.Worker.addEventListener(Wix.Events.COMPONENT_DELETED, function() { 
+//   ajaxRecordRemoval(); 
+//});
+
+// reload upon page change
+Wix.Worker.addEventListener(Wix.Events.PAGE_NAVIGATION, function() {
+   window.location.reload();
+});
+
+
+// launch script
+
+if(document.readyState !== 'loading'){
+   wtshInitStatsWorker("1");
+} 
+else if (typeof document.addEventListener === 'function'){
+   document.addEventListener('DOMContentLoaded', function () {
+      wtshInitStatsWorker("2");
+   }, false);
+}
+else if(typeof document.getElementById('wts1768726') === 'object'){
+
+   var site;
+
+   if ('' == 'fr'){
+      site = 'www.web-stat.fr';
+   }
+   else{
+      site = 'www.web-stat.com';
+   }
+
+   document.getElementById('wts1768726').innerHTML = '<a href="https://'+site+'"><img alt="Web-Stat Web Analytics" src="https://wts.one/6s/15/1768726.gif" style="width:0; height:0;"></a>';
+
+}
+
+
+
+
+
+</script>
+<style wix-style="">.Title{ font:normal normal normal 36px/1.4em "open sans",sans-serif; } .Menu{ font:normal normal bold 16px/1.4em "jockey one",sans-serif; } .Page-title{ font:normal normal normal 37px/1.4em museo-slab-w01-100,serif; } .Heading-XL{ font:normal normal bold 48px/1.4em museo-slab-w01-100,serif; } .Heading-L{ font:normal normal normal 24px/1.4em "open sans",sans-serif; } .Heading-M{ font:normal normal normal 18px/1.4em "open sans",sans-serif; } .Heading-S{ font:normal normal bold 14px/1.4em "open sans",sans-serif; } .Body-L{ font:normal normal normal 22px/1.4em "open sans",sans-serif; } .Body-M{ font:normal normal normal 14px/1.4em "open sans",sans-serif; } .Body-S{ font:italic normal normal 14px/1.4em "open sans",sans-serif; } .Body-XS{ font:normal normal normal 11px/1.4em verdana,geneva,sans-serif; } }</style><link type="text/css" rel="stylesheet" href="./css" id="wix-google-fonts"><link type="text/css" rel="stylesheet" href="./languages.css"><style>:focus {
+    outline: none;
+}
+
+.js-focus-visible .focus-visible:focus,
+.js-focus-visible .focus-visible:focus ~ .wixSdkShowFocusOnSibling
+{
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 1px 2px #3899EC;
+}
+</style><script src="./focus-visible.min.js.download" id="dynamic_script_FOCUS_VISIBLE"></script></head>
+<body class="js-focus-visible">
+
+<div id="wts1768726" style="display:none;"></div>
+
+
+
+<span id="wtstimer1768726" style="display: none;">no_streaming</span><script type="text/javascript" src="./count6.pl.download"></script></body></html>
