@@ -207,7 +207,7 @@ export default {
               {
                 type: 'link',
                 text: 'NARAP in the News',
-                path: './inthenews',
+                path: './NARAPInTheNews',
                 iconLeft: '<i class="fas fa-tv"></i>',
               },
               {
@@ -215,8 +215,8 @@ export default {
               },
               {
                 type: 'link',
-                text: 'News Magazine',
-                path: './newmagazine',
+                text: 'NARAPMagazine',
+                path: './NARAPMagazine',
                 iconLeft: '<i class="far fa-newspaper"></i>',
               },
             ],

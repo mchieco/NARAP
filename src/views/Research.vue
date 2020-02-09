@@ -141,7 +141,7 @@
 </template>
 
 
-<style>
+<style scoped>
 
 .columnList{
   font-size: 15px;
