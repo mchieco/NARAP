@@ -155,6 +155,15 @@ export default {
             subMenuOptions: [
               {
                 type: 'link',
+                text: 'Alumni Association',
+                path: './alumniassoc',
+                iconLeft: '<i class="fas fa-users"></i>',
+              },
+              {
+                type: 'hr',
+              },
+              {
+                type: 'link',
                 text: 'Mentoring Program',
                 path: './alumnimentor',
                 iconLeft: '<i class="fas fa-user"></i>',

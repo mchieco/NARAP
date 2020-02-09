@@ -1,0 +1,14 @@
+
+if ("yes" != "yes"){
+   localStorage.setItem("timeLastLoadx_1768726", "");
+   localStorage.setItem("prev_v_1768726", "6.96wk");
+   localStorage.setItem("prev_e_1768726", "yes");
+}
+
+
+if ('regular' == 'premium' && 'yes' != 'yes'){
+   document.getElementById("wtstimer1768726").innerHTML = '15'+'::'+'wix8176271'+'::'+'3600'+'::'+'no'+'::'+'XjxLgQrRho8AAFwcft8AAAAL'+'::'+'1581009749277.664';
+}
+else {
+   document.getElementById("wtstimer1768726").innerHTML = 'no_streaming';
+}
