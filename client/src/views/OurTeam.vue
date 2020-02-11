@@ -60,7 +60,7 @@
       </v-row>
       <v-row class="execRow">
         <v-row>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="6">
+          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
             <figure>
               <v-img class="exec" src="../assets/keith2.png"></v-img>
             </figure>
@@ -68,7 +68,7 @@
               <p class="boldText"> Keith Bradley </p> <p class="desc">Founder, CEO, Chief Medical Officer </p>
             </figcaption>
           </v-col>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="6">
+          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
             <figure>
               <v-img class="exec" src="../assets/gina.png"></v-img>
             </figure>
@@ -78,7 +78,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="6">
+          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
             <figure>
               <v-img class="exec" src="../assets/robert.png"></v-img>
             </figure>
@@ -86,7 +86,7 @@
               <p class="boldText"> Robert Wickey </p> <p class="desc">Chief Financial Officer </p>
             </figcaption>
           </v-col>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="6">
+          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
             <figure>
               <v-img class="exec" src="../assets/beau.png"></v-img>
             </figure>
@@ -96,12 +96,24 @@
           </v-col>
         </v-row>
       </v-row>
+      <v-row class="rowBottom2">
+        <h1 class="headerBottom">To schedule a meeting with a member of the NARAP Executive Team, click on the following link:
+          <a href="mailto:ask@theNARAP.org" style="text-decoration: underline;">administrativeassistant@theNARAP.org</a></h1>
+      </v-row>
     
     </div>
   </div>
 </template>
 
 <style>
+.headerBottom{
+    font-size: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: rgb(6, 57, 84);
+}
 .boldText{
   font-size: 17px;
   font-weight: bold;
@@ -120,6 +132,11 @@
 }
 .execRow{
   margin-left: 15%;
+}
+
+.rowBottom2{
+    text-align: center;
+    font-size: 20px;
 }
 
 figure{
