@@ -6,6 +6,6 @@ router.route("/livedata")
 .all((req,res,next)=>{
     next();
 })
-.get(livedataController.getData) //Public
+.get(livedataController) //Public
 
 module.exports = router;

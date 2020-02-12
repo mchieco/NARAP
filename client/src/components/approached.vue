@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import liveDataService from '@/services/livedata/approached';
+import liveDataService from '@/services/livedata';
 
 export default {
   data() {
@@ -38,16 +38,8 @@ export default {
     async load() {
       this.isLoading = true;
       const x = await liveDataService();
-      x.forEach((obj) => {
-        if (obj.fake_data_flag === '') {
-          if (obj.age >= 18) {
-            this.eligible += 1;
-            if (obj.verbal_consent_permission === '1') {
-              this.enrolled += 1;
-            }
-          }
-        }
-      });
+      this.eligible = x.eligible;
+      this.enrolled = x.enrolled;
       this.series = [
         this.eligible,
         this.enrolled,

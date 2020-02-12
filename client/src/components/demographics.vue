@@ -1,75 +1,110 @@
 <template>
-    <div>
+  <div>
     <div style="padding-bottom: 15px;" class="row">
       <div class="col-md-4 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsGender" :series="seriesGender" />
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsGender"
+          :series="seriesGender"
+        />
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsHispanic" :series="seriesHispanic" />
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsHispanic"
+          :series="seriesHispanic"
+        />
       </div>
-    <div class="col-md-6 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsEducation" :series="seriesEducation" />
-    </div>
+      <div class="col-md-6 col-sm-12 col-lg-4">
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsEducation"
+          :series="seriesEducation"
+        />
+      </div>
     </div>
     <div class="row">
-    <div class="col-md-4 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsAge" :series="seriesAge"/>
-    </div>
-    <div class="col-md-4 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsRace" :series="seriesRace"/>
-    </div>
-    <div class="col-md-4 col-sm-12 col-lg-4">
-        <apexchart type=pie height=350 width=500 :options="chartOptionsInsurance" :series="seriesInsurance" />
-    </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsAge"
+          :series="seriesAge"
+        />
+      </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsRace"
+          :series="seriesRace"
+        />
+      </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <apexchart
+          type="pie"
+          height="350"
+          width="500"
+          :options="chartOptionsInsurance"
+          :series="seriesInsurance"
+        />
+      </div>
     </div>
     <v-overlay :value="isLoading">
       <v-progress-circular indeterminate size="64"></v-progress-circular>
     </v-overlay>
-    </div>
+  </div>
 </template>
 
 <script>
-import liveDataService from '@/services/livedata/demographics';
-
-let females = 0;
-let males = 0;
-let age18to29 = 0;
-let age30to39 = 0;
-let age40to49 = 0;
-let age50to59 = 0;
-let age60to69 = 0;
-let age70to79 = 0;
-let age80plus = 0;
-let hispanic = 0;
-let nohispanic = 0;
-let african = 0;
-let indian = 0;
-let asian = 0;
-let white = 0;
-let multi = 0;
-let hawaiian = 0;
-let raceOther = 0;
-let raceRefused = 0;
-let lowerthan9th = 0;
-let hsdropout = 0;
-let ged = 0;
-let hsdiploma = 0;
-let somecollege = 0;
-let collegedegree = 0;
-let educationIDK = 0;
-let educationRefused = 0;
-let insurancePrivate = 0;
-let medicare = 0;
-let medicaid = 0;
-let none = 0;
-let insuranceOther = 0;
-let insuranceIDK = 0;
-let insuranceRefused = 0;
+import liveDataService from '@/services/livedata';
 
 export default {
   data() {
     return {
       isLoading: false,
+      females: 0,
+      males: 0,
+      age18to29: 0,
+      age30to39: 0,
+      age40to49: 0,
+      age50to59: 0,
+      age60to69: 0,
+      age70to79: 0,
+      age80plus: 0,
+      hispanic: 0,
+      nohispanic: 0,
+      african: 0,
+      indian: 0,
+      asian: 0,
+      white: 0,
+      multi: 0,
+      hawaiian: 0,
+      raceOther: 0,
+      raceRefuseed: 0,
+      lowerthan9th: 0,
+      hsdropout: 0,
+      ged: 0,
+      hsdiploma: 0,
+      somecollege: 0,
+      collegedegree: 0,
+      educationIDK: 0,
+      educationRefused: 0,
+      insurancePrivate: 0,
+      medicare: 0,
+      medicaid: 0,
+      none: 0,
+      insuranceOther: 0,
+      insuranceIDK: 0,
+      insuranceRefused: 0,
       seriesGender: [],
       chartOptionsGender: {
         title: {
@@ -232,159 +267,85 @@ export default {
     async load() {
       this.isLoading = true;
       const x = await liveDataService();
-      x.forEach((obj) => {
-        if (obj.fake_data_flag === '') {
-          if (obj.gender === '1') {
-            males += 1;
-          }
-          if (obj.gender === '2') {
-            females += 1;
-          }
-          if (obj.ethnic_hisp === '0') {
-            nohispanic += 1;
-          }
-          if (obj.ethnic_hisp === '1') {
-            hispanic += 1;
-          }
-          if (obj.racial_background === '1') {
-            white += 1;
-          }
-          if (obj.racial_background === '2') {
-            african += 1;
-          }
-          if (obj.racial_background === '3') {
-            indian += 1;
-          }
-          if (obj.racial_background === '4') {
-            asian += 1;
-          }
-          if (obj.racial_background === '5') {
-            hawaiian += 1;
-          }
-          if (obj.racial_background === '6') {
-            multi += 1;
-          }
-          if (obj.racial_background === '7') {
-            raceOther += 1;
-          }
-          if (obj.racial_background === '99') {
-            raceRefused += 1;
-          }
-          if (obj.education === '1') {
-            lowerthan9th += 1;
-          }
-          if (obj.education === '2') {
-            hsdropout += 1;
-          }
-          if (obj.education === '3') {
-            ged += 1;
-          }
-          if (obj.education === '4') {
-            hsdiploma += 1;
-          }
-          if (obj.education === '5') {
-            somecollege += 1;
-          }
-          if (obj.education === '6') {
-            collegedegree += 1;
-          }
-          if (obj.education === '7') {
-            educationIDK += 1;
-          }
-          if (obj.education === '7') {
-            educationRefused += 1;
-          }
-          if (obj.insurance___1 === '1') {
-            insurancePrivate += 1;
-          }
-          if (obj.insurance___2 === '1') {
-            medicare += 1;
-          }
-          if (obj.insurance___3 === '1') {
-            medicaid += 1;
-          }
-          if (obj.insurance___4 === '1') {
-            none += 1;
-          }
-          if (obj.insurance___5 === '1') {
-            insuranceOther += 1;
-          }
-          if (obj.insurance___6 === '1') {
-            insuranceIDK += 1;
-          }
-          if (obj.insurance___7 === '1') {
-            insuranceRefused += 1;
-          }
-          if (obj.age >= 18 && obj.age <= 29) {
-            age18to29 += 1;
-          }
-          if (obj.age >= 30 && obj.age <= 39) {
-            age30to39 += 1;
-          }
-          if (obj.age >= 40 && obj.age <= 49) {
-            age40to49 += 1;
-          }
-          if (obj.age >= 50 && obj.age <= 59) {
-            age50to59 += 1;
-          }
-          if (obj.age >= 60 && obj.age <= 69) {
-            age60to69 += 1;
-          }
-          if (obj.age >= 70 && obj.age <= 79) {
-            age70to79 += 1;
-          }
-          if (obj.age > 80) {
-            age80plus += 1;
-          }
-        }
-      });
-      console.log(hawaiian);
-      console.log(raceRefused);
+      this.females = x.females;
+      this.males = x.males;
+      this.age18to29 = x.age18to29;
+      this.age30to39 = x.age30to39;
+      this.age40to49 = x.age40to49;
+      this.age50to59 = x.age50to59;
+      this.age60to69 = x.age60to69;
+      this.age70to79 = x.age70to79;
+      this.age80plus = x.age80plus;
+      this.hispanic = x.hispanic;
+      this.nohispanic = x.nohispanic;
+      this.african = x.african;
+      this.indian = x.indian;
+      this.asian = x.asian;
+      this.white = x.white;
+      this.multi = x.multi;
+      this.hawaiian = x.hawaiian;
+      this.raceOther = x.raceOther;
+      this.raceRefused = x.raceRefused;
+      this.lowerthan9th = x.lowerthan9th;
+      this.hsdropout = x.hsdropout;
+      this.ged = x.ged;
+      this.hsdiploma = x.hsdiploma;
+      this.somecollege = x.somecollege;
+      this.collegedegree = x.collegedegree;
+      this.educationIDK = x.educationIDK;
+      this.educationRefused = x.educationRefused;
+      this.insurancePrivate = x.insurancePrivate;
+      this.medicare = x.medicare;
+      this.medicaid = x.medicaid;
+      this.none = x.none;
+      this.insuranceOther = x.insuranceOther;
+      this.insuranceIDK = x.insuranceIDK;
+      this.insuranceRefused = x.insuranceRefused;
       this.seriesGender = [
-        males,
-        females,
+        this.males,
+        this.females,
       ];
       this.seriesHispanic = [
-        hispanic,
-        nohispanic,
+        this.hispanic,
+        this.nohispanic,
       ];
       this.seriesRace = [
-        african,
-        indian,
-        asian,
-        white,
-        multi,
-        hawaiian,
-        raceOther,
-        raceRefused,
+        this.african,
+        this.indian,
+        this.asian,
+        this.white,
+        this.multi,
+        this.hawaiian,
+        this.raceOther,
+        this.raceRefused,
       ];
       this.seriesEducation = [
-        lowerthan9th,
-        hsdropout,
-        ged,
-        hsdiploma,
-        somecollege,
-        collegedegree,
-        educationIDK,
-        educationRefused,
+        this.lowerthan9th,
+        this.hsdropout,
+        this.ged,
+        this.hsdiploma,
+        this.somecollege,
+        this.collegedegree,
+        this.educationIDK,
+        this.educationRefused,
       ];
       this.seriesInsurance = [
-        insurancePrivate,
-        medicare,
-        medicaid,
-        none,
-        insuranceOther,
-        insuranceIDK,
-        insuranceRefused,
+        this.insurancePrivate,
+        this.medicare,
+        this.medicaid,
+        this.none,
+        this.insuranceOther,
+        this.insuranceIDK,
+        this.insuranceRefused,
       ];
       this.seriesAge = [
-        age18to29,
-        age30to39,
-        age40to49,
-        age50to59,
-        age60to69,
-        age70to79,
-        age80plus,
+        this.age18to29,
+        this.age30to39,
+        this.age40to49,
+        this.age50to59,
+        this.age60to69,
+        this.age70to79,
+        this.age80plus,
       ];
       this.isLoading = false;
     },

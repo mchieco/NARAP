@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import liveDataService from '@/services/livedata/demographics';
+import liveDataService from '@/services/livedata';
 import Demographics from '@/components/demographics.vue';
 import Approached from '@/components/approached.vue';
 
@@ -51,11 +51,7 @@ export default {
   methods: {
     async load() {
       const x = await liveDataService();
-      x.forEach((obj) => {
-        if (obj.fake_data_flag === '') {
-          this.participants += 1;
-        }
-      });
+      this.participants = x.participants;
     },
   },
   mounted() {
