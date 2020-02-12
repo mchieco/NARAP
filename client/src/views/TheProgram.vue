@@ -24,7 +24,7 @@
           <li>as data collectors in clinical research</li>
         </ul>
       </v-row>
-      <v-row class="rowButton">
+      <v-row class="button">
         <button type="button" class="btn blue-gradient" target="_blank" onclick="window.location.href = '../research-associates'">Learn More</button>
       </v-row>
       <v-row class="headerThree">
@@ -38,13 +38,13 @@
           <li>minimizing cost and impact on clinical personnel</li>
         </ul>
       </v-row>
-      <v-row class="rowButton">
+      <v-row class="button">
         <button type="button" class="btn blue-gradient" onclick="window.location.href = '../affiliates'">Learn More</button>
       </v-row>
       <v-row class="headerThree">
         <h5 class="headerSmaller">Clinical Researchers</h5>
       </v-row>
-      <v-row class="listRow3">
+      <v-row class="">
         <ul class="list">
           <li>research accomplished</li>
             <ul>
@@ -54,7 +54,7 @@
             </ul>
         </ul>
       </v-row>
-      <v-row class="rowButton">
+      <v-row class="button">
         <button type="button" class="btn blue-gradient" onclick="window.location.href = '../our-research'">Learn More</button>
       </v-row>
     </div>
@@ -65,14 +65,12 @@
 <style>
 
 .proImg{
-    max-width: 700px;
+    max-width: 70%;
     margin: 0% auto;
 }
 
 .headerTop{
   font-size: 40px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 2%;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
@@ -81,8 +79,6 @@
 
 .headerThree{
   font-size: 20px;
-  margin-left: auto;
-  margin-right: auto;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(0, 48, 0);
@@ -99,37 +95,11 @@
   color: rgb(62, 61, 60)
 }
 
-.listRow1{
-    width: 75%;
-}
-
-.listRow2{
-    width: 100%;
-    padding-left: 230px;
-}
-
-.listRow3{
-    width: 100%;
-    padding-left: 190px;
-}
-
 .list{
   font-size: 15px;
-  margin-left: auto;
-  margin-right: auto;
   font-family: 'Trebuchet MS', sans-serif;
   color:rgba(9, 8, 7, 0.924);
-}
-
-.rowButton{
-    margin-top: -70px;
-    width: 75%;
-    padding-left: 150px;
-}
-
-.btn{
-    font-size: 10px;
-    margin-bottom: 3%;
+  margin-bottom: -10%;
 }
 
 </style>

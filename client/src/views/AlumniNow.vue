@@ -103,7 +103,7 @@
 
 .row-1{
     width: 100%;
-    margin-left: 8rem;
+    margin-left: 2rem;
     margin-right: 12rem;
 }
 
@@ -112,7 +112,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
-  width: 75%;
+  width: 100%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(0, 48, 0);
 }
@@ -123,7 +123,7 @@
   margin-right: auto;
   margin-top: 0%;
   padding-bottom: 2%;
-  width: 75%;
+  width: 100%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(6, 57, 84);
 }
@@ -146,9 +146,7 @@
 
 .headerBottom{
     font-size: 22px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
+    width: 100%;
     font-family: 'Trebuchet MS', sans-serif;
     color: rgb(6, 57, 84);
 }
