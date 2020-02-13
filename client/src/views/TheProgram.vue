@@ -62,7 +62,7 @@
 </template>
 
 
-<style>
+<style scoped>
 
 .proImg{
     max-width: 70%;

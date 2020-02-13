@@ -105,7 +105,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .headerBottom{
     font-size: 22px;
     margin-left: auto;

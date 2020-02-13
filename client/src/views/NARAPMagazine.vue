@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .headerT {
   margin-left: 36%;
   font-size: 40px;

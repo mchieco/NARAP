@@ -138,7 +138,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 .headerTop{
   font-size: 40px;

@@ -99,7 +99,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .aboutImg{
   max-width: 80%;
   margin: auto;

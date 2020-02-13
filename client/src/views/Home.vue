@@ -78,7 +78,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .v-carousel {
   height: 550px !important;
 }

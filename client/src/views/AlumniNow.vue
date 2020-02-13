@@ -83,7 +83,7 @@
 </template>
 
 
-<style>
+<style scoped>
 
 .name{
     font-weight: bold;

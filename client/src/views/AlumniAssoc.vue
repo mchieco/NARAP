@@ -72,7 +72,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .buttRows{
     margin-left: -4px;
     margin-right: 8px;

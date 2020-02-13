@@ -104,7 +104,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .holder{
     width: 90%;
     margin: auto;

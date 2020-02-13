@@ -93,7 +93,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .headerTwo {
   font-size: 20px;
   font-family: "Trebuchet MS", sans-serif;

@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 #pic {
   height: 400px;
 }

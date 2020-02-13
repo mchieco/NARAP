@@ -53,7 +53,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 
 .supportImg{
     max-width: 80%;
