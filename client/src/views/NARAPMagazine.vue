@@ -28,11 +28,13 @@
 </template>
 
 <style scoped>
+#magContainer{
+  width: 100%;
+}
 .headerT {
-  margin-left: 36%;
+  text-align: center;
   font-size: 40px;
   margin-top: 2%;
-  width: 75%;
   font-family: "Trebuchet MS", sans-serif;
   color: rgb(0, 48, 0);
 }

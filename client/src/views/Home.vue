@@ -33,21 +33,21 @@
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_500e6464d174418191ffe84f3195903c~mv2.png/v1/fill/w_250,h_270,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_500e6464d174418191ffe84f3195903c~mv2.webp"
+            src="../assets/home3.png"
           ></v-img>
         </v-col>
 
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_af4a2caa4e77432fb1a521d4ace0c112~mv2.png/v1/crop/x_0,y_0,w_299,h_308/fill/w_250,h_270,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_af4a2caa4e77432fb1a521d4ace0c112~mv2.webp"
+            src="../assets/home2.png"
           ></v-img>
         </v-col>
 
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_bd714323d6a64a4e98bc2dc9be89d136~mv2.png/v1/fill/w_271,h_286,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_bd714323d6a64a4e98bc2dc9be89d136~mv2.webp"
+            src="../assets/home1.png"
           ></v-img>
         </v-col>
       </v-row>
