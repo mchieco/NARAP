@@ -61,16 +61,13 @@ export default {
     return {
       items: [
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_0b0072a429ba48e099f3f6279940bb9a~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_0b0072a429ba48e099f3f6279940bb9a~mv2.webp',
+          src: require('../assets/c1.png'),
         },
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_5209cf4bd74340f1861b554a16e162c3~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_5209cf4bd74340f1861b554a16e162c3~mv2.webp',
+          src: require('../assets/c2.png'),
         },
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_997d7f2a15dc4257932dcae46bdecea2~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_997d7f2a15dc4257932dcae46bdecea2~mv2.webp',
+          src: require('../assets/c3.png'),
         },
       ],
     };
