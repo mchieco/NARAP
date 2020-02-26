@@ -85,6 +85,10 @@
 
 <style scoped>
 
+.container{
+  padding-left: 20px;
+}
+
 .name{
     font-weight: bold;
     font-size: 13px;

@@ -64,6 +64,10 @@
 
 <style scoped>
 
+.container{
+  padding-left: 20px;
+}
+
 .proImg{
     max-width: 70%;
     margin: 0% auto;

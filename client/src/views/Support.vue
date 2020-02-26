@@ -32,17 +32,17 @@
               made on the Amazon Smile and iGive.com web sites. </p>
       </v-row>
       <v-row class="columnLogos">
-           <v-col cols="4" lg="4" md="4" sm="4">
+           <v-col cols="4">
                 <a href="https://1f0c3862-0949-4b88-9102-04ee863b9010.filesusr.com/ugd/96c217_05efefa575e14c1a8308c0beb48520c4.pdf" target="_blank" class="hyperlink">
                     <v-img class="logo" src="../assets/wishlist.png"></v-img>
                 </a>
             </v-col>
-           <v-col cols="4" lg="4" md="4" sm="4">
+           <v-col cols="4">
                 <a href="https://smile.amazon.com/gp/chpf/homepage?orig=Lw==" target="_blank" class="hyperlink">
                     <v-img class="logo" src="../assets/amazon.png"></v-img>
                 </a>
             </v-col>
-           <v-col cols="4" lg="4" md="4" sm="4">
+           <v-col cols="4">
                 <a href="https://www.igive.com/welcome/lp15/wr35.cfm?c=65063&p=19992&jltest=1" target="_blank" class="hyperlink">
                     <v-img class="logo" src="../assets/give.png"></v-img>
                 </a>
@@ -82,7 +82,7 @@
 
 .logo{
     max-height: auto;
-    max-width: 60%;
+    max-width: 70%;
     margin-bottom: 5%;
 }
 
@@ -90,7 +90,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
-  width: 60%;
+  width: 80%;
   font-family: Arial, Helvetica, sans-serif;
 }
 

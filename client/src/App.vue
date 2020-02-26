@@ -215,7 +215,7 @@ export default {
               },
               {
                 type: 'link',
-                text: 'NARAPMagazine',
+                text: 'NARAP Magazine',
                 path: './NARAPMagazine',
                 iconLeft: '<i class="far fa-newspaper"></i>',
               },

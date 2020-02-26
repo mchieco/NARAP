@@ -18,7 +18,7 @@
         <v-img class="keithIMG" src="../assets/keith.png"></v-img>
       </v-row>
       <v-row>
-        <p class="cap">Chief Executive Officer | Dr. Keith Bradley | Chief Medical Officer &amp; Founder</p>
+        <p class="cap">Chief Executive Officer | Dr. Keith Bradley | Founder</p>
       </v-row>
 
       <v-row>
@@ -60,7 +60,7 @@
       </v-row>
       <v-row class="execRow">
         <v-row>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
+          <v-col class="col-1" cols="6" lg="6" md="6" sm="6">
             <figure>
               <v-img class="exec" src="../assets/keith2.png"></v-img>
             </figure>
@@ -68,7 +68,7 @@
               <p class="boldText"> Keith Bradley </p> <p class="desc">Founder, CEO, Chief Medical Officer </p>
             </figcaption>
           </v-col>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
+          <v-col class="col-1" cols="6" lg="6" md="6" sm="6">
             <figure>
               <v-img class="exec" src="../assets/gina.png"></v-img>
             </figure>
@@ -78,7 +78,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
+          <v-col class="col-1" cols="6" lg="6" md="6" sm="6">
             <figure>
               <v-img class="exec" src="../assets/robert.png"></v-img>
             </figure>
@@ -86,7 +86,7 @@
               <p class="boldText"> Robert Wickey </p> <p class="desc">Chief Financial Officer </p>
             </figcaption>
           </v-col>
-          <v-col class="col-1" cols="2" lg="6" md="6" sm="12">
+          <v-col class="col-1" cols="6" lg="6" md="6" sm="6">
             <figure>
               <v-img class="exec" src="../assets/beau.png"></v-img>
             </figure>
@@ -98,7 +98,7 @@
       </v-row>
       <v-row class="rowBottom2">
         <h1 class="headerBottom">To schedule a meeting with a member of the NARAP Executive Team, click on the following link:
-          <a href="mailto:ask@theNARAP.org" style="text-decoration: underline;">administrativeassistant@theNARAP.org</a></h1>
+          <a class="link" href="mailto:ask@theNARAP.org" style="text-decoration: underline;">administrativeassistant@theNARAP.org</a></h1>
       </v-row>
     
     </div>
@@ -107,13 +107,14 @@
 
 <style scoped>
 .headerBottom{
-    font-size: 22px;
+    font-size: 16px;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
     font-family: 'Trebuchet MS', sans-serif;
     color: rgb(6, 57, 84);
 }
+
 .boldText{
   font-size: 17px;
   font-weight: bold;
@@ -135,8 +136,9 @@
 }
 
 .rowBottom2{
+    width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 60%;
 }
 
 figure{
@@ -195,7 +197,7 @@ figure{
 
 .pText{
   font-size: 15px;
-  margin-left: 10%;
+  margin-left: 15%;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
   color:rgba(9, 8, 7, 0.924);
