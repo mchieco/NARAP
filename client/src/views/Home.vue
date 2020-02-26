@@ -33,21 +33,21 @@
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_500e6464d174418191ffe84f3195903c~mv2.png/v1/fill/w_250,h_270,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_500e6464d174418191ffe84f3195903c~mv2.webp"
+            src="../assets/home3.png"
           ></v-img>
         </v-col>
 
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_af4a2caa4e77432fb1a521d4ace0c112~mv2.png/v1/crop/x_0,y_0,w_299,h_308/fill/w_250,h_270,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_af4a2caa4e77432fb1a521d4ace0c112~mv2.webp"
+            src="../assets/home2.png"
           ></v-img>
         </v-col>
 
         <v-col cols="6" sm="4">
           <v-img
             id="homeImg"
-            src="https://static.wixstatic.com/media/4c8ad7_bd714323d6a64a4e98bc2dc9be89d136~mv2.png/v1/fill/w_271,h_286,al_c,q_80,usm_4.00_1.00_0.00/4c8ad7_bd714323d6a64a4e98bc2dc9be89d136~mv2.webp"
+            src="../assets/home1.png"
           ></v-img>
         </v-col>
       </v-row>
@@ -61,16 +61,13 @@ export default {
     return {
       items: [
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_0b0072a429ba48e099f3f6279940bb9a~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_0b0072a429ba48e099f3f6279940bb9a~mv2.webp',
+          src: require('../assets/c1.png'),
         },
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_5209cf4bd74340f1861b554a16e162c3~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_5209cf4bd74340f1861b554a16e162c3~mv2.webp',
+          src: require('../assets/c2.png'),
         },
         {
-          src:
-            'https://static.wixstatic.com/media/4c8ad7_997d7f2a15dc4257932dcae46bdecea2~mv2.png/v1/fill/w_1407,h_550,al_c,q_85,usm_4.00_1.00_0.00/4c8ad7_997d7f2a15dc4257932dcae46bdecea2~mv2.webp',
+          src: require('../assets/c3.png'),
         },
       ],
     };
