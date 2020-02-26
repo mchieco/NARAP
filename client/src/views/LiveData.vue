@@ -1,7 +1,6 @@
 <template>
     <div class="pa-8">
-      <p style="font-size: 22px;"><b>Implementation Study</b></p>
-      <p style="font-size: 22px;"><b>Number of Participants: {{ participants }}</b></p>
+      <h1>Implementation Study - Patients and their visitors in the emergency department</h1>
       <div class="row justify-content-md-center">
       <div class="col-12 col-md-4 col-lg-4 align-self-center">
       <v-select
@@ -18,16 +17,20 @@
       ></component>
     </div>
 </template>
-
+<style scoped>
+h1{
+  font-size: 22px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+</style>
 <script>
-import liveDataService from '@/services/livedata';
 import Demographics from '@/components/demographics.vue';
 import Approached from '@/components/approached.vue';
 
 export default {
   data() {
     return {
-      participants: 0,
       seriesGender: [],
       selectedValue: 'Approached',
       items: ['Approached', 'Demographics', 'Primary Care Practitioner', 'Tobacco Cessation',
@@ -48,15 +51,5 @@ export default {
       return Approached;
     },
   },
-  methods: {
-    async load() {
-      const x = await liveDataService();
-      this.participants = x.participants;
-    },
-  },
-  mounted() {
-    this.load();
-  },
-
 };
 </script>
