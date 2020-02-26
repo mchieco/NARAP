@@ -18,7 +18,7 @@
         <v-img class="keithIMG" src="../assets/keith.png"></v-img>
       </v-row>
       <v-row>
-        <p class="cap">Chief Executive Officer | <a class="name"> Dr. Keith Bradley </a> | Chief Medical Officer &amp; Founder</p>
+        <p class="cap">Chief Executive Officer | Dr. Keith Bradley | Chief Medical Officer &amp; Founder</p>
       </v-row>
 
       <v-row>
@@ -170,15 +170,16 @@ figure{
     margin: auto;
 }
 .cap{
-  font-size: 17px;
-  margin-left: 25%;
-  max-width: 60%;
+  font-size: 13px;
+  margin: 0 auto;
+  max-width: 85%;
   padding-top: 1%;
+  padding-bottom: 1%;
   font-family: 'Trebuchet MS', sans-serif;
 }
 .headerTop{
   font-size: 30px;
-  margin-left: 15%;
+  margin-left: 10%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(0, 48, 0);
@@ -194,7 +195,7 @@ figure{
 
 .pText{
   font-size: 15px;
-  margin-left: 15%;
+  margin-left: 10%;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
   color:rgba(9, 8, 7, 0.924);
