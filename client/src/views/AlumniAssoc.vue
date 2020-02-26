@@ -5,7 +5,7 @@
         <h1 class="headerTop">NARAP Alumni Association</h1>
       </v-row>
       <v-row class="rows">
-          <v-col col="2" lg="8" md="8" sm= "8">
+          <v-col col="12" lg="8" md="8">
               <p id="p">
                 Regardless of where you find yourself in your health care career, the NARAP Alumni Association has something for you!
               <br><br>
@@ -18,7 +18,7 @@
               </p>
 
           </v-col>
-          <v-col col="2" lg="4" md="4" sm= "4">
+          <v-col col="12" lg="4" md="4">
                 <v-img class="assocImg" src="../assets/assoc.png"></v-img>
           </v-col>
       </v-row>
@@ -26,7 +26,7 @@
         <v-row class="headerThree rows">
             <h5>Our Program</h5>
         </v-row>
-          <v-col col="2" lg="8" md="8" sm= "8">
+          <v-col col="12" lg="8" md="8">
             <ul class="list">
                 <li>Network with other students or health professionals across the US.</li>
                 <li>Exchange ideas and share advice on applications, graduate school and more.</li>
@@ -35,23 +35,23 @@
                 <li>Re-connect with friends and colleagues.</li>
             </ul>
           </v-col>
-          <v-col class="buttonBox" col="2" lg="4" md="4" sm= "4">
+          <v-col class="buttonBox" col="12" lg="4" md="4">
               <v-row id="quickLinks">
                   <h1 class="quick">Quick Links</h1>
               </v-row>
                 <v-row class="buttRows">
-                    <v-col cols="2" lg="6" md="6" sm="6">
+                    <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" small color="success" dark>Update information</v-btn>
                     </v-col>
-                    <v-col cols="2" lg="6" md="6" sm="6">
+                    <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" small color="success" dark onclick="window.location.href = '../alumnimentor'">Mentoring Program</v-btn>
                     </v-col>
                 </v-row>
                 <v-row class="buttRows">
-                    <v-col cols="2" lg="6" md="6" sm="6">
+                    <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" small color="success" dark>Our Feedback Survey</v-btn>
                     </v-col>
-                    <v-col cols="2" lg="6" md="6" sm="6">
+                    <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" onclick="window.location.href = '../alumninow'" small color="success" dark>Where Are They Now?</v-btn>
                     </v-col>
                 </v-row>

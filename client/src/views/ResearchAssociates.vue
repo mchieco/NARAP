@@ -17,7 +17,7 @@
           </v-carousel>
         </v-row>
         <v-row class="columns">
-            <v-col cols="6" lg="6" md="6" sm="6">
+            <v-col cols="12" lg="6" md="6">
                 <h5 class="headerTwo">Research Mode</h5>
                     <p class="pText"><!-- eslint-disable max-len -->
                         RAs help conduct clinical research in the emergency department allows for pre-health
@@ -29,7 +29,7 @@
                         <li>Line RA</li>
                     </ul>
             </v-col>
-            <v-col cols="6" lg="6" md="6" sm="6">
+            <v-col cols="12" lg="6" md="6">
                 <h5 class="headerTwo">How are RAs Chosen?</h5>
                     <p class="pText"><!-- eslint-disable max-len -->
                         Recruiting RAs is done through:
@@ -42,7 +42,7 @@
             </v-col>
         </v-row>
         <v-row class="columns">
-            <v-col cols="6" lg="6" md="6" sm="6">
+            <v-col cols="12" lg="6" md="6">
                 <h5 class="headerTwo">Chief Research Associate:</h5>
                     <ul>
                         <li>They are college graduates taking a year or more between college and medical</li>
@@ -60,7 +60,7 @@
                         style="text-decoration: underline;">ask@theNARAP.org</a>.
                     </p>
             </v-col>
-            <v-col cols="6" lg="6" md="6" sm="6">
+            <v-col cols="12" lg="6" md="6">
                 <h5 class="headerTwo">Line Research Associate:</h5>
                     <ul>
                         <li>Pre-health professional students</li>

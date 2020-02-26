@@ -16,8 +16,9 @@
           About NARAP
         </h1>
       </v-row>
+      <v-container>
       <v-row class="columnText">
-        <v-col cols="6">
+        <v-col cols="12" md="6" lg="6">
           <h1 class="header2">Vision</h1>
           <p class="pText"><!-- eslint-disable max-len -->
             Centered in emergency depts across the US, NARAP is a non-profit clinical research org. facilitating large scale,
@@ -53,9 +54,8 @@
             The values of NARAP are those of emergency medicine: Providing service to all who seek care, evidence-based practice,
             seeking to improve upon what we know and how we implement that knowledge and bringing all this to the future members of the
             health profession at the earliest stages of their careers.</p>
-
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" md="6" lg="6">
           <h1 class="header2">Affliliates</h1>
           <p class="pText"><!-- eslint-disable max-len -->
             Emergency Departments across the country are joining our program.</p>
@@ -94,6 +94,7 @@
 
         </v-col>
       </v-row>
+      </v-container>
     
     </div>
   </div>
@@ -142,7 +143,6 @@
 .columnText{
   margin-left: 8%;
   margin-right: 8%;
-  margin-top: 2%;
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>

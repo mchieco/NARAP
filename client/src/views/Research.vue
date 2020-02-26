@@ -8,7 +8,7 @@
           <h5 class="headerTwo">NARAP has enrolled more than 140,000 participants in primary health care screening studies. </h5>
       </v-row>
       <v-row class="columnList">
-          <v-col class="col1" cols="2" lg="6" md="6" xs="12">
+          <v-col class="col1" cols="12" lg="6" md="6" sm="6">
             <ul>
                 <li>Domestic violence</li>
                 <li>Firearms injury risk assessment</li>
@@ -20,7 +20,7 @@
                 <li>Colon-rectal cancer</li>
             </ul>
           </v-col>
-          <v-col class="col2" cols="2" lg="6" md="6" xs="12">
+          <v-col class="col2" cols="12" lg="6" md="6" sm="6">
             <ul>
                 <li>Assessing ankle injuries</li>
                 <li>Evaluating chest pain</li>
@@ -155,11 +155,6 @@
 .col1{
   padding-right: 40px;
 }
-
-.col2{
-  padding-left: 80px;
-}
-
 .headerTop{
   font-size: 40px;
   margin-left: auto;
