@@ -20,7 +20,7 @@ async function fetchredcapData() {
             token: 'A4FD20E1552AD49113B0998FA226EF9E', // gave the values directly for testing
             content: 'record',
             format: 'json',
-            fields: 'fake_data_flag, ' + //make sure the data is real
+            fields: 'record_id, fake_data_flag, ' + //make sure the data is real
                 'age, verbal_consent_permission, excl_criteria, gender,ethnic_hisp,racial_background, education, language_preference, insurance, patient_or_visitor, ' + //demographics
                 'pcp, pcp_12months, ' + //primary care practicioner
                 'tobacco_30days, quitline_enroll, cat_scan, current_smoker, quit_smoking_15, pack_years_calc, ' + //Tobacco Cessation
