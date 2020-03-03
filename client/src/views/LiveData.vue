@@ -1,6 +1,6 @@
 <template>
     <div class="pa-8">
-      <h1>Implementation Study - Patients and their visitors in the emergency department</h1>
+      <h1>Implementation Study - Cancer Screening Among Patients and Their Visitors in the Emergency Department</h1>
       <div class="row justify-content-md-center">
       <div class="col-12 col-md-4 col-lg-4 align-self-center">
       <v-select

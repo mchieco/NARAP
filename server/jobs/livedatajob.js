@@ -21,7 +21,7 @@ async function fetchredcapData() {
             content: 'record',
             format: 'json',
             fields: 'fake_data_flag, ' + //make sure the data is real
-                'age, verbal_consent_permission, gender,ethnic_hisp,racial_background, education, language_preference, insurance, patient_or_visitor, ' + //demographics
+                'age, verbal_consent_permission, excl_criteria, gender,ethnic_hisp,racial_background, education, language_preference, insurance, patient_or_visitor, ' + //demographics
                 'pcp, pcp_12months, ' + //primary care practicioner
                 'tobacco_30days, quitline_enroll, cat_scan, current_smoker, quit_smoking_15, pack_years_calc, ' + //Tobacco Cessation
                 'no_mammograms_anymore, mammogram_more_2, mammogram_within_2, ' + //lung cancer
@@ -285,7 +285,11 @@ async function setredcapData() {
         if (obj.fake_data_flag === '') {
             //participants are everything that isn't
             approached += 1;
-            if (obj.age >= 18) {
+            if (obj.age >= 18 && (obj.excl_criteria__1 !== '1' 
+            || obj.excl_criteria__2 !== '1' || obj.excl_criteria__3 !== '1' 
+            || obj.excl_criteria__4 !== '1' || obj.excl_criteria__5 !== '1' 
+            || obj.excl_criteria__6 !== '1' || obj.excl_criteria__7 !== '1' 
+            || obj.excl_criteria__8 !== '1' || obj.excl_criteria__9 !== '1')) {
                 eligible += 1;
                 if (obj.verbal_consent_permission === '1') {
                     enrolled += 1;
