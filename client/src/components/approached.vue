@@ -16,6 +16,11 @@
           Enrolled: <b> {{ enrolled }} ({{ enrolledPercent }}% of Approached) </b>
         </h1>
         </div>
+        <div class="row justify-content-center">
+        <h1>
+          Enrolled/Eligible: <b> {{ (enrolled/eligible * 100).toFixed(2) }}% </b>
+        </h1>
+        </div>
     </div>
           <div class="row justify-content-center">
     <apexchart type=bar width=900 :options="chartOptions" :series="series" />

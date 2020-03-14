@@ -32,8 +32,8 @@ export default {
   data() {
     return {
       seriesGender: [],
-      selectedValue: 'Approached',
-      items: ['Approached', 'Demographics', 'Primary Care Practitioner', 'Tobacco Cessation',
+      selectedValue: 'Approached-Eligible-Enrolled',
+      items: ['Approached-Eligible-Enrolled', 'Demographics', 'Primary Care Practitioner', 'Tobacco Cessation',
         'Breast Cancer Screening', 'Cervical Cancer Screening',
         'Colon-Rectal Screening', 'Barriers to Screening'],
     };
