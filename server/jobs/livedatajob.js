@@ -99,7 +99,7 @@ let pcpintervention = 0;
 //tobacco cessation
 let tobacco30plus = 0;
 let tobacco30less = 0;
-let Tobacco30refused = 0;
+let tobacco30refused = 0;
 let quitlineyes = 0;
 let quitlineno = 0;
 //lung cancer section
@@ -225,7 +225,7 @@ async function setredcapData() {
     pcpintervention = 0;
     tobacco30plus = 0;
     tobacco30less = 0;
-    Tobacco30refused = 0;
+    tobacco30refused = 0;
     quitlineyes = 0;
     lungcancercount = 0;
     quitlineno = 0;
@@ -588,7 +588,7 @@ async function setredcapData() {
                         tobacco30less += 1;
                     }
                     if(obj.tobacco_30days === '4') {
-                        Tobacco30refused += 1;
+                        tobacco30refused += 1;
                     }
 
                     //colon-rectal cancer data
@@ -724,7 +724,7 @@ function getData() {
         pcpintervention,
         tobacco30plus,
         tobacco30less,
-        Tobacco30refused,
+        tobacco30refused,
         quitlineyes,
         quitlineno,
         lungcancercount,

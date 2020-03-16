@@ -27,6 +27,7 @@ h1{
 <script>
 import Demographics from '@/components/demographics.vue';
 import Approached from '@/components/approached.vue';
+import Tobacco from '@/components/tobacco.vue';
 
 export default {
   data() {
@@ -47,6 +48,8 @@ export default {
           return Demographics;
         case 'Appraoched':
           return Approached;
+        case 'Tobacco Cessation':
+          return Tobacco;
       }
       return Approached;
     },
