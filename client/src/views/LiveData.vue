@@ -28,6 +28,7 @@ h1{
 import Demographics from '@/components/demographics.vue';
 import Approached from '@/components/approached.vue';
 import Tobacco from '@/components/tobacco.vue';
+import primaryCare from '@/components/primaryCare.vue';
 
 export default {
   data() {
@@ -50,6 +51,8 @@ export default {
           return Approached;
         case 'Tobacco Cessation':
           return Tobacco;
+        case 'Primary Care Practitioner':
+          return primaryCare;
       }
       return Approached;
     },
