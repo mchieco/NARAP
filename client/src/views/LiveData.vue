@@ -29,6 +29,7 @@ import Demographics from '@/components/demographics.vue';
 import Approached from '@/components/approached.vue';
 import Tobacco from '@/components/tobacco.vue';
 import primaryCare from '@/components/primaryCare.vue';
+import breastCancer from '@/components/breastCancer.vue';
 
 export default {
   data() {
@@ -53,6 +54,8 @@ export default {
           return Tobacco;
         case 'Primary Care Practitioner':
           return primaryCare;
+        case 'Breast Cancer Screening':
+          return breastCancer;
       }
       return Approached;
     },
