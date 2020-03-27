@@ -30,6 +30,8 @@ import Approached from '@/components/approached.vue';
 import Tobacco from '@/components/tobacco.vue';
 import primaryCare from '@/components/primaryCare.vue';
 import breastCancer from '@/components/breastCancer.vue';
+import cervicalCancer from '@/components/cervicalCancer.vue';
+
 
 export default {
   data() {
@@ -56,6 +58,8 @@ export default {
           return primaryCare;
         case 'Breast Cancer Screening':
           return breastCancer;
+        case 'Cervical Cancer Screening':
+          return cervicalCancer;
       }
       return Approached;
     },
