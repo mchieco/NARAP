@@ -13,7 +13,7 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you been told by a health professional that you no longer need to have mammograms for breast cancer screenings?</h2>
-          <v-btn @click="showModal(mammogramObject1,'Have you been told by a health professional that you no longer need to have mammograms for breast cancer screenings?')" small rounded color="success">View Graph</v-btn>
+          <v-btn @click="showModal(mammogramObject1,'No longer need to have mammograms for breast cancer screenings?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in mammogramObject1" :key="value.id">
           <ul>{{ name }}: <b> {{ value }} ({{ (value /breastcancercount * 100).toFixed(2) }} % of Total Patients)</b></ul>
@@ -22,7 +22,7 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
             <h2>Have you been told by a health professional that you need a mammogram more often than every two years?</h2>
-            <v-btn @click="showModal(mammogramObject2, 'Have you been told by a health professional that you need a mammogram more often than every two years?')" small rounded color="success">View Graph</v-btn>
+            <v-btn @click="showModal(mammogramObject2, 'Need a mammogram more often than every two years?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in mammogramObject2" :key="value.id">
             <ul>{{ name }}: <b> {{ value }} ({{ (value /nomammogramsno * 100).toFixed(2) }} % of Qualifying Patients)</b></ul>
@@ -33,7 +33,7 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you  had a mammogram within the last two years?</h2>
-          <v-btn @click="showModal(mammogramObject3,'Have you  had a mammogram within the last two years?')" small rounded color="success">View Graph</v-btn>
+          <v-btn @click="showModal(mammogramObject3,'Had a mammogram within the last two years?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in mammogramObject3" :key="value.id">
           <ul>{{ name }}: <b> {{ value }} ({{ (value /mammogrammore2yearsno * 100).toFixed(2) }} % of Qualifying Patients)</b></ul>

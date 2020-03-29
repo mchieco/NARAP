@@ -7,7 +7,7 @@
       <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row">
           <h2>Age</h2>
-          <v-btn @click="showModal(ageobject,'Age')" small rounded color="success">View Graph</v-btn>
+          <v-btn scoped @click="showModal(ageobject,'Age')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in ageobject" :key="value.id">
           <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>

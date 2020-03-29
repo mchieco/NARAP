@@ -1,11 +1,13 @@
 <template>
   <v-row justify="center">
-    <v-dialog max-width="600" max-height="300" v-model="dialog">
+    <v-dialog max-width="1200" max-height="300" v-model="dialog">
       <v-card>
-        <v-card-title style="font-size: 22px" v-if="title">{{title}}</v-card-title>
+        <v-card-title style="font-size: 20px" v-if="title">{{title}}</v-card-title>
         <v-btn style="position: absolute; right: 0; top: 0;" @click="dialog = false" icon color="black"><v-icon>mdi-close</v-icon></v-btn>
         <div class="row justify-center">
-        <apexchart
+        <apexchart class="apex"
+          width="900"
+          height="600"
           type="pie"
           :options="chartOptions"
           :series="chartSeries"
