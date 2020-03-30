@@ -6,7 +6,7 @@
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
-          <h2>Has patient used tobacco products for more than 30 days in a row?</h2>
+          <h2>Has the participant used tobacco products for more than 30 days in a row?</h2>
           <v-btn @click="showModal(tobacco30DaysObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in tobacco30DaysObject" :key="value.id">
@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
-            <h2>Did the patient request a quitline referral?</h2>
+            <h2>Did the participant request a quitline referral?</h2>
             <v-btn @click="showModal(quitlineReferralObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in quitlineReferralObject" :key="value.id">
@@ -27,10 +27,10 @@
       <h1 style="font-size: 40px; text-decoration: underline;">Lung Cancer Screening</h1>
     </div>
     <div class="row justify-content-center" style="padding-left: 20px;">
-      <p>All patients have smoked for longer than 30 days and are between the ages of 55 and 80 years old.</p>
+      <p>All participants that have smoked for longer than 30 days and are between the ages of 55 and 80 years old.</p>
     </div>
     <div class="row justify-content-center">
-      <h1 style="font-size: 30px;">Total Patients: <b> {{ lungcancercount }} </b></h1>
+      <h1 style="font-size: 30px;">Total Participants: <b> {{ lungcancercount }} </b></h1>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">

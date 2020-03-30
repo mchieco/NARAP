@@ -26,7 +26,8 @@ async function fetchredcapData() {
                 'tobacco_30days, quitline_enroll, cat_scan, current_smoker, quit_smoking_15, pack_years_calc, ' + //Tobacco Cessation
                 'no_mammograms_anymore, mammogram_more_2, mammogram_within_2, ' + //lung cancer
                 'no_cervical_screening, pap_more_3, pap_within_3, hpv_test, ' + //cervical screening
-                'colonrectal_screening, colonrectal_10, colonoscopy, other_colonrectal, sigmoidoscopy', //colorectal screening 
+                'colonrectal_screening, colonrectal_10, colonoscopy, other_colonrectal, sigmoidoscopy, ' + //colorectal screening
+                'liklihood_pcp, liklihood_quitline, liklihood_lung, liklihood_breast, liklihood_cervical, liklihood_colorectal, liklihood_why_not_pcp, liklihood_help_pcp, liklihood_why_not_quitline, liklihood_help_quitline, liklihood_why_not_cat, liklihood_help_cat, liklihood_why_not_mam, liklihood_help_mam. liklihood_why_not_pap, liklihood_help_pap, liklihood_why_not_crc, liklihood_help_crc', //barriers to screening
         }), {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -157,6 +158,116 @@ let otherthancolonoscopyrefused = 0;
 let sigmoidoscopyyes = 0;
 let sigmoidoscopyno = 0;
 let sigmoidoscopyrefused = 0;
+//barriers to screening
+let liklihoodpcpvu = 0;
+let liklihoodpcpu = 0;
+let liklihoodpcpns = 0;
+let liklihoodpcpl = 0;
+let liklihoodpcpvl = 0;
+let liklihoodquitlinevu = 0;
+let liklihoodquitlineu = 0;
+let liklihoodquitlinens = 0;
+let liklihoodquitlinel = 0;
+let liklihoodquitlinevl = 0;
+let liklihoodcatvu = 0;
+let liklihoodcatu = 0;
+let liklihoodcatns = 0;
+let liklihoodcatl = 0;
+let liklihoodcatvl = 0;
+let liklihoodbreastvu = 0;
+let liklihoodbreastu = 0;
+let liklihoodbreastns = 0;
+let liklihoodbreastl = 0;
+let liklihoodbreastvl = 0;
+let liklihoodcervicalvu = 0;
+let liklihoodcervicalu = 0;
+let liklihoodcervicalns = 0;
+let liklihoodcervicall = 0;
+let liklihoodcervicalvl = 0;
+let liklihoodcolonrectalvu = 0;
+let liklihoodcolonrectalu = 0;
+let liklihoodcolonrectalns = 0;
+let liklihoodcolonrectall = 0;
+let liklihoodcolonrectalvl = 0;
+let liklihoodwhynotpcp1 = 0;
+let liklihoodwhynotpcp2 = 0;
+let liklihoodwhynotpcp3 = 0;
+let liklihoodwhynotpcp4 = 0;
+let liklihoodwhynotpcp5 = 0;
+let liklihoodwhynotpcp6 = 0;
+let liklihoodwhynotpcp7 = 0;
+let liklihoodwhynotpcp8 = 0;
+let liklihoodwhynotquitline1 = 0;
+let liklihoodwhynotquitline2 = 0;
+let liklihoodwhynotquitline3 = 0;
+let liklihoodwhynotquitline4 = 0;
+let liklihoodwhynotquitline5 = 0;
+let liklihoodwhynotquitline6 = 0;
+let liklihoodwhynotquitline7 = 0;
+let liklihoodwhynotquitline8 = 0;
+let liklihoodwhynotcat1 = 0;
+let liklihoodwhynotcat2 = 0;
+let liklihoodwhynotcat3 = 0;
+let liklihoodwhynotcat4 = 0;
+let liklihoodwhynotcat5 = 0;
+let liklihoodwhynotcat6 = 0;
+let liklihoodwhynotcat7 = 0;
+let liklihoodwhynotcat8 = 0;
+let liklihoodwhynotbreast1 = 0;
+let liklihoodwhynotbreast2 = 0;
+let liklihoodwhynotbreast3 = 0;
+let liklihoodwhynotbreast4 = 0;
+let liklihoodwhynotbreast5 = 0;
+let liklihoodwhynotbreast6 = 0;
+let liklihoodwhynotbreast7 = 0;
+let liklihoodwhynotbreast8 = 0;
+let liklihoodwhynotcervical1 = 0;
+let liklihoodwhynotcervical2 = 0;
+let liklihoodwhynotcervical3 = 0;
+let liklihoodwhynotcervical4 = 0;
+let liklihoodwhynotcervical5 = 0;
+let liklihoodwhynotcervical6 = 0;
+let liklihoodwhynotcervical7 = 0;
+let liklihoodwhynotcervical8 = 0;
+let liklihoodwhynotcolonrectal1 = 0;
+let liklihoodwhynotcolonrectal2 = 0;
+let liklihoodwhynotcolonrectal3 = 0;
+let liklihoodwhynotcolonrectal4 = 0;
+let liklihoodwhynotcolonrectal5 = 0;
+let liklihoodwhynotcolonrectal6 = 0;
+let liklihoodwhynotcolonrectal7 = 0;
+let liklihoodwhynotcolonrectal8 = 0;
+let liklihoodhelppcpvu = 0;
+let liklihoodhelppcpu = 0;
+let liklihoodhelppcpns = 0;
+let liklihoodhelppcpl = 0;
+let liklihoodhelppcpvl = 0;
+let liklihoodhelpquitlinevu = 0;
+let liklihoodhelpquitlineu = 0;
+let liklihoodhelpquitlinens = 0;
+let liklihoodhelpquitlinel = 0;
+let liklihoodhelpquitlinevl = 0;
+let liklihoodhelpcatvu = 0;
+let liklihoodhelpcatu = 0;
+let liklihoodhelpcatns = 0;
+let liklihoodhelpcatl = 0;
+let liklihoodhelpcatvl = 0;
+let liklihoodhelpbreastvu = 0;
+let liklihoodhelpbreastu = 0;
+let liklihoodhelpbreastns = 0;
+let liklihoodhelpbreastl = 0;
+let liklihoodhelpbreastvl = 0;
+let liklihoodhelpcervicalvu = 0;
+let liklihoodhelpcervicalu = 0;
+let liklihoodhelpcervicalns = 0;
+let liklihoodhelpcervicall = 0;
+let liklihoodhelpcervicalvl = 0;
+let liklihoodhelpcolonrectalvu = 0;
+let liklihoodhelpcolonrectalu = 0;
+let liklihoodhelpcolonrectalns = 0;
+let liklihoodhelpcolonrectall = 0;
+let liklihoodhelpcolonrectalvl = 0;
+
 
 async function setredcapData() {
     //vairables for all data points
@@ -279,6 +390,114 @@ async function setredcapData() {
     sigmoidoscopyyes = 0;
     sigmoidoscopyno = 0;
     sigmoidoscopyrefused = 0;
+    liklihoodpcpvu = 0;
+    liklihoodpcpu = 0;
+    liklihoodpcpns = 0;
+    liklihoodpcpl = 0;
+    liklihoodpcpvl = 0;
+    liklihoodquitlinevu = 0;
+    liklihoodquitlineu = 0;
+    liklihoodquitlinens = 0;
+    liklihoodquitlinel = 0;
+    liklihoodquitlinevl = 0;
+    liklihoodcatvu = 0;
+    liklihoodcatu = 0;
+    liklihoodcatns = 0;
+    liklihoodcatl = 0;
+    liklihoodcatvl = 0;
+    liklihoodbreastvu = 0;
+    liklihoodbreastu = 0;
+    liklihoodbreastns = 0;
+    liklihoodbreastl = 0;
+    liklihoodbreastvl = 0;
+    liklihoodcervicalvu = 0;
+    liklihoodcervicalu = 0;
+    liklihoodcervicalns = 0;
+    liklihoodcervicall = 0;
+    liklihoodcervicalvl = 0;
+    liklihoodcolonrectalvu = 0;
+    liklihoodcolonrectalu = 0;
+    liklihoodcolonrectalns = 0;
+    liklihoodcolonrectall = 0;
+    liklihoodcolonrectalvl = 0;
+    liklihoodwhynotpcp1 = 0;
+    liklihoodwhynotpcp2 = 0;
+    liklihoodwhynotpcp3 = 0;
+    liklihoodwhynotpcp4 = 0;
+    liklihoodwhynotpcp5 = 0;
+    liklihoodwhynotpcp6 = 0;
+    liklihoodwhynotpcp7 = 0;
+    liklihoodwhynotpcp8 = 0;
+    liklihoodwhynotquitline1 = 0;
+    liklihoodwhynotquitline2 = 0;
+    liklihoodwhynotquitline3 = 0;
+    liklihoodwhynotquitline4 = 0;
+    liklihoodwhynotquitline5 = 0;
+    liklihoodwhynotquitline6 = 0;
+    liklihoodwhynotquitline7 = 0;
+    liklihoodwhynotquitline8 = 0;
+    liklihoodwhynotcat1 = 0;
+    liklihoodwhynotcat2 = 0;
+    liklihoodwhynotcat3 = 0;
+    liklihoodwhynotcat4 = 0;
+    liklihoodwhynotcat5 = 0;
+    liklihoodwhynotcat6 = 0;
+    liklihoodwhynotcat7 = 0;
+    liklihoodwhynotcat8 = 0;
+    liklihoodwhynotbreast1 = 0;
+    liklihoodwhynotbreast2 = 0;
+    liklihoodwhynotbreast3 = 0;
+    liklihoodwhynotbreast4 = 0;
+    liklihoodwhynotbreast5 = 0;
+    liklihoodwhynotbreast6 = 0;
+    liklihoodwhynotbreast7 = 0;
+    liklihoodwhynotbreast8 = 0;
+    liklihoodwhynotcervical1 = 0;
+    liklihoodwhynotcervical2 = 0;
+    liklihoodwhynotcervical3 = 0;
+    liklihoodwhynotcervical4 = 0;
+    liklihoodwhynotcervical5 = 0;
+    liklihoodwhynotcervical6 = 0;
+    liklihoodwhynotcervical7 = 0;
+    liklihoodwhynotcervical8 = 0;
+    liklihoodwhynotcolonrectal1 = 0;
+    liklihoodwhynotcolonrectal2 = 0;
+    liklihoodwhynotcolonrectal3 = 0;
+    liklihoodwhynotcolonrectal4 = 0;
+    liklihoodwhynotcolonrectal5 = 0;
+    liklihoodwhynotcolonrectal6 = 0;
+    liklihoodwhynotcolonrectal7 = 0;
+    liklihoodwhynotcolonrectal8 = 0;
+    liklihoodhelppcpvu = 0;
+    liklihoodhelppcpu = 0;
+    liklihoodhelppcpns = 0;
+    liklihoodhelppcpl = 0;
+    liklihoodhelppcpvl = 0;
+    liklihoodhelpquitlinevu = 0;
+    liklihoodhelpquitlineu = 0;
+    liklihoodhelpquitlinens = 0;
+    liklihoodhelpquitlinel = 0;
+    liklihoodhelpquitlinevl = 0;
+    liklihoodhelpcatvu = 0;
+    liklihoodhelpcatu = 0;
+    liklihoodhelpcatns = 0;
+    liklihoodhelpcatl = 0;
+    liklihoodhelpcatvl = 0;
+    liklihoodhelpbreastvu = 0;
+    liklihoodhelpbreastu = 0;
+    liklihoodhelpbreastns = 0;
+    liklihoodhelpbreastl = 0;
+    liklihoodhelpbreastvl = 0;
+    liklihoodhelpcervicalvu = 0;
+    liklihoodhelpcervicalu = 0;
+    liklihoodhelpcervicalns = 0;
+    liklihoodhelpcervicall = 0;
+    liklihoodhelpcervicalvl = 0;
+    liklihoodhelpcolonrectalvu = 0;
+    liklihoodhelpcolonrectalu = 0;
+    liklihoodhelpcolonrectalns = 0;
+    liklihoodhelpcolonrectall = 0;
+    liklihoodhelpcolonrectalvl = 0;
 
     recdapData.forEach((obj) => {
         //makes sure it isnt fake data, this is needed for all of the research points  
@@ -651,6 +870,97 @@ async function setredcapData() {
                             nocolonrectalrefused += 1;
                         }
                     }
+                    //barriers to screening
+                    if(obj.liklihood_pcp === '1') {
+                        liklihoodpcpvu += 1;
+                    }
+                    if(obj.liklihood_pcp === '2') {
+                        liklihoodpcpu += 1;
+                    }
+                    if(obj.liklihood_pcp === '3') {
+                        liklihoodpcpns += 1;
+                    }
+                    if(obj.liklihood_pcp === '4') {
+                        liklihoodpcpl += 1;
+                    }
+                    if(obj.liklihood_pcp === '5') {
+                        liklihoodpcpvl += 1;
+                    }
+                    if(obj.liklihood_quitline === '1') {
+                        liklihoodquitlinevu += 1;
+                    }
+                    if(obj.liklihood_quitline === '2') {
+                        liklihoodquitlineu += 1;
+                    }
+                    if(obj.liklihood_quitline === '3') {
+                        liklihoodquitlinens += 1;
+                    }
+                    if(obj.liklihood_quitline === '4') {
+                        liklihoodquitlinel += 1;
+                    }
+                    if(obj.liklihood_quitline === '5') {
+                        liklihoodquitlinevl += 1;
+                    }
+                    if(obj.liklihood_lung === '1') {
+                        liklihoodcatvu += 1;
+                    }
+                    if(obj.liklihood_lung === '2') {
+                        liklihoodcatu += 1;
+                    }
+                    if(obj.liklihood_lung === '3') {
+                        liklihoodcatns += 1;
+                    }
+                    if(obj.liklihood_lung === '4') {
+                        liklihoodcatl += 1;
+                    }
+                    if(obj.liklihood_lung === '5') {
+                        liklihoodcatvl += 1;
+                    }
+                    if(obj.liklihood_breast === '1') {
+                        liklihoodbreastvu += 1;
+                    }
+                    if(obj.liklihood_breast === '2') {
+                        liklihoodbreastu += 1;
+                    }
+                    if(obj.liklihood_breast === '3') {
+                        liklihoodbreastns += 1;
+                    }
+                    if(obj.liklihood_breast === '4') {
+                        liklihoodbreastl += 1;
+                    }
+                    if(obj.liklihood_breast === '5') {
+                        liklihoodbreastvl += 1;
+                    }
+                    if(obj.liklihood_cervical === '1') {
+                        liklihoodcervicalvu += 1;
+                    }
+                    if(obj.liklihood_cervical === '2') {
+                        liklihoodcervicalu += 1;
+                    }
+                    if(obj.liklihood_cervical === '3') {
+                        liklihoodcervicalns += 1;
+                    }
+                    if(obj.liklihood_cervical === '4') {
+                        liklihoodcervicall += 1;
+                    }
+                    if(obj.liklihood_cervical === '5') {
+                        liklihoodcervicalvl += 1;
+                    }
+                    if(obj.liklihood_colorectal === '1') {
+                        liklihoodcolonrectalvu += 1;
+                    }
+                    if(obj.liklihood_colorectal === '2') {
+                        liklihoodcolonrectalu += 1;
+                    }
+                    if(obj.liklihood_colorectal === '3') {
+                        liklihoodcolonrectalns += 1;
+                    }
+                    if(obj.liklihood_colorectal === '4') {
+                        liklihoodcolonrectall += 1;
+                    }
+                    if(obj.liklihood_colorectal === '5') {
+                        liklihoodcolonrectalvl += 1;
+                    }
                 }
             }
         }
@@ -778,6 +1088,114 @@ function getData() {
         sigmoidoscopyyes,
         sigmoidoscopyno,
         sigmoidoscopyrefused,
+        liklihoodpcpvu,
+        liklihoodpcpu,
+        liklihoodpcpns,
+        liklihoodpcpl,
+        liklihoodpcpvl,
+        liklihoodquitlinevu,
+        liklihoodquitlineu,
+        liklihoodquitlinens,
+        liklihoodquitlinel,
+        liklihoodquitlinevl,
+        liklihoodcatvu,
+        liklihoodcatu,
+        liklihoodcatns,
+        liklihoodcatl,
+        liklihoodcatvl,
+        liklihoodbreastvu,
+        liklihoodbreastu,
+        liklihoodbreastns,
+        liklihoodbreastl,
+        liklihoodbreastvl,
+        liklihoodcervicalvu,
+        liklihoodcervicalu,
+        liklihoodcervicalns,
+        liklihoodcervicall,
+        liklihoodcervicalvl,
+        liklihoodcolonrectalvu,
+        liklihoodcolonrectalu, 
+        liklihoodcolonrectalns,
+        liklihoodcolonrectall,
+        liklihoodcolonrectalvl,
+        liklihoodwhynotpcp1,
+        liklihoodwhynotpcp2,
+        liklihoodwhynotpcp3,
+        liklihoodwhynotpcp4,
+        liklihoodwhynotpcp5,
+        liklihoodwhynotpcp6,
+        liklihoodwhynotpcp7,
+        liklihoodwhynotpcp8,
+        liklihoodwhynotquitline1,
+        liklihoodwhynotquitline2,
+        liklihoodwhynotquitline3,
+        liklihoodwhynotquitline4,
+        liklihoodwhynotquitline5,
+        liklihoodwhynotquitline6,
+        liklihoodwhynotquitline7,
+        liklihoodwhynotquitline8,
+        liklihoodwhynotcat1,
+        liklihoodwhynotcat2,
+        liklihoodwhynotcat3,
+        liklihoodwhynotcat4,
+        liklihoodwhynotcat5,
+        liklihoodwhynotcat6,
+        liklihoodwhynotcat7,
+        liklihoodwhynotcat8,
+        liklihoodwhynotbreast1,
+        liklihoodwhynotbreast2,
+        liklihoodwhynotbreast3,
+        liklihoodwhynotbreast4,
+        liklihoodwhynotbreast5,
+        liklihoodwhynotbreast6,
+        liklihoodwhynotbreast7,
+        liklihoodwhynotbreast8,
+        liklihoodwhynotcervical1,
+        liklihoodwhynotcervical2,
+        liklihoodwhynotcervical3,
+        liklihoodwhynotcervical4,
+        liklihoodwhynotcervical5,
+        liklihoodwhynotcervical6,
+        liklihoodwhynotcervical7,
+        liklihoodwhynotcervical8,
+        liklihoodwhynotcolonrectal1,
+        liklihoodwhynotcolonrectal2,
+        liklihoodwhynotcolonrectal3,
+        liklihoodwhynotcolonrectal4,
+        liklihoodwhynotcolonrectal5,
+        liklihoodwhynotcolonrectal6,
+        liklihoodwhynotcolonrectal7,
+        liklihoodwhynotcolonrectal8,
+        liklihoodhelppcpvu,
+        liklihoodhelppcpu,
+        liklihoodhelppcpns,
+        liklihoodhelppcpl,
+        liklihoodhelppcpvl,
+        liklihoodhelpquitlinevu,
+        liklihoodhelpquitlineu,
+        liklihoodhelpquitlinens,
+        liklihoodhelpquitlinel,
+        liklihoodhelpquitlinevl,
+        liklihoodhelpcatvu,
+        liklihoodhelpcatu,
+        liklihoodhelpcatns,
+        liklihoodhelpcatl,
+        liklihoodhelpcatvl,
+        liklihoodhelpbreastvu,
+        liklihoodhelpbreastu,
+        liklihoodhelpbreastns,
+        liklihoodhelpbreastl,
+        liklihoodhelpbreastvl,
+        liklihoodhelpcervicalvu,
+        liklihoodhelpcervicalu,
+        liklihoodhelpcervicalns,
+        liklihoodhelpcervicall,
+        liklihoodhelpcervicalvl,
+        liklihoodhelpcolonrectalvu,
+        liklihoodhelpcolonrectalu,
+        liklihoodhelpcolonrectalns,
+        liklihoodhelpcolonrectall,
+        liklihoodhelpcolonrectalvl,
     }
 }
 
