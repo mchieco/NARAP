@@ -31,6 +31,7 @@ import Tobacco from '@/components/tobacco.vue';
 import primaryCare from '@/components/primaryCare.vue';
 import breastCancer from '@/components/breastCancer.vue';
 import cervicalCancer from '@/components/cervicalCancer.vue';
+import colonrectal from '@/components/colonrectal.vue';
 
 
 export default {
@@ -60,6 +61,8 @@ export default {
           return breastCancer;
         case 'Cervical Cancer Screening':
           return cervicalCancer;
+        case 'Colon-Rectal Screening':
+          return colonrectal;
       }
       return Approached;
     },

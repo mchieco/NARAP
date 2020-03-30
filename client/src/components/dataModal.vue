@@ -5,7 +5,7 @@
         <v-card-title style="font-size: 20px" v-if="title">{{title}}</v-card-title>
         <v-btn style="position: absolute; right: 0; top: 0;" @click="dialog = false" icon color="black"><v-icon>mdi-close</v-icon></v-btn>
         <div class="row justify-center">
-        <apexchart class="apex"
+        <apexchart
           width="900"
           height="600"
           type="pie"
@@ -23,6 +23,7 @@
 .chart-holder {
     padding: 0;
 }
+
 </style>
 <script>
 export default {
@@ -44,7 +45,7 @@ export default {
       const dd = {
         labels: [],
         legend: {
-          position: 'right',
+          position: 'bottom',
         },
       };
       if (this.series) {
