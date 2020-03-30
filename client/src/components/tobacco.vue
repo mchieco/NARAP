@@ -27,10 +27,10 @@
       <h1 style="font-size: 40px; text-decoration: underline;">Lung Cancer Screening</h1>
     </div>
     <div class="row justify-content-center" style="padding-left: 20px;">
-      <p>All patients have smoked for longer than 30 days and are between the ages of 55 and 80 years old.</p>
+      <p>All participants have smoked for longer than 30 days and are between the ages of 55 and 80 years old.</p>
     </div>
     <div class="row justify-content-center">
-      <h1 style="font-size: 30px;">Total Patients: <b> {{ lungcancercount }} </b></h1>
+      <h1 style="font-size: 30px;">Total Participants: <b> {{ lungcancercount }} </b></h1>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
@@ -39,7 +39,7 @@
           <v-btn @click="showModal(earlyLungCancerObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in earlyLungCancerObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Patients)</b></ul>
+          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
@@ -48,7 +48,7 @@
             <v-btn @click="showModal(currentlySmokeObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in currentlySmokeObject" :key="value.id">
-            <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Patients)</b></ul>
+            <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
         </div>
       </div>
     </div>
@@ -59,12 +59,12 @@
           <v-btn @click="showModal(quitSmokingObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in quitSmokingObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Patients)</b></ul>
+          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
       </div>
     </div>
     <div class="row">
-      <p style="font-weight: bold;">**Disclaimer** Participants may not have answered all questions, so the percentages may not add up to 100%</p>
+      <p style="font-weight: bold;">Disclaimer: Participants may not have answered all questions, so the percentages may not add up to 100%</p>
     </div>
     <v-overlay :value="isLoading">
       <v-progress-circular indeterminate size="64"></v-progress-circular>
