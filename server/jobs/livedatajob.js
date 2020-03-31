@@ -27,7 +27,7 @@ async function fetchredcapData() {
                 'no_mammograms_anymore, mammogram_more_2, mammogram_within_2, ' + //lung cancer
                 'no_cervical_screening, pap_more_3, pap_within_3, hpv_test, ' + //cervical screening
                 'colonrectal_screening, colonrectal_10, colonoscopy, other_colonrectal, sigmoidoscopy, ' + //colorectal screening
-                'liklihood_pcp, liklihood_quitline, liklihood_lung, liklihood_breast, liklihood_cervical, liklihood_colorectal, liklihood_why_not_pcp, liklihood_help_pcp, liklihood_why_not_quitline, liklihood_help_quitline, liklihood_why_not_cat, liklihood_help_cat, liklihood_why_not_mam, liklihood_help_mam. liklihood_why_not_pap, liklihood_help_pap, liklihood_why_not_crc, liklihood_help_crc', //barriers to screening
+                'liklihood_pcp, liklihood_quitline, liklihood_lung, liklihood_breast, liklihood_cervical, liklihood_colorectal, liklihood_why_not_pcp, liklihood_help_pcp, liklihood_why_not_quitline, liklihood_help_quitline, liklihood_why_not_cat, liklihood_help_cat, liklihood_why_not_mam, liklihood_help_mam, liklihood_why_not_pap, liklihood_help_pap, liklihood_why_not_crc, liklihood_help_crc', //barriers to screening
         }), {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -504,11 +504,11 @@ async function setredcapData() {
         if (obj.fake_data_flag === '') {
             //participants are everything that isn't
             approached += 1;
-            if (obj.age >= 18 && (obj.excl_criteria__1 !== '1' 
-            || obj.excl_criteria__2 !== '1' || obj.excl_criteria__3 !== '1' 
-            || obj.excl_criteria__4 !== '1' || obj.excl_criteria__5 !== '1' 
-            || obj.excl_criteria__6 !== '1' || obj.excl_criteria__7 !== '1' 
-            || obj.excl_criteria__8 !== '1' || obj.excl_criteria__9 !== '1')) {
+            if (obj.age >= 18 && (obj.excl_criteria___1 !== '1' 
+            || obj.excl_criteria___2 !== '1' || obj.excl_criteria___3 !== '1' 
+            || obj.excl_criteria___4 !== '1' || obj.excl_criteria___5 !== '1' 
+            || obj.excl_criteria___6 !== '1' || obj.excl_criteria___7 !== '1' 
+            || obj.excl_criteria___8 !== '1' || obj.excl_criteria___9 !== '1')) {
                 eligible += 1;
                 if (obj.verbal_consent_permission === '1') {
                     enrolled += 1;
@@ -960,6 +960,243 @@ async function setredcapData() {
                     }
                     if(obj.liklihood_colorectal === '5') {
                         liklihoodcolonrectalvl += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___1 === '1'){
+                        liklihoodwhynotpcp1 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___2 === '1'){
+                        liklihoodwhynotpcp2 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___3 === '1'){
+                        liklihoodwhynotpcp3 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___4 === '1'){
+                        liklihoodwhynotpcp4 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___5 === '1'){
+                        liklihoodwhynotpcp5 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___6 === '1'){
+                        liklihoodwhynotpcp6 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___7 === '1'){
+                        liklihoodwhynotpcp7 += 1;
+                    }
+                    if(obj.liklihood_why_not_pcp___8 === '1'){
+                        liklihoodwhynotpcp8 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___1 === '1'){
+                        liklihoodwhynotquitline1 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___2 === '1'){
+                        liklihoodwhynotquitline2 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___3 === '1'){
+                        liklihoodwhynotquitline3 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___4 === '1'){
+                        liklihoodwhynotquitline4 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___5 === '1'){
+                        liklihoodwhynotquitline5 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___6 === '1'){
+                        liklihoodwhynotquitline6 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___7 === '1'){
+                        liklihoodwhynotquitline7 += 1;
+                    }
+                    if(obj.liklihood_why_not_quitline___8 === '1'){
+                        liklihoodwhynotquitline8 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___1 === '1'){
+                        liklihoodwhynotcat1 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___2 === '1'){
+                        liklihoodwhynotcat2 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___3 === '1'){
+                        liklihoodwhynotcat3 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___4 === '1'){
+                        liklihoodwhynotcat4 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___5 === '1'){
+                        liklihoodwhynotcat5 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___6 === '1'){
+                        liklihoodwhynotcat6 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___7 === '1'){
+                        liklihoodwhynotcat7 += 1;
+                    }
+                    if(obj.liklihood_why_not_cat___8 === '1'){
+                        liklihoodwhynotcat8 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___1 === '1'){
+                        liklihoodwhynotbreast1 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___2 === '1'){
+                        liklihoodwhynotbreast2 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___3 === '1'){
+                        liklihoodwhynotbreast3 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___4 === '1'){
+                        liklihoodwhynotbreast4 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___5 === '1'){
+                        liklihoodwhynotbreast5 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___6 === '1'){
+                        liklihoodwhynotbreast6 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___7 === '1'){
+                        liklihoodwhynotbreast7 += 1;
+                    }
+                    if(obj.liklihood_why_not_mam___8 === '1'){
+                        liklihoodwhynotbreast8 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___1 === '1'){
+                        liklihoodwhynotcervical1 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___2 === '1'){
+                        liklihoodwhynotcervical2 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___3 === '1'){
+                        liklihoodwhynotcervical3 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___4 === '1'){
+                        liklihoodwhynotcervical4 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___5 === '1'){
+                        liklihoodwhynotcervical5 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___6 === '1'){
+                        liklihoodwhynotcervical6 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___7 === '1'){
+                        liklihoodwhynotcervical7 += 1;
+                    }
+                    if(obj.liklihood_why_not_pap___8 === '1'){
+                        liklihoodwhynotcervical8 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___1 === '1'){
+                        liklihoodwhynotcolonrectal1 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___2 === '1'){
+                        liklihoodwhynotcolonrectal2 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___3 === '1'){
+                        liklihoodwhynotcolonrectal3 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___4 === '1'){
+                        liklihoodwhynotcolonrectal4 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___5 === '1'){
+                        liklihoodwhynotcolonrectal5 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___6 === '1'){
+                        liklihoodwhynotcolonrectal6 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___7 === '1'){
+                        liklihoodwhynotcolonrectal7 += 1;
+                    }
+                    if(obj.liklihood_why_not_crc___8 === '1'){
+                        liklihoodwhynotcolonrectal8 += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '1') {
+                        liklihoodhelppcpvu += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '2') {
+                        liklihoodhelppcpu += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '3') {
+                        liklihoodhelppcpns += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '4') {
+                        liklihoodhelppcpl += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '5') {
+                        liklihoodhelppcpvl += 1;
+                    }
+                    if(obj.liklihood_help_pcp === '1') {
+                        liklihoodhelppcpvu += 1;
+                    }
+                    if(obj.liklihood_help_quitline === '1') {
+                        liklihoodhelpquitlinevu += 1;
+                    }
+                    if(obj.liklihood_help_quitline === '2') {
+                        liklihoodhelpquitlineu += 1;
+                    }
+                    if(obj.liklihood_help_quitline === '3') {
+                        liklihoodhelpquitlinens += 1;
+                    }
+                    if(obj.liklihood_help_quitline === '4') {
+                        liklihoodhelpquitlinel += 1;
+                    }
+                    if(obj.liklihood_help_quitline === '5') {
+                        liklihoodhelpquitlinevl += 1;
+                    }
+                    if(obj.liklihood_help_cat === '1') {
+                        liklihoodhelpcatvu += 1;
+                    }
+                    if(obj.liklihood_help_cat === '2') {
+                        liklihoodhelpcatu += 1;
+                    }
+                    if(obj.liklihood_help_cat === '3') {
+                        liklihoodhelpcatns += 1;
+                    }
+                    if(obj.liklihood_help_cat === '4') {
+                        liklihoodhelpcatl += 1;
+                    }
+                    if(obj.liklihood_help_cat === '5') {
+                        liklihoodhelpcatvl += 1;
+                    }
+                    if(obj.liklihood_help_mam === '1') {
+                        liklihoodhelpbreastvu += 1;
+                    }
+                    if(obj.liklihood_help_mam === '2') {
+                        liklihoodhelpbreastu += 1;
+                    }
+                    if(obj.liklihood_help_mam === '3') {
+                        liklihoodhelpbreastns += 1;
+                    }
+                    if(obj.liklihood_help_mam === '4') {
+                        liklihoodhelpbreastl += 1;
+                    }
+                    if(obj.liklihood_help_mam === '5') {
+                        liklihoodhelpbreastvl += 1;
+                    }
+                    if(obj.liklihood_help_pap === '1') {
+                        liklihoodhelpcervicalvu += 1;
+                    }
+                    if(obj.liklihood_help_pap === '2') {
+                        liklihoodhelpcervicalu += 1;
+                    }
+                    if(obj.liklihood_help_pap === '3') {
+                        liklihoodhelpcervicalns += 1;
+                    }
+                    if(obj.liklihood_help_pap === '4') {
+                        liklihoodhelpcervicall += 1;
+                    }
+                    if(obj.liklihood_help_pap === '5') {
+                        liklihoodhelpcervicalvl += 1;
+                    }
+                    if(obj.liklihood_help_crc === '1') {
+                        liklihoodhelpcolonrectalvu += 1;
+                    }
+                    if(obj.liklihood_help_crc === '2') {
+                        liklihoodhelpcolonrectalu += 1;
+                    }
+                    if(obj.liklihood_help_crc === '3') {
+                        liklihoodhelpcolonrectalns += 1;
+                    }
+                    if(obj.liklihood_help_crc === '4') {
+                        liklihoodhelpcolonrectall += 1;
+                    }
+                    if(obj.liklihood_help_crc === '5') {
+                        liklihoodhelpcolonrectalvl += 1;
                     }
                 }
             }

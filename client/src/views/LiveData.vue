@@ -32,6 +32,7 @@ import primaryCare from '@/components/primaryCare.vue';
 import breastCancer from '@/components/breastCancer.vue';
 import cervicalCancer from '@/components/cervicalCancer.vue';
 import colonrectal from '@/components/colonrectal.vue';
+import barriers from '@/components/barriers.vue';
 
 
 export default {
@@ -63,6 +64,8 @@ export default {
           return cervicalCancer;
         case 'Colon-Rectal Screening':
           return colonrectal;
+        case 'Barriers to Screening':
+          return barriers;
       }
       return Approached;
     },
