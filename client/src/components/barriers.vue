@@ -125,7 +125,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotpcpObject,'Why Not Schedule a Primary Care Practicioner visit?')"
+            @click="showModal(whynotpcpObject,'Why not Schedule a Primary Care Practicioner visit?')"
             x-small
             rounded
             color="success"
@@ -147,7 +147,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotquitlineObject,'WHy Not Follow through on help from the Quitline?')"
+            @click="showModal(whynotquitlineObject,'Why not Follow through on help from the Quitline?')"
             x-small
             rounded
             color="success"
@@ -169,7 +169,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotcatObject,'Why Not Schedule Lung Cancer Screening?')"
+            @click="showModal(whynotcatObject,'Why not Schedule Lung Cancer Screening?')"
             x-small
             rounded
             color="success"
@@ -193,7 +193,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotbreastObject,' Why Not Schedule a Breast Cancer Screening?')"
+            @click="showModal(whynotbreastObject,' Why not Schedule a Breast Cancer Screening?')"
             x-small
             rounded
             color="success"
@@ -215,7 +215,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotcervicalObject,'Why Not Schedule a Cervical Cancer Screening?')"
+            @click="showModal(whynotcervicalObject,'Why not Schedule a Cervical Cancer Screening?')"
             x-small
             rounded
             color="success"
@@ -237,7 +237,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotcolonrectalObject,'Why Not Schedule a Colon Rectal Screening?')"
+            @click="showModal(whynotcolonrectalObject,'Why not Schedule a Colon Rectal Screening?')"
             x-small
             rounded
             color="success"
