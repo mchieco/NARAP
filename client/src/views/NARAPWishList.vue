@@ -26,14 +26,14 @@
             <br />
 
       <v-row class="columnText">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Research Associate Scholarships</h5>
           <h5
             class="titleHeader"
           >Help to reduce the cost of admissions, tuition or books for Research Associates who has successfully completed their semester work and are now pursuing their advanced education leading to a career as a health care professional.</h5>
         </v-col>
 
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Association Memberships</h5>
           <ul class="list">
             <ul>
@@ -48,14 +48,14 @@
       </v-row>
 
       <v-row class="columnText">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Conference Fees and Travel</h5>
           <h5
             class="titleHeader"
           >We are seeking donations to sponsor NARAP’s participation in health care and educational institution conferences. The conferences provide a forum for engaging and building relationships with current and future Affiliates hospitals, research partners, and educational institutions as well as sharing NARAP clinical research findings.</h5>
         </v-col>
 
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Data Collection Devices</h5>
           <h5
             class="titleHeader"
@@ -65,14 +65,14 @@
       </v-row>
 
       <v-row class="columnText">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Professional Photographer</h5>
           <h5
             class="titleHeader"
           >We are seeking the support of one or more contributor(s) to help offset the software costs to track and manage key stakeholder relationships with donors, clinical research partners, Research Associates and alumni. The software will also support NARAP’s direct mail campaigns.</h5>
         </v-col>
 
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Relationship Management Software</h5>
           <h5
             class="titleHeader"
@@ -82,7 +82,7 @@
       </v-row>
 
       <v-row class="columnText">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" sm="12">
           <h5 class="headerTwo">Video Production</h5>
           <h5
             class="titleHeader"

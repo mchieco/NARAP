@@ -2,8 +2,8 @@
   <div class="container" id="aboutContainer">
     <div class>
       <v-row class="columnText">
-        <v-col cols="6">
-          <h1 class="header1">NARAP Mentoring Program</h1>
+        <h1 class="header1">NARAP Mentoring Program</h1>
+        <v-col lg="8" md="12" sm="12">
           <p class="pText">
             <!-- eslint-disable max-len -->
             The NARAP Mentoring Program is a duo-driven, year-long program fostering impactful and productive one-on-one relationships between Research Associates and Mentors. As part of the NARAP Mentoring Program, Research Associates and Alumni are encouraged to engage in a minimum of 25 hours (less than a half hour per week) of one-on-one mentorship over the course of the calendar year.
@@ -29,7 +29,7 @@
             Quarterly, mentees and mentors will complete a brief web-based survey to assess the progress of the relationship. The NARAP Mentoring Program team is always available for further support.
           </p>
         </v-col>
-        <v-col cols="6">
+        <v-col lg="4" md="12" sm="12">
           <v-img class="alumImg" id="pic" src="../assets/alumn.png"></v-img>
           <h1 class="header2">Mentorship Program Application</h1>
           <div class="apply">
@@ -43,7 +43,7 @@
 
 <style scoped>
 #pic {
-  height: 400px;
+  max-width: 500px;
 }
 .aboutText {
   padding: 5%;

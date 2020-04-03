@@ -236,7 +236,7 @@ export default {
               },
               {
                 type: 'link',
-                text: 'NARAPWishList',
+                text: 'NARAP Wish List',
                 path: './NARAPWishList',
                 iconLeft: '<i class="fas fa-gift"></i>',
               },

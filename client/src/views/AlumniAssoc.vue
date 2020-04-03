@@ -5,7 +5,7 @@
         <h1 class="headerTop">NARAP Alumni Association</h1>
       </v-row>
       <v-row class="rows">
-          <v-col col="12" lg="8" md="8">
+          <v-col col="8" lg="8" md="8" sm="12">
               <p id="p">
                 Regardless of where you find yourself in your health care career, the NARAP Alumni Association has something for you!
               <br><br>
@@ -18,7 +18,7 @@
               </p>
 
           </v-col>
-          <v-col col="12" lg="4" md="4">
+          <v-col col="4" lg="4" md="4" sm="12">
                 <v-img class="assocImg" src="../assets/assoc.png"></v-img>
           </v-col>
       </v-row>
@@ -41,18 +41,10 @@
               </v-row>
                 <v-row class="buttRows">
                     <v-col cols="12" lg="6" md="6">
-                        <v-btn class="buttons" small color="success" dark>Update information</v-btn>
+                        <v-btn class="buttons" onclick="window.location.href = '../alumninow'" small color="success" dark>Where Are They Now?</v-btn>
                     </v-col>
                     <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" small color="success" dark onclick="window.location.href = '../alumnimentor'">Mentoring Program</v-btn>
-                    </v-col>
-                </v-row>
-                <v-row class="buttRows">
-                    <v-col cols="12" lg="6" md="6">
-                        <v-btn class="buttons" small color="success" dark>Our Feedback Survey</v-btn>
-                    </v-col>
-                    <v-col cols="12" lg="6" md="6">
-                        <v-btn class="buttons" onclick="window.location.href = '../alumninow'" small color="success" dark>Where Are They Now?</v-btn>
                     </v-col>
                 </v-row>
           </v-col>
