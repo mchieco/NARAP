@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <h1>
         Enrolled:
-        <b>{{ enrolled }}</b>
+        <b>{{ numberWithCommas(enrolled) }}</b>
       </h1>
     </div>
     <div style="margin-bottom: 10px;" class="row justify-content-center">
@@ -17,7 +17,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in pcpvisitObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -33,7 +33,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in quitlineObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -49,7 +49,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in catObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -65,7 +65,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in breastObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -81,7 +81,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -97,7 +97,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -134,7 +134,7 @@
         <div class="row list" v-for="(value, name) in whynotpcpObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -156,7 +156,7 @@
         <div class="row list" v-for="(value, name) in whynotquitlineObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -178,7 +178,7 @@
         <div class="row list" v-for="(value, name) in whynotcatObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -202,7 +202,7 @@
         <div class="row list" v-for="(value, name) in whynotbreastObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -224,7 +224,7 @@
         <div class="row list" v-for="(value, name) in whynotcervicalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -246,7 +246,7 @@
         <div class="row list" v-for="(value, name) in whynotcolonrectalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ value }}</b>
+            <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
       </div>
@@ -259,7 +259,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in pcphelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -275,7 +275,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in quitlinehelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -291,7 +291,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cathelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -307,7 +307,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in breasthelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -323,7 +323,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -339,7 +339,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ value }}</b>
+          <b>{{ numberWithCommas(value) }}</b>
         </p>
       </div>
       <v-btn
@@ -397,6 +397,7 @@ p {
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';
+import '@/mixins/helperMixins';
 
 export default {
   data() {
@@ -514,6 +515,60 @@ export default {
       liklihoodhelpcolonrectalns: 0,
       liklihoodhelpcolonrectall: 0,
       liklihoodhelpcolonrectalvl: 0,
+      pcpvisitObject: {
+
+      },
+      quitlineObject: {
+
+      },
+      catObject: {
+
+      },
+      breastObject: {
+
+      },
+      cervicalObject: {
+
+      },
+      colonrectalObject: {
+
+      },
+      whynotpcpObject: {
+
+      },
+      whynotquitlineObject: {
+
+      },
+      whynotcatObject: {
+
+      },
+      whynotbreastObject: {
+
+      },
+      whynotcervicalObject: {
+
+      },
+      whynotcolonrectalObject: {
+
+      },
+      pcphelpObject: {
+
+      },
+      quitlinehelpObject: {
+
+      },
+      cathelpObject: {
+
+      },
+      breasthelpObject: {
+
+      },
+      cervicalhelpObject: {
+
+      },
+      colonrectalhelpObject: {
+
+      },
     };
   },
   methods: {

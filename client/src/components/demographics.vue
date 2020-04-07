@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row justify-content-center">
-      <h1>Enrolled: <b> {{ enrolled }} </b></h1>
+      <h1>Enrolled: <b> {{ numberWithCommas(enrolled) }} </b></h1>
     </div>
     <div style="padding-bottom: 15px;" class="row">
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -10,21 +10,21 @@
           <v-btn scoped @click="showModal(ageobject,'Age')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in ageobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       <div class="row">
           <h2>Gender</h2>
           <v-btn @click="showModal(genderobject, 'Gender')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class ="row leftpad" v-for="(value, name) in genderobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       <div class="row">
           <h2>Hispanic/Latino</h2>
           <v-btn @click="showModal(hispanicobject, 'Hispanic/Latino')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in hispanicobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -33,21 +33,21 @@
           <v-btn @click="showModal(racialbackgroundobject, 'Racial Background')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in racialbackgroundobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       <div class="row">
           <h2>Language Preference</h2>
           <v-btn @click="showModal(languageobject, 'Language Preference')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in languageobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       <div class="row">
           <h2>Patient/Visitor</h2>
           <v-btn @click="showModal(patientobject, 'Patient/Visitor')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class ="row leftpad" v-for="(value, name) in patientobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -56,14 +56,14 @@
           <v-btn @click="showModal(educationobject, 'Education')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in educationobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       <div class="row">
           <h2>Insurance</h2>
           <v-btn @click="showModal(insuranceobject, 'Insurance')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in insuranceobject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
     </div>
@@ -91,6 +91,7 @@ h2 {
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';
+import '@/mixins/helperMixins';
 
 export default {
   data() {

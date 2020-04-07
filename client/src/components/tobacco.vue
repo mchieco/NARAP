@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row justify-content-center">
-      <h1>Enrolled: <b> {{ enrolled }} </b></h1>
+      <h1>Enrolled: <b> {{ numberWithCommas(enrolled) }} </b></h1>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
@@ -10,7 +10,7 @@
           <v-btn @click="showModal(tobacco30DaysObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in tobacco30DaysObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
@@ -19,7 +19,7 @@
             <v-btn @click="showModal(quitlineReferralObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in quitlineReferralObject" :key="value.id">
-            <ul>{{ name }}: <b> {{ value }} ({{ (value /tobacco30plus * 100).toFixed(2) }} % of tobacco users for longer than 30 days)</b></ul>
+            <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /tobacco30plus * 100).toFixed(2) }} % of tobacco users for longer than 30 days)</b></ul>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
           <v-btn @click="showModal(earlyLungCancerObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in earlyLungCancerObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
@@ -48,7 +48,7 @@
             <v-btn @click="showModal(currentlySmokeObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in currentlySmokeObject" :key="value.id">
-            <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
+            <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
           <v-btn @click="showModal(quitSmokingObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in quitSmokingObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
       </div>
     </div>
@@ -89,6 +89,7 @@ h2 {
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';
+import '@/mixins/helperMixins';
 
 export default {
   data() {

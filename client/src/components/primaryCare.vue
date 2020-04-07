@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row justify-content-center">
-      <h1>Enrolled: <b> {{ enrolled }} </b></h1>
+      <h1>Enrolled: <b> {{ numberWithCommas(enrolled) }} </b></h1>
     </div>
     <div style="padding-bottom: 15px;" class="row">
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -10,7 +10,7 @@
           <v-btn @click="showModal(primaryObject,'Do you have a primary care practitioner')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in primaryObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -19,7 +19,7 @@
           <v-btn @click="showModal(visitObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in visitObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
     <div class="col-md-4 col-sm-12 col-lg-4">
@@ -28,7 +28,7 @@
           <v-btn @click="showModal(pcpVisitObject,'Primary practitioner, need intervention')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in pcpVisitObject" :key="value.id">
-          <ul>{{ name }}: <b> {{ value }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
+          <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
       </div>
     </div>
@@ -44,6 +44,7 @@
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';
+import '@/mixins/helperMixins';
 
 export default {
   data() {

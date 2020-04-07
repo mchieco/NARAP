@@ -3,17 +3,17 @@
       <div>
         <div class="row justify-content-center">
         <h1>
-          Approached: <b> {{ approached }} </b>
+          Approached: <b> {{ numberWithCommas(approached) }} </b>
         </h1>
         </div>
         <div class="row justify-content-center">
         <h1>
-          Eligible: <b> {{ eligible }} ({{ eligiblePercent }}% of Approached) </b>
+          Eligible: <b> {{ numberWithCommas(eligible) }} ({{ eligiblePercent }}% of Approached) </b>
         </h1>
         </div>
         <div class="row justify-content-center">
         <h1>
-          Enrolled: <b> {{ enrolled }} ({{ enrolledPercent }}% of Approached) </b>
+          Enrolled: <b> {{ numberWithCommas(enrolled) }} ({{ enrolledPercent }}% of Approached) </b>
         </h1>
         </div>
         <div class="row justify-content-center">
@@ -41,6 +41,7 @@ h1 {
 </style>
 <script>
 import liveDataService from '@/services/livedata';
+import '@/mixins/helperMixins';
 
 export default {
   data() {
