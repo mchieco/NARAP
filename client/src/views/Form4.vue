@@ -129,9 +129,9 @@ export default {
       'Wyoming',
     ],
     dropdown_icon: [
-      { text: 'list', callback: () => console.log('list') },
-      { text: 'favorite', callback: () => console.log('favorite') },
-      { text: 'delete', callback: () => console.log('delete') },
+      { text: 'list' },
+      { text: 'favorite' },
+      { text: 'delete'},
     ],
     valid: true,
     name: '',

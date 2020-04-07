@@ -100,10 +100,10 @@ export default {
         isUsingVueRouter: true,
         mobileBreakpoint: 992,
         brandImagePath: './',
-        brandImage: require('@/assets/narap_logo.png'),
+        brandImage: require('./assets/narap_logo.png'),
         brandImageAltText: 'brand-image',
-        collapseButtonImageOpen: require('@/assets/collapse-menu-dark.png'),
-        collapseButtonImageClose: require('@/assets/times.png'),
+        collapseButtonImageOpen: require('./assets/collapse-menu-dark.png'),
+        collapseButtonImageClose: require('./assets/times.png'),
         showBrandImageInMobilePopup: true,
         ariaLabelMainNav: 'Main Navigation',
         tooltipAnimationType: 'shift-away',
@@ -242,13 +242,13 @@ export default {
               },
             ],
           },
-          {
-            type: 'button',
-            text: 'Login',
-            class: 'button-green',
-            iconRight:
-              '<svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M22 6 L30 16 22 26 M30 16 L2 16" /> </svg>',
-          },
+          // {
+          //   type: 'button',
+          //   text: 'Login',
+          //   class: 'button-green',
+          //   iconRight:
+          //     '<svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M22 6 L30 16 22 26 M30 16 L2 16" /> </svg>',
+          // },
         ],
       },
       icons: [
