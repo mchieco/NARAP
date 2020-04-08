@@ -131,7 +131,7 @@ export default {
     dropdown_icon: [
       { text: 'list' },
       { text: 'favorite' },
-      { text: 'delete'},
+      { text: 'delete' },
     ],
     valid: true,
     name: '',

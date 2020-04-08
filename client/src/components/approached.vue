@@ -67,6 +67,30 @@ export default {
           },
         },
         colors: ['#000080', '#546E7A', '#d4526e'],
+        responsive: [{
+          breakpoint: 450,
+          options: {
+            chart: {
+              height: 350,
+              width: 350,
+            },
+            legend: {
+              position: 'bottom',
+            },
+          },
+        },
+        {
+          breakpoint: 801,
+          options: {
+            chart: {
+              height: 400,
+              width: 700,
+            },
+            legend: {
+              position: 'bottom',
+            },
+          },
+        }],
         legend: {
           fontSize: '16px',
           fontFamily: 'Helvetica, Arial',
