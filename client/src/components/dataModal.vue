@@ -44,6 +44,24 @@ export default {
     chartOptions() {
       const dd = {
         labels: [],
+        plotOptions: {
+          pie: {
+            distributed: true,
+          },
+        },
+        colors: ['#58508d', '#5DA5DA', '#FAA43A', '#60BD68', '#F17CB0', '#B2912F', '#B276B2', '#DECF3F', '#F15854', '#4D4D4D'],
+        responsive: [{
+          breakpoint: 400,
+          options: {
+            chart: {
+              height: 350,
+              width: 270,
+            },
+            legend: {
+              position: 'bottom',
+            },
+          },
+        }],
         legend: {
           position: 'bottom',
         },
