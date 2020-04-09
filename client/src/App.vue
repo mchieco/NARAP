@@ -14,62 +14,33 @@
       <v-footer
         color="grey lighten-3 black--text"
       >
-        <v-row
-          justify="center"
-          
-        >
           <v-container fluid class="footer">
               <v-layout row>
-                <v-flex xs12 sm6 md4 lg4 order-md1 order-sm1>
-                    <v-card-text>
-                      <strong class="subheading">Contact NARAP</strong>
-                        <div class="address">
-                          <p>NARAP <br>
-                            66 Lilalyn Drive <br>
-                            Fairfield, CT 06825 <br>
-                            (860) 386-5676 <br>
-                            <a href="mailto:ask@thenarap.org">ask@thenarap.org</a>
-                          </p>
-                        </div>
-                        <v-btn
-                          v-for="icon in icons"
-                          :key="icon"
-                          class="mx-4 blue--text"
-                          icon
-                          @click="iconLink(icon)"
-                        >
-                          <v-icon size="44px">{{ icon }}</v-icon>
-                        </v-btn>
-                    </v-card-text>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg4 order-md2 order-sm2>
-                    <v-card-text>
-                      <div>
-                        <a href="https://www.paypal.com/donate/?token=2wLZG9U8aU41XA_AxhFKBNmiSPn-5MjdacGXUgqBQDNm_OpEtpSJbaMAxktmulgj3Uc9nG&country.x=US&locale.x="><v-img src="@/assets/donate.png" class="donate"></v-img></a>
-                        <a href="mailto:donate@theNARAP.org">donate@theNARAP.org</a>
-                        <p class="register">
-                          NARAP is registered as a 501(c)(3)<br>
-                          non-profit organization
-                        </p>
-                    </div>
-                    </v-card-text>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg4 order-md4 order-sm4>
-                  <v-container>
-                    <v-row>
-                      <v-flex xs5 sm5 md5 lg5 order-md1 order-sm1>
-                        <v-img src="@/assets/news.png" class="news"></v-img>
-                      </v-flex>
-                      <v-flex xs7 sm7 md7 lg7 order-md2 order-sm2>
-                        <h1 class="header">
-                          Join FANS of NARAP by <br> receiving our news!
-                        </h1>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
-                        <button type="button" class="btn btn-primary">Subscribe</button>
-                      </v-flex>
-                    </v-row>
-                  </v-container>
-                </v-flex>
+                <v-col cols="12" lg="4" md="4" sm="4" xs="12">
+                  <div class="address">
+                    <strong class="subheading">Contact NARAP</strong>
+                    <p>NARAP <br>
+                     66 Lilalyn Drive <br>
+                     Fairfield, CT 06825 <br>
+                     (860) 386-5676 <br>
+                     </p>
+                  </div>
+
+                </v-col>
+                <v-col cols="12" lg="4" md="4" sm="4" xs="12">
+                  <a href="mailto:ask@thenarap.org">ask@thenarap.org</a>
+                </v-col>
+                <v-col cols="12" lg="4" md="4" sm="4" xs="12">
+                  <v-btn
+                    v-for="icon in icons"
+                    :key="icon"
+                    class="mx-4 blue--text"
+                    icon
+                    @click="iconLink(icon)"
+                    >
+                    <v-icon size="44px">{{ icon }}</v-icon>
+                    </v-btn>
+                </v-col>
               </v-layout>
             </v-container>
           <v-col
@@ -78,7 +49,6 @@
           >
             {{ new Date().getFullYear() }} — <strong>NARAP</strong>
           </v-col>
-        </v-row>
       </v-footer>
     </section>
     <login-modal @close="showLogin=false"
@@ -316,7 +286,9 @@ body {
 }
 
 .footer{
-  max-width: 55%;
+  margin: 0 auto;
+  margin-left: 20%;
+  max-width: 70%;
   margin-bottom: -20px;
 }
 

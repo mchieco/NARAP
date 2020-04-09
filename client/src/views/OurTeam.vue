@@ -105,6 +105,7 @@
   </div>
 </template>
 
+
 <style scoped>
 .headerBottom{
     font-size: 16px;

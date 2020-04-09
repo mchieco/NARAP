@@ -33,7 +33,7 @@
           <v-img class="alumImg" id="pic" src="../assets/alumn.png"></v-img>
           <h1 class="header2">Mentorship Program Application</h1>
           <div class="apply">
-            <v-btn large color="success" dark>Click Here to Apply</v-btn>
+            <v-btn large color="success" dark onclick="window.open('https://www.thenarap.org/mentoring-application')">Click Here to Apply</v-btn>
           </div>
         </v-col>
       </v-row>

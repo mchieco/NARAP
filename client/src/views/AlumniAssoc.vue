@@ -41,10 +41,18 @@
               </v-row>
                 <v-row class="buttRows">
                     <v-col cols="12" lg="6" md="6">
-                        <v-btn class="buttons" onclick="window.location.href = '../alumninow'" small color="success" dark>Where Are They Now?</v-btn>
+                        <v-btn class="buttons" onclick="window.open('https://www.thenarap.org/information-form')" small color="success" dark>Update Information</v-btn>
                     </v-col>
                     <v-col cols="12" lg="6" md="6">
                         <v-btn class="buttons" small color="success" dark onclick="window.location.href = '../alumnimentor'">Mentoring Program</v-btn>
+                    </v-col>
+                </v-row>
+                <v-row class="buttRows">
+                    <v-col cols="12" lg="6" md="6">
+                        <v-btn class="buttons" small color="success" dark onclick="window.open('https://www.thenarap.org/engagement-survey')">Our Feedback Survey</v-btn>
+                    </v-col>
+                    <v-col cols="12" lg="6" md="6">
+                        <v-btn class="buttons" onclick="window.location.href = '../alumninow'" small color="success" dark>Where Are They Now?</v-btn>
                     </v-col>
                 </v-row>
           </v-col>

@@ -1,10 +1,10 @@
 <template>
   <div class="caro">
-    <v-carousel>
-      <v-carousel-item
+    <v-carousel class="caros" height="auto">
+      <v-carousel-item height="auto"
         v-for="(item,i) in items"
         :key="i"
-        :src="item.src"
+        :src="item.src" aspect-ratio="3.27"
         reverse-transition="fade-transition"
         transition="fade-transition"
       >
@@ -23,28 +23,28 @@
       <!-- eslint-disable max-len -->
       <p>Centered in emergency deptartments across the US, NARAP is a non-profit clinical research organization facilitating large-scale, national, multi-center studies to increase the quality of healthcare delivery nationally, especially in the areas of screening and prevention.</p>
       <p>Our work engages vast numbers of pre-health professional students as Data Collectors / Research Associates in the studies, providing enhanced clinical opportunities unique to the research setting while teaching the fundamentals of interacting with patients.</p>
-      <h1>Consider These Numbers</h1>
+      <h1 class="headerTop"> Consider These Numbers </h1>
       <p>More than half the U.S. population visits an Emergency Department as a patient or visitor each year. The average Emergency Department visit lasts four hours.</p>
       <p>By conservative estimates, there are over half a million "pre-med" college and post-baccalaureate students any given year.</p>
     </div>
 
-    <v-container fluid id="homePics">
-      <v-row>
-        <v-col cols="6" sm="4">
+    <v-container fluid>
+      <v-row id="homePics">
+        <v-col cols="12" sm="4">
           <v-img
             id="homeImg"
             src="../assets/home3.png"
           ></v-img>
         </v-col>
 
-        <v-col cols="6" sm="4">
+        <v-col cols="12" sm="4">
           <v-img
             id="homeImg"
             src="../assets/home2.png"
           ></v-img>
         </v-col>
 
-        <v-col cols="6" sm="4">
+        <v-col cols="12" sm="4">
           <v-img
             id="homeImg"
             src="../assets/home1.png"
@@ -52,6 +52,14 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <div class="container" id="homeText">
+      <!-- eslint-disable max-len -->
+      <p>If there were similar clinical research requirements for medical school applicants as there are for  most other health professional students (on average 500 volunteer hours) this would result in an  additional 60,000,000 volunteer hours per year devoted to activities like RA programs.</p>
+      <p>Even at minimum wage, this translates to a potential $435 million value in work by motivated,  college-educated students.</p>
+      <p class="header3">NARAP brings these numbers together to produce a fundamental change in how clinical research is conducted, how screening and prevention is facilitated and how future health professionals discern, qualify and are developed.</p>
+      <p>NARAP is producing millions of work hours for the public good compensated in a commodity other than money, with dividends for the nation’s health now and for generations to come. </p>
+    </div>
   </div>
 </template>
 
@@ -76,8 +84,27 @@ export default {
 </script>
 
 <style scoped>
+
+p{
+  font-size: 18px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
+}
+
+.headerTop{
+  font-size: 30px;
+  margin-top: 2%;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: rgb(0, 48, 0);
+}
 .v-carousel {
   height: 550px !important;
+}
+
+.header3{
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(84, 82, 82);
 }
 
 #wtf {
@@ -88,8 +115,8 @@ export default {
   padding-bottom: 100px;
 }
 #homeImg {
-  padding-top: 100px;
-  height: 90%;
+  margin: 0 auto;
+  max-width: 80%;
 }
 .caroText {
   font-size: 30px;
@@ -120,12 +147,11 @@ export default {
 #homeText {
   padding-left: 12%;
   padding-right: 12%;
-  padding-top: 5%;
-  padding-bottom: 5%;
   font-size: 20px;
   text-align: center;
 }
 #homePics{
-  max-width: 70%;
+  margin: 0 auto;
+  max-width: 50%;
 }
 </style>
