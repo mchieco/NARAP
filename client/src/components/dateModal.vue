@@ -1,3 +1,4 @@
+<!-- this file serves as the code for a form that was not fully implemented -->
 <template>
   <v-row>
     <v-col cols="12" sm="6" md="4">

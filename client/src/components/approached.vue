@@ -1,3 +1,4 @@
+<!-- this file serves as the code for the Approached, Enrolled, and Eligible view of the live data page -->
 <template>
     <div>
       <div>
@@ -31,6 +32,7 @@
     </div>
     
 </template>
+<!-- the styling for the page -->
 <style scoped>
 h1 {
   font-size: 25px;
@@ -39,6 +41,7 @@ h1 {
   font-family: 'Times New Roman';
 }
 </style>
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import '@/mixins/helperMixins';

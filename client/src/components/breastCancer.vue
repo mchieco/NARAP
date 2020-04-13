@@ -1,3 +1,4 @@
+<!-- this file serves as the code for the breast cancer screening view of the live data page -->
 <template>
   <div>
     <div class="row justify-content-center">
@@ -13,31 +14,31 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you been told by a health professional that you no longer need to have mammograms for breast cancer screenings?</h2>
-          <v-btn @click="showModal(mammogramObject1,'No longer need to have mammograms for breast cancer screenings?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in mammogramObject1" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /breastcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(mammogramObject1,'No longer need to have mammograms for breast cancer screenings?')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
             <h2>Have you been told by a health professional that you need a mammogram more often than every two years?</h2>
-            <v-btn @click="showModal(mammogramObject2, 'Need a mammogram more often than every two years?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in mammogramObject2" :key="value.id">
             <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /nomammogramsno * 100).toFixed(2) }} % of Qualifying Participants*)</b></ul>
         </div>
+        <v-btn @click="showModal(mammogramObject2, 'Need a mammogram more often than every two years?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you  had a mammogram within the last two years?</h2>
-          <v-btn @click="showModal(mammogramObject3,'Had a mammogram within the last two years?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in mammogramObject3" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /mammogrammore2yearsno * 100).toFixed(2) }} % of Qualifying Participants**)</b></ul>
       </div>
+      <v-btn @click="showModal(mammogramObject3,'Had a mammogram within the last two years?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div class="row">
@@ -55,7 +56,7 @@
     <dataModal :dialog="isOpen" :series="modalseries" :title="title"></dataModal>
   </div>
 </template>
-
+<!-- the styling for the page -->
 <style scoped>
 h2 {
   font-weight: bold;
@@ -68,7 +69,7 @@ h2 {
 
 
 </style>
-
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';

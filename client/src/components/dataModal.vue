@@ -1,3 +1,4 @@
+<!-- this file serves as the code for creating each graph shown on the data pages -->
 <template>
   <v-row justify="center">
     <v-dialog max-width="1200" max-height="300" v-model="dialog">
@@ -25,6 +26,7 @@
 }
 
 </style>
+<!-- Javascript creation of graphs -->
 <script>
 export default {
   props: ['dialog', 'series', 'title'],

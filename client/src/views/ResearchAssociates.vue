@@ -108,7 +108,8 @@ export default {
 
 <style scoped>
 .holder{
-    width: 90%;
+    padding-left: 10%;
+    width: 100%;
     margin: auto;
 }
 .columns{
@@ -131,7 +132,7 @@ export default {
 
 .headerTop{
   font-size: 40px;
-  margin-left: auto;
+  margin-left: -2%;
   margin-right: auto;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;

@@ -1,3 +1,4 @@
+<!-- this file serves as the code for the Barriers to screening view of the live data page -->
 <template>
   <div>
     <div class="row justify-content-center">
@@ -122,14 +123,6 @@
         </div>
         <div class="row justify-content-center">
           <h4>Is it because you:</h4>
-          <v-btn
-            style="margin-left: 10px;"
-            class="button"
-            @click="showModal(whynotpcpObject,'Why not Schedule a Primary Care Practicioner visit?')"
-            x-small
-            rounded
-            color="success"
-          >View Graph</v-btn>
         </div>
         <div class="row list" v-for="(value, name) in whynotpcpObject" :key="value.id">
           <p style="font-size: 16px;">
@@ -137,6 +130,16 @@
             <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
+        <div class="row justify-content-center">
+          <v-btn
+            style=""
+            class="button"
+            @click="showModal(whynotpcpObject,'Why not schedule a Primary Care Practicioner visit?')"
+            x-small
+            rounded
+            color="success"
+          >View Graph</v-btn>
+          </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row justify-content-center">
@@ -144,20 +147,22 @@
         </div>
         <div class="row justify-content-center">
           <h4>Is it because you:</h4>
-          <v-btn
-            style="margin-left: 10px;"
-            class="button"
-            @click="showModal(whynotquitlineObject,'Why not Follow through on help from the Quitline?')"
-            x-small
-            rounded
-            color="success"
-          >View Graph</v-btn>
         </div>
         <div class="row list" v-for="(value, name) in whynotquitlineObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
             <b>{{ numberWithCommas(value) }}</b>
           </p>
+        </div>
+        <div class="row justify-content-center">
+          <v-btn
+            style="margin-left: 10px;"
+            class="button"
+            @click="showModal(whynotquitlineObject,'Why not follow through on help from the Quitline?')"
+            x-small
+            rounded
+            color="success"
+          >View Graph</v-btn>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -169,7 +174,7 @@
           <v-btn
             style="margin-left: 10px;"
             class="button"
-            @click="showModal(whynotcatObject,'Why not Schedule Lung Cancer Screening?')"
+            @click="showModal(whynotcatObject,'Why not schedule Lung Cancer Screening?')"
             x-small
             rounded
             color="success"
@@ -181,6 +186,9 @@
             <b>{{ numberWithCommas(value) }}</b>
           </p>
         </div>
+        <div class="row justify-content-center">
+
+        </div>
       </div>
     </div>
     <div class="row">
@@ -190,20 +198,22 @@
         </div>
         <div class="row justify-content-center">
           <h4>Is it because you:</h4>
-          <v-btn
-            style="margin-left: 10px;"
-            class="button"
-            @click="showModal(whynotbreastObject,' Why not Schedule a Breast Cancer Screening?')"
-            x-small
-            rounded
-            color="success"
-          >View Graph</v-btn>
         </div>
         <div class="row list" v-for="(value, name) in whynotbreastObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
             <b>{{ numberWithCommas(value) }}</b>
           </p>
+        </div>
+        <div class="row justify-content-center">
+          <v-btn
+            style="margin-left: 10px;"
+            class="button"
+            @click="showModal(whynotbreastObject,' Why not schedule a Breast Cancer Screening?')"
+            x-small
+            rounded
+            color="success"
+          >View Graph</v-btn>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -212,20 +222,22 @@
         </div>
         <div class="row justify-content-center">
           <h4>Is it because you:</h4>
-          <v-btn
-            style="margin-left: 10px;"
-            class="button"
-            @click="showModal(whynotcervicalObject,'Why not Schedule a Cervical Cancer Screening?')"
-            x-small
-            rounded
-            color="success"
-          >View Graph</v-btn>
         </div>
         <div class="row list" v-for="(value, name) in whynotcervicalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
             <b>{{ numberWithCommas(value) }}</b>
           </p>
+        </div>
+        <div class="row justify-content-center">
+          <v-btn
+            style="margin-left: 10px;"
+            class="button"
+            @click="showModal(whynotcervicalObject,'Why not schedule a Cervical Cancer Screening?')"
+            x-small
+            rounded
+            color="success"
+          >View Graph</v-btn>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
@@ -234,20 +246,22 @@
         </div>
         <div class="row justify-content-center">
           <h4>Is it because you:</h4>
-          <v-btn
-            style="margin-left: 10px;"
-            class="button"
-            @click="showModal(whynotcolonrectalObject,'Why not Schedule a Colon Rectal Screening?')"
-            x-small
-            rounded
-            color="success"
-          >View Graph</v-btn>
         </div>
         <div class="row list" v-for="(value, name) in whynotcolonrectalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
             <b>{{ numberWithCommas(value) }}</b>
           </p>
+        </div>
+        <div class="row justify-content-center">
+          <v-btn
+            style="margin-left: 10px;"
+            class="button"
+            @click="showModal(whynotcolonrectalObject,'Why not schedule a Colon Rectal Screening?')"
+            x-small
+            rounded
+            color="success"
+          >View Graph</v-btn>
         </div>
       </div>
     </div>
@@ -280,7 +294,7 @@
       </div>
       <v-btn
         class="button"
-        @click="showModal(quitlinehelpObject,'Follow Through on help from Quitline')"
+        @click="showModal(quitlinehelpObject,'Follow through on help from Quitline')"
         small
         rounded
         color="success"
@@ -352,7 +366,7 @@
     </div>
     <div class="row">
       <p
-        style="font-weight: bold;"
+        style="font-weight: bold; font-size: 17px;"
       >Disclaimer: Participants may not have answered all questions, so the percentages may not add up to 100%</p>
     </div>
     <v-overlay :value="isLoading">
@@ -361,7 +375,7 @@
     <dataModal :dialog="isOpen" :series="modalseries" :title="title"></dataModal>
   </div>
 </template>
-
+<!-- the styling for the page -->
 <style scoped>
 .list {
   justify-content: center;
@@ -393,7 +407,7 @@ p {
   margin-left: 10px;
 }
 </style>
-
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';

@@ -8,9 +8,8 @@
         <v-col cols="6">
           <h7 class="dateHeader">July 11, 2017</h7>
           <h5 class="headerTwo">2017 NARAP Q2 Newsletter</h5>
-          <h5
-            class="titleHeader"
-          >The 2017 NARAP Q2 Newsletter was released earlier today and contained the following news articles.</h5>
+          <h5 class="titleHeader"
+          >The 2017 NARAP Q2 Newsletter contained the following news articles.</h5>
           <ul class="list">
             <ul>
               <li>A Guided Path to a Career in Health Care</li>
@@ -94,9 +93,7 @@
         <v-col cols="6">
           <h7 class="dateHeader">April 06, 2017</h7>
           <h5 class="headerTwo">2017 NARAP Q1 Newsletter</h5>
-          <h5
-            class="titleHeader"
-          >The 2017 NARAP Q1 Newsletter was released earlier today and contained the following news articles</h5>
+          <h5 class="titleHeader">The 2017 NARAP Q1 Newsletter was released earlier today and contained the following news articles</h5>
           <ul class="list">
             <ul>
               <li>2017 Affiliate Growth Plans</li>
@@ -192,6 +189,13 @@
 </template>
 
 <style scoped>
+.headerTop{
+  font-size: 40px;
+  margin-left: 9%;
+  margin-top: 2%;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: rgb(0, 48, 0);
+}
 .headerTwo {
   font-size: 20px;
   font-family: "Trebuchet MS", sans-serif;
@@ -202,11 +206,21 @@
 }
 .titleHeader {
   font-size: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 hr.new5 {
   border: 1px solid green;
   border-radius: 5px;
   width: 3000px;
+}
+.columnText{
+  padding-left: 9%;
+}
+
+.list{
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 </style>
 
