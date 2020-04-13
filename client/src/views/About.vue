@@ -1,3 +1,4 @@
+
 <template>
   <div class="container" id="aboutContainer">
     <v-img class="aboutImg" src="../assets/about.png">
@@ -117,7 +118,7 @@
 }
 
 .headerTop{
-  font-size: 30px;
+  font-size: 40px;
   margin-left: 10%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;

@@ -1,40 +1,40 @@
+<!-- this file serves as the code for the cervical cancer screening view of the live data page -->
 <template>
   <div>
     <div class="row justify-content-center">
       <h1>Enrolled: <b> {{ numberWithCommas(enrolled) }} </b></h1>
     </div>
-        <div class="row justify-content-center">
-      <h1 style="font-size: 30px;">Participants Eligible for Cervical Cancer Screening: <b> {{ numberWithCommas(cervicalcancerfullcount) }} </b></h1>
+    <div class="row justify-content-center">
+      <h1 style="font-size: 20px;">Participants ages 21 to 29: <b> {{ numberWithCommas(cervicalcancer21to29) }} </b></h1>
     </div>
     <div class="row justify-content-center">
-      <h1 style="font-size: 30px;">Participants Ages 21 to 29: <b> {{ numberWithCommas(cervicalcancer21to29) }} </b></h1>
+      <h1 style="font-size: 20px;">Participants ages 30 to 65: <b> {{ numberWithCommas(cervicalcancer30to65) }} </b></h1>
     </div>
     <div class="row justify-content-center">
-      <h1 style="font-size: 30px;">Participants Ages 30 to 65: <b> {{ numberWithCommas(cervicalcancer30to65) }} </b></h1>
+      <h1 style="font-size: 30px;">Total Participants: <b> {{ numberWithCommas(cervicalcancerfullcount) }} </b></h1>
     </div>
     <div style="padding-bottom: 15px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
-          <h2>Have you been told by a health care professional that you no longer need to have Cervical Cancer Screening</h2>
-          <v-btn @click="showModal(screeningObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
+          <h2>Have you been told by a health care professional that you no longer need to have Cervical Cancer Screening?</h2>
         </div>
         <div class ="row leftpad" v-for="(value, name) in screeningObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /cervicalcancerfullcount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(screeningObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
       </div>
     <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
-          <h2>Have you been told by a professional that you need a pap test more often than 3 years</h2>
-          <v-btn @click="showModal(papObject,'Primary practitioner, need intervention')" small rounded color="success">View Graph</v-btn>
+          <h2>Have you been told by a professional that you need a Pap test more often than 3 years?</h2>
         </div>
         <div class ="row leftpad" v-for="(value, name) in papObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /nocervicalscreeningno * 100).toFixed(2) }} % of Qualifying Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(papObject,'Primary practitioner, need intervention')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
-          <h2>Have you had a pap test within the last 3 years</h2>
-          <v-btn @click="showModal(papTestObject,'Cervical Cancer')" small rounded color="success">View Graph</v-btn>
+          <h2>Have you had a Pap test within the last 3 years?</h2>
         </div>
         <div class ="row leftpad" v-for="(value, name) in papTestObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /papmorethan3no * 100).toFixed(2) }} % of Qualifying Participants)</b></ul>
@@ -45,11 +45,11 @@
             <div class ="row leftpad" v-for="(value, name) in papTestObject3065" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /cervicalcancer30to65 * 100).toFixed(2) }} % of Qualifying Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(papTestObject,'Cervical Cancer')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you had a test for human papilloma virus, that is an HPV test, and a Pap test within the last 5 years?</h2>
-          <v-btn @click="showModal(hpvObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in hpvObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /cervicalcancer30to65 * 100).toFixed(2) }} % of Qualifying Participants)</b></ul>
@@ -57,6 +57,7 @@
         <div class ="row leftpad" v-for="(value, name) in hpvObjectDoesNotKnow" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /papmorethan3no * 100).toFixed(2) }} % of Qualifying Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(hpvObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
         <v-overlay :value="isLoading">
@@ -67,7 +68,7 @@
     
 </template>
 
-
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';
@@ -157,11 +158,11 @@ export default {
 
       };
       this.papTestObject2129 = {
-        'No: ages 21 to 29': this.papwithin3no21to29,
+        'No (ages 21 to 29)': this.papwithin3no21to29,
 
       };
       this.papTestObject3065 = {
-        'No: ages 30 to 65': this.papwithin3no30to65,
+        'No (ages 30 to 65)': this.papwithin3no30to65,
 
       };
       this.hpvObject = {
@@ -195,9 +196,14 @@ export default {
 
 };
 </script>
-
+<!-- the styling for the page -->
 <style scoped>
-#Smaller{
-  max-width: 350px;
+h2 {
+  font-weight: bold;
+  padding-right: 10px;
+  font-size: 20px;
+}
+.leftpad {
+  padding-left: 0px;
 }
 </style>

@@ -1,3 +1,4 @@
+<!-- this file serves as the code for the colon rectal cancer screening view of the live data page -->
 <template>
   <div>
     <div class="row justify-content-center">
@@ -13,51 +14,51 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you been told by a health professional that you no longer need to have a colon-rectal cancer screening?</h2>
-          <v-btn @click="showModal(noColonObject,'No longer need to have a colon-rectal cancer screenings?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in noColonObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /colonrectalcount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(noColonObject,'No longer need to have a colon-rectal cancer screenings?')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
             <h2>Have you been told by a health professional that you need to have a colon-rectal cancer screening more often than every 10 years?</h2>
-            <v-btn @click="showModal(colon10Object, 'Colon-rectal cancer screening more often than every 10 years?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in colon10Object" :key="value.id">
             <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /colonrectalcount * 100).toFixed(2) }} % of Total Participants)</b></ul>
         </div>
+        <v-btn @click="showModal(colon10Object, 'Colon-rectal cancer screening more often than every 10 years?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you had a colonoscopy within the last 10 years?</h2>
-          <v-btn @click="showModal(colonscopyObject,'Colonoscopy within the last 10 years?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in colonscopyObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /colonrectal10no * 100).toFixed(2) }} % of Qualifying Participants*)</b></ul>
       </div>
+      <v-btn @click="showModal(colonscopyObject,'Colonoscopy within the last 10 years?')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you had another form of colon-rectal cancer screening instead of a colonoscopy?</h2>
-          <v-btn @click="showModal(otherColonObject,'Colon-rectal cancer screening instead of a colonoscopy?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in otherColonObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /colonrectal10no * 100).toFixed(2) }} % of Qualifying Participants*)</b></ul>
       </div>
+      <v-btn @click="showModal(otherColonObject,'Colon-rectal cancer screening instead of a colonoscopy?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
         <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you  had a Sigmoidoscopy?</h2>
-          <v-btn @click="showModal(sigmoidObject,'Sigmoidoscopy??')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in sigmoidObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /colonrectal10no * 100).toFixed(2) }} % of Qualifying Participants*)</b></ul>
       </div>
+      <v-btn @click="showModal(sigmoidObject,'Sigmoidoscopy??')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div class="row">
@@ -73,7 +74,7 @@
     <dataModal :dialog="isOpen" :series="modalseries" :title="title"></dataModal>
   </div>
 </template>
-
+<!-- the styling for the page -->
 <style scoped>
 h2 {
   font-weight: bold;
@@ -86,7 +87,7 @@ h2 {
 
 
 </style>
-
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';

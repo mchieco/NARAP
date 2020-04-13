@@ -7,20 +7,20 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Has the participant used tobacco products for more than 30 days in a row?</h2>
-          <v-btn @click="showModal(tobacco30DaysObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in tobacco30DaysObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
+      <v-btn @click="showModal(tobacco30DaysObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
             <h2>Did the participant request a quitline referral?</h2>
-            <v-btn @click="showModal(quitlineReferralObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in quitlineReferralObject" :key="value.id">
             <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /tobacco30plus * 100).toFixed(2) }} % of tobacco users for longer than 30 days)</b></ul>
         </div>
+        <v-btn @click="showModal(quitlineReferralObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div class="row justify-content-center" style="padding-left: 20px;">
@@ -36,31 +36,31 @@
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you ever had a low-dose CAT scan to look for early lung cancer?</h2>
-          <v-btn @click="showModal(earlyLungCancerObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in earlyLungCancerObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(earlyLungCancerObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
             <h2>Do you currently smoke cigarettes?</h2>
-            <v-btn @click="showModal(currentlySmokeObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
             </div>
         <div class ="row leftpad" v-for="(value, name) in currentlySmokeObject" :key="value.id">
             <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
         </div>
+        <v-btn @click="showModal(currentlySmokeObject, 'Did the patient request a quitline referral?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div style="padding-bottom: 15px; padding-left: 20px;" class="row">
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="row">
           <h2>Have you quit smoking cigarettes within the last 15 years?</h2>
-          <v-btn @click="showModal(quitSmokingObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
         </div>
       <div class ="row leftpad" v-for="(value, name) in quitSmokingObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /lungcancercount * 100).toFixed(2) }} % of Total Participants)</b></ul>
       </div>
+      <v-btn @click="showModal(quitSmokingObject,'Tobacco products for more than 30 days?')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
     <div class="row">

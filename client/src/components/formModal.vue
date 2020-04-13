@@ -1,3 +1,4 @@
+<!-- this file serves as the code a form that was not fully implemented -->
 <template>
   <div id="myModal">
     <b-button v-b-modal.modal-prevent-closing>Open Modal</b-button>

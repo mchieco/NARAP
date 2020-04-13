@@ -181,7 +181,7 @@ figure{
   font-family: 'Trebuchet MS', sans-serif;
 }
 .headerTop{
-  font-size: 30px;
+  font-size: 40px;
   margin-left: 10%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;
@@ -190,7 +190,7 @@ figure{
 
 .headerTwo{
   font-size: 30px;
-  margin-left: 15%;
+  margin-left: 10%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(241, 200, 37);
@@ -198,7 +198,7 @@ figure{
 
 .pText{
   font-size: 15px;
-  margin-left: 15%;
+  margin-left: 10%;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
   color:rgba(9, 8, 7, 0.924);

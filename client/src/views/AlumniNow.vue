@@ -86,7 +86,7 @@
 <style scoped>
 
 .container{
-  padding-left: 20px;
+  padding-left: 7%;
 }
 
 .name{

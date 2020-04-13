@@ -1,3 +1,4 @@
+<!-- this file serves as the code for the cervical cancer screening view of the live data page -->
 <template>
   <div>
     <div class="row justify-content-center">
@@ -7,29 +8,29 @@
       <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row">
           <h2>Do you have a Primary Care Practitioner?</h2>
-          <v-btn @click="showModal(primaryObject,'Do you have a primary care practitioner')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in primaryObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
+      <v-btn @click="showModal(primaryObject,'Do you have a primary care practitioner')" small rounded color="success">View Graph</v-btn>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row">
           <h2>Have you had a primary practitioner visit within the preceding 12 months?</h2>
-          <v-btn @click="showModal(visitObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in visitObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
+      <v-btn @click="showModal(visitObject,'Primary practitioner visit within preceding 12 months')" small rounded color="success">View Graph</v-btn>
       </div>
     <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row">
           <h2>Primary Care Practitioner, need intervention?</h2>
-          <v-btn @click="showModal(pcpVisitObject,'Primary practitioner, need intervention')" small rounded color="success">View Graph</v-btn>
         </div>
         <div class ="row leftpad" v-for="(value, name) in pcpVisitObject" :key="value.id">
           <ul>{{ name }}: <b> {{ numberWithCommas(value) }} ({{ (value /enrolled * 100).toFixed(2) }} % of Enrolled)</b></ul>
       </div>
+      <v-btn @click="showModal(pcpVisitObject,'Primary practitioner, need intervention')" small rounded color="success">View Graph</v-btn>
       </div>
     </div>
         <v-overlay :value="isLoading">
@@ -39,8 +40,19 @@
     </div>
     
 </template>
+<!-- the styling for the page -->
+<style>
+h2 {
+  font-weight: bold;
+  padding-right: 10px;
+  font-size: 20px;
+}
+.leftpad {
+  padding-left: 0px;
+}
+</style>
 
-
+<!-- the JavaScript code that grabs the data, puts them in the proper set, and stores them as graphs  -->
 <script>
 import liveDataService from '@/services/livedata';
 import dataModal from '@/components/dataModal.vue';

@@ -75,6 +75,9 @@
 
 .pText {
   font-size: 15px;
+  margin-left: -2%;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 
 .columnText {

@@ -157,7 +157,7 @@
 }
 .headerTop{
   font-size: 40px;
-  margin-left: auto;
+  margin-left: 9%;
   margin-right: auto;
   margin-top: 2%;
   width: 75%;
@@ -167,7 +167,7 @@
 
 .headerTwo{
   font-size: 20px;
-  margin-left: auto;
+  margin-left: 9%;
   margin-right: auto;
   margin-top: 2%;
   width: 75%;
@@ -177,7 +177,7 @@
 
 .headerThree{
   font-size: 20px;
-  margin-left: auto;
+  margin-left: 9%;
   margin-right: auto;
   margin-top: 2%;
   width: 80%;
@@ -187,7 +187,7 @@
 
 .headerSmaller{
   font-size: 17px;
-  margin-left: auto;
+  margin-left: 9%;
   margin-right: auto;
   margin-top: 2%;
   width: 75%;
@@ -237,7 +237,7 @@
 
 .pText{
   font-size: 15px;
-  margin-left: auto;
+  margin-left: 9%;
   margin-right: auto;
   margin-top: 2%;
   width: 75%;

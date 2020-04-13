@@ -9,19 +9,19 @@
 
       <v-row>
         <h5
-          class="titleHeader"
+          class="titleHeader2"
         >NARAP is seeking financial donations to support our mission to increase the quality of health care delivery nationally while developing the knowledge and skills of future health care professionals. As a 501(c)(3) non-profit organization we are dependent on corporate and individual donations to successfully advance this mission.</h5>
       </v-row>
       <br />
       <v-row>
         <h5
-          class="titleHeader"
+          class="titleHeader2"
         >Donation of all sizes will help to fund the NARAP Wish List items listed below. Please email us at donate@theNARAP.org and let us know the specific Wish List item and the amount of your donation. We will ensure that your donation goes to support the exact Wish List item that you have specified. You will also receive a letter from us documenting the amount of your donation for tax purposes.</h5>
       </v-row>
       <br />
 
       <v-row>
-        <h5 class="titleHeader">Your generosity is greatly appreciated. Thank you!</h5>
+        <h5 class="titleHeader2">Your generosity is greatly appreciated. Thank you!</h5>
       </v-row>
             <br />
 
@@ -94,6 +94,16 @@
 </template>
 
 <style scoped>
+.headerTop{
+  font-size: 40px;
+  margin-left: 9%;
+  margin-top: 2%;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: rgb(0, 48, 0);
+}
+.columnText{
+  padding-left: 9%;
+}
 .headerTwo {
   font-size: 20px;
   font-family: "Trebuchet MS", sans-serif;
@@ -104,11 +114,25 @@
 }
 .titleHeader {
   font-size: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
+}
+.titleHeader2 {
+  margin-left: 9%;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 hr.new5 {
   border: 1px solid green;
   border-radius: 5px;
   width: 3000px;
+}
+
+.list{
+  font-size: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 </style>
 

@@ -1,3 +1,4 @@
+<!-- this file serves as the code a login system that was not fully implemented -->
 <template>
   <v-row justify="center">
     <v-dialog v-model="dialog" persistent max-width="500px">

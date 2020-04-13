@@ -146,17 +146,17 @@ export default {
 }
 .headerTop{
   font-size: 40px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 2%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(0, 48, 0);
 }
 
 .pageText{
-  color: black;
   font-size: 18px;
-  margin-left: 9%;
+  margin-left: 8%;
   font-family: 'Trebuchet MS', sans-serif;
+  color:rgba(9, 8, 7, 0.924);
 }
 
 .logo{

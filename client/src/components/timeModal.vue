@@ -1,3 +1,4 @@
+<!-- this file serves as the code a login system that was not fully implemented -->
 <template>
   <v-row>
     <v-col cols="11" sm="5">
