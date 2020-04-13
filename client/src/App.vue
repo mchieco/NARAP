@@ -70,7 +70,7 @@ export default {
         isUsingVueRouter: true,
         mobileBreakpoint: 992,
         brandImagePath: './',
-        brandImage: require('./assets/narap_logo.png'),
+        brandImage: require('./assets/narapmain.png'),
         brandImageAltText: 'brand-image',
         collapseButtonImageOpen: require('./assets/collapse-menu-dark.png'),
         collapseButtonImageClose: require('./assets/times.png'),

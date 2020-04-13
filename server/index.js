@@ -9,10 +9,10 @@ const bodyparser = require("body-parser");
 
 const app = express();
 app.use(cors());
-app.use(serveStatic(__dirname + "/dist"));
-app.use(history());
-const port = process.env.PORT || 5000; //port we will listen for connections on. 
+//app.use(serveStatic(__dirname + "/dist"));
+//app.use(history());
 app.use(bodyparser.json()); // get information from html forms
+const port = process.env.PORT || 5000; //port we will listen for connections on. 
 livedatajob = require("./jobs/livedatajob"); //makes reference to cronjob file so it can run
 
 
