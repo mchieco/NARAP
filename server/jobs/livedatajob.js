@@ -849,7 +849,7 @@ async function setredcapData() {
                                             if(obj.sigmoidoscopy === '2') {
                                                 sigmoidoscopyno += 1;
                                             }
-                                            if(obj.sigmoidoscopy === '1') {
+                                            if(obj.sigmoidoscopy === '3') {
                                                 sigmoidoscopyrefused += 1;
                                             }
                                         }
