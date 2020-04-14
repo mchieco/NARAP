@@ -1,24 +1,24 @@
 <!-- this file serves as the code for the Barriers to screening view of the live data page -->
 <template>
   <div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
       <h1>
         Enrolled:
         <b>{{ numberWithCommas(enrolled) }}</b>
       </h1>
     </div>
-    <div style="margin-bottom: 10px;" class="row justify-content-center">
+    <div style="margin-bottom: 10px;" class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
       <h3>**For participants identified as needing a primary care practitioner visit, tobacco cessation or cancer screenings**</h3>
     </div>
-    <div style="margin-bottom: 10px;" class="row justify-content-center">
+    <div style="margin-bottom: 10px;" class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
       <h2>How likely are you to schedule a:</h2>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Primary Care Practicioner visit?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in pcpvisitObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpcpvisit * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -29,12 +29,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Call to their States Quitline?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in quitlineObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allquitline * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -45,12 +45,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Low Dose Cat Screening for Lung Cancer?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in catObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcat * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -61,12 +61,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Mammogram Screening for Breast Cancer?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in breastObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allbreast * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -77,12 +77,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Pap Test Screeing for Cervical Cancer?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpap * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -93,12 +93,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Colon-Rectal Cancer Screening?:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcrc * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -122,17 +122,8 @@
           <h5>Schedule a Primary Care Practicioner visit</h5>
         </div>
         <div class="row justify-content-center">
-          <h4>Is it because you:</h4>
-        </div>
-        <div class="row list" v-for="(value, name) in whynotpcpObject" :key="value.id">
-          <p style="font-size: 16px;">
-            {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
-          </p>
-        </div>
-        <div class="row justify-content-center">
           <v-btn
-            style=""
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotpcpObject,'Why not schedule a Primary Care Practicioner visit?')"
             x-small
@@ -140,23 +131,23 @@
             color="success"
           >View Graph</v-btn>
           </div>
-      </div>
-      <div class="col-md-4 col-sm-12 col-lg-4">
-        <div class="row justify-content-center">
-          <h5>Follow through on help from the Quitline</h5>
-        </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <h4>Is it because you:</h4>
         </div>
-        <div class="row list" v-for="(value, name) in whynotquitlineObject" :key="value.id">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotpcpObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }} %)
           </p>
         </div>
-        <div class="row justify-content-center">
+      </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h5>Follow through on help from the Quitline</h5>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
-            style="margin-left: 10px;"
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotquitlineObject,'Why not follow through on help from the Quitline?')"
             x-small
@@ -164,15 +155,23 @@
             color="success"
           >View Graph</v-btn>
         </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h4>Is it because you:</h4>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotquitlineObject" :key="value.id">
+          <p style="font-size: 16px;">
+            {{ name }}:
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }} %)
+          </p>
+        </div>
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <h5>Schedule Lung Cancer Screening</h5>
         </div>
-        <div class="row justify-content-center">
-          <h4>Is it because you:</h4>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
-            style="margin-left: 10px;"
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotcatObject,'Why not schedule Lung Cancer Screening?')"
             x-small
@@ -180,34 +179,25 @@
             color="success"
           >View Graph</v-btn>
         </div>
-        <div class="row list" v-for="(value, name) in whynotcatObject" :key="value.id">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h4>Is it because you:</h4>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcatObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }} %)
           </p>
-        </div>
-        <div class="row justify-content-center">
-
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-12 col-lg-4">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <h5>Schedule a Breast Cancer Screening</h5>
         </div>
-        <div class="row justify-content-center">
-          <h4>Is it because you:</h4>
-        </div>
-        <div class="row list" v-for="(value, name) in whynotbreastObject" :key="value.id">
-          <p style="font-size: 16px;">
-            {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
-          </p>
-        </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
-            style="margin-left: 10px;"
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotbreastObject,' Why not schedule a Breast Cancer Screening?')"
             x-small
@@ -215,23 +205,23 @@
             color="success"
           >View Graph</v-btn>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-12 col-lg-4">
-        <div class="row justify-content-center">
-          <h5>Schedule a Cervical Cancer Screening</h5>
-        </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <h4>Is it because you:</h4>
         </div>
-        <div class="row list" v-for="(value, name) in whynotcervicalObject" :key="value.id">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotbreastObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }} %)
           </p>
         </div>
-        <div class="row justify-content-center">
+      </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h5>Schedule a Cervical Cancer Screening</h5>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
-            style="margin-left: 10px;"
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotcervicalObject,'Why not schedule a Cervical Cancer Screening?')"
             x-small
@@ -239,23 +229,23 @@
             color="success"
           >View Graph</v-btn>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-12 col-lg-4">
-        <div class="row justify-content-center">
-          <h5>Schedule a Colon-Rectal Screening</h5>
-        </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <h4>Is it because you:</h4>
         </div>
-        <div class="row list" v-for="(value, name) in whynotcolonrectalObject" :key="value.id">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcervicalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-            <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }} %)
           </p>
         </div>
-        <div class="row justify-content-center">
+      </div>
+      <div class="col-md-4 col-sm-12 col-lg-4">
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h5>Schedule a Colon-Rectal Screening</h5>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
-            style="margin-left: 10px;"
+            style="margin: 5px;"
             class="button"
             @click="showModal(whynotcolonrectalObject,'Why not schedule a Colon Rectal Screening?')"
             x-small
@@ -263,17 +253,26 @@
             color="success"
           >View Graph</v-btn>
         </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+          <h4>Is it because you:</h4>
+        </div>
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcolonrectalObject" :key="value.id">
+          <p style="font-size: 16px;">
+            {{ name }}:
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }} %)
+          </p>
+        </div>
       </div>
     </div>
-    <div style="margin-bottom: 10px;" class="row justify-content-center">
+    <div style="margin-bottom: 10px;" class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
       <h3 style="font-weight: bold;">If you could have help with this, how likely would you be to get this accomplished?</h3>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Primary Care Practicioner visit:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in pcphelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -284,12 +283,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Follow Through on help from Quitline:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in quitlinehelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -300,12 +299,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Schedule a Lung Cancer Screening:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in cathelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -316,12 +315,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Schedule a Breast Cancer Screening:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in breasthelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -332,12 +331,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Schedule a Cervical Cancer Screening:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -348,12 +347,12 @@
         color="success"
       >View Graph</v-btn>
     </div>
-    <div class="row justify-content-center">
+    <div class="row listmargin">
       <p style="font-weight: bold;">Schedule Colon-Rectal Cancer Screening:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value) }}</b>
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }} %)
         </p>
       </div>
       <v-btn
@@ -377,9 +376,8 @@
 </template>
 <!-- the styling for the page -->
 <style scoped>
-.list {
-  justify-content: center;
-  text-align: center;
+.listmargin {
+  margin-left: 6px;
 }
 h2 {
   font-weight: bold;
@@ -400,7 +398,7 @@ h5 {
   padding-left: 0px;
 }
 p {
-  font-size: 20px;
+  font-size: 18px;
 }
 .button {
   margin-top: 2px;
@@ -529,6 +527,18 @@ export default {
       liklihoodhelpcolonrectalns: 0,
       liklihoodhelpcolonrectall: 0,
       liklihoodhelpcolonrectalvl: 0,
+      allpcpvisit: 0,
+      allquitline: 0,
+      allcat: 0,
+      allbreast: 0,
+      allpap: 0,
+      allcrc: 0,
+      bottom3pcpvisit: 0,
+      bottom3quitline: 0,
+      bottom3cat: 0,
+      bottom3breast: 0,
+      bottom3pap: 0,
+      bottom3crc: 0,
       pcpvisitObject: {
 
       },
@@ -590,6 +600,8 @@ export default {
       this.isLoading = true;
       const x = await liveDataService();
       this.enrolled = x.enrolled;
+      this.allpcpvisit = x.liklihoodpcpvu + x.liklihoodpcpu + x.liklihoodpcpns + x.liklihoodpcpl + x.liklihoodpcpvl;
+      this.bottom3pcpvisit = x.liklihoodpcpvu + x.liklihoodpcpu + x.liklihoodpcpns;
       this.liklihoodpcpvu = x.liklihoodpcpvu;
       this.liklihoodpcpu = x.liklihoodpcpu;
       this.liklihoodpcpns = x.liklihoodpcpns;
@@ -602,6 +614,8 @@ export default {
         Likely: this.liklihoodpcpl,
         'Very Likely': this.liklihoodpcpvl,
       };
+      this.allquitline = x.liklihoodquitlinevu + x.liklihoodquitlineu + x.liklihoodquitlinens + x.liklihoodquitlinel + x.liklihoodquitlinevl;
+      this.bottom3quitline = x.liklihoodquitlinevu + x.liklihoodquitlineu + x.liklihoodquitlinens;
       this.liklihoodquitlinevu = x.liklihoodquitlinevu;
       this.liklihoodquitlineu = x.liklihoodquitlineu;
       this.liklihoodquitlinens = x.liklihoodquitlinens;
@@ -614,6 +628,8 @@ export default {
         Likely: this.liklihoodquitlinel,
         'Very Likely': this.liklihoodquitlinevl,
       };
+      this.allcat = x.liklihoodcatvu + x.liklihoodcatu + x.liklihoodcatns + x.liklihoodcatl + x.liklihoodcatvl;
+      this.bottom3cat = x.liklihoodcatvu + x.liklihoodcatu + x.liklihoodcatns;
       this.liklihoodcatvu = x.liklihoodcatvu;
       this.liklihoodcatu = x.liklihoodcatu;
       this.liklihoodcatns = x.liklihoodcatns;
@@ -626,6 +642,8 @@ export default {
         Likely: this.liklihoodcatl,
         'Very Likely': this.liklihoodcatvl,
       };
+      this.allbreast = x.liklihoodbreastvu + x.liklihoodbreastu + x.liklihoodbreastns + x.liklihoodbreastl + x.liklihoodbreastvl;
+      this.bottom3breast = x.liklihoodbreastvu + x.liklihoodbreastu + x.liklihoodbreastns;
       this.liklihoodbreastvu = x.liklihoodbreastvu;
       this.liklihoodbreastu = x.liklihoodbreastu;
       this.liklihoodbreastns = x.liklihoodbreastns;
@@ -638,6 +656,8 @@ export default {
         Likely: this.liklihoodbreastl,
         'Very Likely': this.liklihoodbreastvl,
       };
+      this.allpap = x.liklihoodcervicalvu + x.liklihoodcervicalu + x.liklihoodcervicalns + x.liklihoodcervicall + x.liklihoodcervicalvl;
+      this.bottom3pap = x.liklihoodcervicalvu + x.liklihoodcervicalu + x.liklihoodcervicalns;
       this.liklihoodcervicalvu = x.liklihoodcervicalvu;
       this.liklihoodcervicalu = x.liklihoodcervicalu;
       this.liklihoodcervicalns = x.liklihoodcervicalns;
@@ -650,6 +670,8 @@ export default {
         Likely: this.liklihoodcervicall,
         'Very Likely': this.liklihoodcervicalvl,
       };
+      this.allcrc = x.liklihoodcolonrectalvu + x.liklihoodcolonrectalu + x.liklihoodcolonrectalns + x.liklihoodcolonrectall + x.liklihoodcolonrectalvl;
+      this.bottom3crc = x.liklihoodcolonrectalvu + x.liklihoodcolonrectalu + x.liklihoodcolonrectalns;
       this.liklihoodcolonrectalvu = x.liklihoodcolonrectalvu;
       this.liklihoodcolonrectalu = x.liklihoodcolonrectalu;
       this.liklihoodcolonrectalns = x.liklihoodcolonrectalns;

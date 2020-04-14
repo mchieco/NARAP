@@ -84,7 +84,6 @@ export default {
 </script>
 
 <style scoped>
-
 p{
   font-size: 18px;
   font-family: 'Trebuchet MS', sans-serif;

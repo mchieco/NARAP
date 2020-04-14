@@ -2,22 +2,22 @@
 <template>
     <div>
       <div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
         <h1>
           Approached: <b> {{ numberWithCommas(approached) }} </b>
         </h1>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
         <h1>
           Eligible: <b> {{ numberWithCommas(eligible) }} ({{ eligiblePercent }}% of Approached) </b>
         </h1>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
         <h1>
           Enrolled: <b> {{ numberWithCommas(enrolled) }} ({{ enrolledPercent }}% of Approached) </b>
         </h1>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-lg-center justify-content-sm-center justify-content-md-center justify-content-sm-center">
         <h1>
           Enrolled/Eligible: <b> {{ (enrolled/eligible * 100).toFixed(2) }}% </b>
         </h1>
