@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 async function getData() {
-  const response = await axios.get('http://localhost:5000/fetchdata');
+  const response = await axios.get('https://thenarap.herokuapp.com/fetchdata');
   return response.data;
 }
 
