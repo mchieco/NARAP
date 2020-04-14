@@ -24,9 +24,7 @@
           <li>as data collectors in clinical research</li>
         </ul>
       </v-row>
-      <v-row class="button">
-        <button type="button" class="btn blue-gradient" target="_blank" onclick="window.location.href = '../research-associates'">Learn More</button>
-      </v-row>
+      <router-link to="/research-associates"> <button type="button" class="btn blue-gradient">Learn More</button> </router-link>
       <v-row class="headerThree">
         <h5 class="headerSmaller">Affiliates</h5>
       </v-row>
@@ -38,9 +36,7 @@
           <li>minimizing cost and impact on clinical personnel</li>
         </ul>
       </v-row>
-      <v-row class="button">
-        <button type="button" class="btn blue-gradient" onclick="window.location.href = '../affiliates'">Learn More</button>
-      </v-row>
+      <router-link to="/affiliates"> <button type="button" class="btn blue-gradient">Learn More</button> </router-link>
       <v-row class="headerThree">
         <h5 class="headerSmaller">Clinical Researchers</h5>
       </v-row>
@@ -54,15 +50,17 @@
             </ul>
         </ul>
       </v-row>
-      <v-row class="button">
-        <button type="button" class="btn blue-gradient" onclick="window.location.href = '../our-research'">Learn More</button>
-      </v-row>
+        <router-link to="/our-research"> <button type="button" class="btn blue-gradient">Learn More</button> </router-link>
     </div>
   </div>
 </template>
 
 
 <style scoped>
+
+.btn{
+  margin-top: 0%;
+}
 
 .container{
   padding-left: 7%;
@@ -83,6 +81,7 @@
 
 .headerThree{
   font-size: 20px;
+  padding-top: 10px;
   width: 75%;
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(0, 48, 0);
@@ -103,7 +102,6 @@
   font-size: 15px;
   font-family: 'Trebuchet MS', sans-serif;
   color:rgba(9, 8, 7, 0.924);
-  margin-bottom: -10%;
 }
 
 </style>
