@@ -9,7 +9,7 @@ const bodyparser = require("body-parser");
 
 const app = express();
 app.use(cors());
-//app.use(serveStatic(__dirname + "/dist"));
+app.use(serveStatic(__dirname + "../../client/dist"));
 //app.use(history());
 app.use(bodyparser.json()); // get information from html forms
 const port = process.env.PORT || 5000; //port we will listen for connections on. 
@@ -19,4 +19,7 @@ livedatajob = require("./jobs/livedatajob"); //makes reference to cronjob file s
 
 const router = require("./routes/livedataRouter");
 app.use("/", router);
+app.get("*",(req,res,next)=>{
+    res.status(200).sendFile(path.join(__dirname,'../client/dist/index.html'))
+});
 app.listen(port, () => console.log(` Server listening on port ${port}!`));

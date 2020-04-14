@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const livedataController = require("../controllers/livedataController")
 
-router.route("/livedata")
+router.route("/fetchdata")
 .all((req,res,next)=>{
     next();
 })
