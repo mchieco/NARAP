@@ -7,12 +7,12 @@ const qs = require('query-string');
 //run job on restart
 setredcapData();
 
-//cron.schedule("* * * * *", async function () { //seconds,
-    //console.log("---------------------");
-    //console.log("Running Cron Job on REDCAP");
-    //const result = await setredcapData();
-    //console.log(result);
-//});
+cron.schedule("*/30 * * * *", async function () { //seconds,
+    console.log("---------------------");
+    console.log("Running Cron Job on REDCAP");
+    const result = await setredcapData();
+    console.log(result);
+});
 
 async function fetchredcapData() {
     const response = await axios.post('https://redcap.vanderbilt.edu/api/',
