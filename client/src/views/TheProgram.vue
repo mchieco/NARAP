@@ -42,7 +42,7 @@
       </v-row>
       <v-row class="">
         <ul class="list">
-          <li>research accomplished</li>
+          <li>Research accomplished</li>
             <ul>
                 <li>enrolling unprecedented numbers of participants over short time frames </li>
                 <li>from the broad range of diverse demographics found in NARAP Affiliates in urban, suburban and rural settings across the U.S.</li>
