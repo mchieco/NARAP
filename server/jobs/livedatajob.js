@@ -10,8 +10,9 @@ setredcapData();
 cron.schedule("30 * * * *", async function () { //seconds,
     console.log("---------------------");
     console.log("Running Cron Job on REDCAP");
-    const result = await setredcapData();
-    console.log(result);
+    await setredcapData();
+    console.log("---------------------");
+    console.log("Cron Job Complete");
 });
 
 async function fetchredcapData() {
