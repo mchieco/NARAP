@@ -7,7 +7,7 @@ const qs = require('query-string');
 //run job on restart
 setredcapData();
 
-cron.schedule("* */1 * * *", async function () { //seconds,
+cron.schedule("30 * * * *", async function () { //seconds,
     console.log("---------------------");
     console.log("Running Cron Job on REDCAP");
     const result = await setredcapData();
