@@ -10,6 +10,7 @@ setredcapData();
 cron.schedule("*/15 * * * *", async function () { //seconds,
     console.log("---------------------");
     console.log("Running Cron Job on REDCAP");
+    axios.get('https://thenarap.herokuapp.com');
     await setredcapData();
     console.log("---------------------");
     console.log("Cron Job Complete");
