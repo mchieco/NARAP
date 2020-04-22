@@ -18,7 +18,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in pcpvisitObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpcpvisit * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpcpvisit * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -34,7 +34,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in quitlineObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allquitline * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allquitline * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -50,7 +50,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in catObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcat * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcat * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -66,7 +66,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in breastObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allbreast * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allbreast * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -82,7 +82,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpap * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allpap * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -98,7 +98,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcrc * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /allcrc * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -137,7 +137,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotpcpObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -161,7 +161,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotquitlineObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -185,7 +185,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcatObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -211,7 +211,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotbreastObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -235,7 +235,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcervicalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -259,7 +259,7 @@
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" v-for="(value, name) in whynotcolonrectalObject" :key="value.id">
           <p style="font-size: 16px;">
             {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }}%)
           </p>
         </div>
       </div>
@@ -272,7 +272,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in pcphelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -288,7 +288,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in quitlinehelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3quitline * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -304,7 +304,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cathelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3cat * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -320,7 +320,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in breasthelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3breast * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -336,7 +336,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in cervicalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pap * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
@@ -352,7 +352,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalhelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }} %)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3crc * 100).toFixed(1) }}%)
         </p>
       </div>
       <v-btn
