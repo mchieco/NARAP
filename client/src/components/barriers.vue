@@ -272,7 +272,7 @@
       <div style="margin-left: 10px;" v-for="(value, name) in pcphelpObject" :key="value.id">
         <p>
           {{ name }}:
-          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1) }}%)
+          <b>{{ numberWithCommas(value)}}</b> ({{ (value /bottom3pcpvisit * 100).toFixed(1)}}%)
         </p>
       </div>
       <v-btn
@@ -398,7 +398,7 @@ h5 {
   padding-left: 0px;
 }
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 .button {
   margin-top: 2px;
