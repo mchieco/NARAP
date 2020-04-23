@@ -167,7 +167,7 @@
       </div>
       <div class="col-md-4 col-sm-12 col-lg-4">
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
-          <h5>Schedule Lung Cancer Screening</h5>
+          <h5>Schedule a Lung Cancer Screening</h5>
         </div>
         <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
           <v-btn
@@ -348,7 +348,7 @@
       >View Graph</v-btn>
     </div>
     <div class="row listmargin">
-      <p style="font-weight: bold;">Schedule Colon-Rectal Cancer Screening:</p>
+      <p style="font-weight: bold;">Schedule a Colon-Rectal Cancer Screening:</p>
       <div style="margin-left: 10px;" v-for="(value, name) in colonrectalhelpObject" :key="value.id">
         <p>
           {{ name }}:
@@ -398,7 +398,7 @@ h5 {
   padding-left: 0px;
 }
 p {
-  font-size: 16px;
+  font-size: 14px;
 }
 .button {
   margin-top: 2px;
