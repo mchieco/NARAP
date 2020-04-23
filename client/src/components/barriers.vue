@@ -398,7 +398,7 @@ h5 {
   padding-left: 0px;
 }
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 .button {
   margin-top: 2px;
