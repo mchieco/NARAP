@@ -19,6 +19,8 @@ livedatajob = require("./jobs/livedatajob"); //makes reference to cronjob file s
 
 const router = require("./routes/livedataRouter");
 app.use("/", router);
+
+//handle all of the build files for front-end, can remove this code if using seperately 
 app.get("*",(req,res,next)=>{
     res.status(200).sendFile(path.join(__dirname,'../client/dist/index.html'))
 });

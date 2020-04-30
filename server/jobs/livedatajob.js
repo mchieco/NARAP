@@ -7,7 +7,8 @@ const qs = require('query-string');
 //run job on restart
 setredcapData();
 
-cron.schedule("*/15 * * * *", async function () { //seconds,
+//cron job that is scheduled for every 15 minutes, to change it change the number for the desired increment number, for minutes
+cron.schedule("*/15 * * * *", async function () {
     console.log("---------------------");
     console.log("Running Cron Job on REDCAP");
     axios.get('https://thenarap.herokuapp.com');

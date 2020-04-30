@@ -4,6 +4,7 @@ const cron = require("node-cron");
 const fs = require("fs");
 const qs = require('query-string');
 
+//get the live data job
 const cache = require("../jobs/livedatajob");
 
 //get cached value from cron job and send it through endpoint
