@@ -4,7 +4,7 @@
 ```
 cd client
 npm install
-.. cd server
+cd .. server
 npm install
 ```
 ### Compiles for development, but doesn't hot reload (For the back end, must be in server directory)
