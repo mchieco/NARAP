@@ -7,7 +7,7 @@ npm install
 .. cd server
 npm install
 ```
-### Compiles and hot-reloads for development (For the back end, must be in server directory)
+### Compiles for development, but doesn't hot reload (For the back end, must be in server directory)
 ```
 node index.js
 ```
